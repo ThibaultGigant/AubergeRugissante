@@ -2,7 +2,7 @@
 var maelisTopic = [
 	// INFO
 	[["KEY", "_class"],						["VAL", "bot"], ["BOT","maelisBot"]],
-	[["KEY", "_reference"],					["VAL", ["cy","maelis","boy","man","assistant"]]],
+	[["KEY", "_reference"],					["VAL", ["mae","maelis","fille","mael","tantine", "demoiselle", ""]]],
 	[["KEY", "_charprefix"],				["VAL", "maelis"]],
 	[["KEY", "_read"],						["VAL", ["userTopic", "carnaumTopic"]]],
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],
@@ -17,15 +17,6 @@ var maelisTopic = [
 											],
 	[["KEY", "gender"],						["VAL", "female"],
 											["ONASK", function(s) { return ((s == "male") ? "I am proud to be a man!" : "Just a woman") }]
-											],
-	[["KEY", ["job"]],			          	["VAL", "I am a counter assistant"]],
-	[["KEY", ["job","phone"]],				["VAL", "01 69 85 80 85"], ["TYPE","INT"]],
-	[["KEY", ["job","company"]],			["VAL", "I work at LIMSI-CNRS"]],
-	[["KEY", ["home","location"]],		    ["VAL", "I live in Orsay"]],
-	[["KEY", ["home","phone","number"]],	["VAL", "It is a secret"]],
-	[["KEY", "usage"],						["VAL", "_UN_, I can control the counter for you"]],
-	[["KEY", "date"],						["VAL", function(){return new Date()}],
-											["WHY","Because I asked JavaScript to calculate it for me"]
 											],
 	// REL
 
