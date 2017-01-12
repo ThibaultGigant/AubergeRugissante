@@ -15,14 +15,16 @@ BOT_theUserTopicId	= "userTopic";		// sets topic of current user id
 var drunk_sentences = ["Zzzzz", "Heuu...", "bwork", "Hic!", "Gnouf", "Slurp", "Gnalaacool"];
 
 var BOT_SynonymList	=  [
-	["quête",		["voyage", "pépriple", "aventure", "quête", "expédition", "vadrouille", "chasse aux monstres"]],
-	["aventuriers",	["soldats", "camarades", "équipiers", "co-équipiers", "coéquipiers", "glandus", "inconscients", "gars", "amis"]],
-	["tavernier",	["tenancier", "aubergiste", "barman", "patron", "chef"]],
-	["boisson",		["bière", "vin", "gnôle", "binouze", "chope", "pinte", "tonnelet", "tonneau", "litre"]],
-	["monsieur",	["mr.", "mr", "m.", "m", "msgr.", "msgr", "monseigneur", "seigneur"]],
-	["madame",		["mm.", "mm", "mme.", "mme"]],
-	["mademoiselle",["mlle.", "mlle"]],
-	["saoul",		["bourré", "torché", "rond", "gris"]]
+	["_a TMM",			["dites m en plus", "et donc", "et alors", "expliquez", "quoi d'autre"]],
+	["quête",			["voyage", "pépriple", "aventure", "quête", "expédition", "vadrouille", "chasse aux monstres"]],
+	["aventuriers",		["soldats", "camarades", "équipiers", "co-équipiers", "coéquipiers", "glandus", "inconscients", "gars", "amis"]],
+	["tavernier",		["tenancier", "aubergiste", "barman", "patron", "chef"]],
+	["boisson",			["bière", "vin", "gnôle", "binouze", "chope", "pinte", "tonnelet", "tonneau", "litre"]],
+	["monsieur",		["mr.", "mr", "m.", "msgr.", "msgr", "monseigneur", "seigneur"]],
+	["madame",			["mm.", "mm", "mme.", "mme"]],
+	["mademoiselle",	["mlle.", "mlle"]],
+	["saoul",			["bourré", "torché", "rond", "gris"]],
+	["_a",				["quel", "quelle", "quoi", "qu'", "que", "qui"]]
 	];
 BOT_basicSynonymList = BOT_basicSynonymList.concat(BOT_SynonymList);
 
