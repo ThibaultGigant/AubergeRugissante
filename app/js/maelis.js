@@ -2,9 +2,9 @@
 var maelisTopic = [
 	// INFO
 	[["KEY", "_class"],						["VAL", "bot"], ["BOT","maelisBot"]],
-	[["KEY", "_reference"],					["VAL", ["cy","maelis","boy","man","assistant"]]],
+	[["KEY", "_reference"],					["VAL", ["maelis","mael", "madame"]]],
 	[["KEY", "_charprefix"],				["VAL", "maelis"]],
-	[["KEY", "_read"],						["VAL", ["userTopic", "carnaumTopic"]]],
+	[["KEY", "_read"],						["VAL", ["userTopic", "carnaumTopic", "lucreciaTopic", "taojimTopic"]]],
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],
 	[["KEY", "_exec"],						["VAL", ["userTopic"]]], // try
 	[["KEY", "type"],						["VAL", ["human","man"]]],
@@ -29,7 +29,10 @@ var maelisTopic = [
 											],
 	// REL
 
-	[["KEY", "carnaum"],			["VAL", "carnaumTopic"],["CAT","REL"]],
+	[["KEY", "carnaum"],				["VAL", "carnaumTopic"],["CAT","REL"]],
+	[["KEY", "taojim"],					["VAL", "taojimTopic"],["CAT","REL"]],
+	[["KEY", "lucrecia"],				["VAL", "lucreciaTopic"],["CAT","REL"]],
+	//[["KEY", "tavernier"],				["VAL", "tavernierTopic"],["CAT","REL"]],
 	
 	// FEELINGS
 	[["KEY", "happiness"],		["VAL", 0.8], ["CAT","VAR"], ["TYPE","INT"]], // 7 standard feelings iniitated
