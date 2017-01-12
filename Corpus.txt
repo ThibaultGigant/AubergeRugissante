@@ -1,0 +1,40 @@
+# Greetings
+Bonjour !
+Bonjour à tous
+Bonjour tout le monde
+
+# commande au tavernier
+Une biere
+Une choppe
+Je voudrais une biere tavernier
+(de l'eau -> de l'eau ?)
+A boire patron
+Qu'est-ce que vous avez chef ?
+Votre meilleur cru monsieur !
+Mon seigneur, un tonnelet de biere, s'il vous plait
+
+# explication recherche
+Je cherche à former une équipe
+Je recherche des coéquipiers
+Je cherche des aventuriers
+Je voudrais constituer un groupe de valeureux glandus !
+Je voudrais réunir un équipe de soldats sans peur et sans reproches
+Qui voudrait se joindre à moi ?
+Ça intéresse quelqu'un ?
+
+# Recrutement
+Quelles sont tes compétences ?
+Que pourrais-tu apporter à l'équipe ?
+Que veux-tu en échange ? / Tu veux quoi en échange ?
+Qu'espères-tu retirer de ce périple
+Qu'attends-tu de cette quête ?
+Qu'attends-tu de ce voyage ?
+Tu fais quoi ?
+Ça te dit de partir à l'aventure ?
+Serais-tu capable / Est-ce que tu sais faire ... ?
+Dites m'en plus
+
+
+
+# fin du jeu
+Partons à l'aventure !
