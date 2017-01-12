@@ -1,6 +1,8 @@
 // =========  Initialization of bots and declaration of topics  ==========
 var carnaumBot = new BOT_makeBot("carnaumBot","carnaumTopic");
 var maelisBot = new BOT_makeBot("maelisBot","maelisTopic");
+var taojimBot = new BOT_makeBot("taojimBot","taojimTopic");
+var lucreciaBot = new BOT_makeBot("lucreciaBot","lucreciaTopic");
 BOT_declareTopics(["userTopic"]); 
 
 BOT_theBotId		= "carnaumBot";		// sets current bot id 
