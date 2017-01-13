@@ -24,13 +24,16 @@ var BOT_SynonymList	=  [
 	["madame",			["madame", "mm", "mme"]],
 	["mademoiselle",	["mademoiselle","mlle.", "mlle"]],
 	["saoulZZZ",		["saoul","bourre", "torche", "rond", "gris"]],
-	["_a",				["quel", "quelle", "quoi", "qu", "que fais", "que faites", "qui","c est un", "c est une", "c est de", "c est du"]],
+	["_a",				["veux","je voudrais", "donnez moi", "passez moi","combien", "quels", "quel", "quelles", "quelle", "quoi", "qu", "que fais", "que faites", "qui","c est un", "c est une", "c est de", "c est du"]],
 	["_g",				["bonjour", "salut", "hola", "heho", "hohe", "eho", "ohe", "ca va"]],
-	["boissonZZZ",		["boisson","biere", "choppe", "cru", "tonnelet", "tonneau", "vin", "gnôle", "binouze", "pinte", "litre"]],
-	["competenceZZZ",	["competence", "magie", "maniement", "maitrise","boule de feu", "psychique", "aider", "sais faire"]],
+	["boissonZZZ",		["boisson","biere", "choppe", "cru", "tonnelet", "tonneau", "vin", "gnôle", "binouze", "pinte", "litre", "bibine"]],
+	["competenceZZZ",	["competences","competence", "magie", "maniement", "maitrise","boule de feu", "psychique", "aider", "sais faire"]],
 	["defenseZZZ",		["defense", "equipement", "armure", "protection", "fais quoi", "sais faire quoi", "bouclier"]],
-	["armeZZZ",			["arme", "epee", "force", "hache", "arbalete", "arc"]]
-	//["",				["tien", "tiens", "la", "de", "le", "du", "un", "une"]]
+	["armeZZZ",			["arme", "epee", "force", "hache", "arbalete", "arc"]],
+	["",				["tien", "tiens", "la", "de", "le", "du", "un", "une", "coute", "coûte", "reste"]],
+	["bourseZZZ",		["bourse", "argent", "des sous", "de sous", "piece", "pognon", "monaie"]],
+	["proposeZZZ",		["propose", "tu veux", "veux-tu", "vous prendrez", "tu prendras", "veux tu", "vous voulez", "voulez-vous", "voulez vous"]],
+	["_a offreZZZ",		["offre", "tiens", "Tiens", "tien", "Tien", "tennez", "Tennez", "prends", "Prends", "prennez", "Prennez"]]
 
 	];
 BOT_basicSynonymList = BOT_basicSynonymList.concat(BOT_SynonymList);
