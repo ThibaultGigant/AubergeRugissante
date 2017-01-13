@@ -25,7 +25,7 @@ var carnaumTopic = [
 											["ONWHY",	"Dans la vie, faut faire des choix, et moi, le voilà."]
 											],
 	// armure
-	[["KEY", "defense"],					["VAL",		"Cotte de maille"],
+	[["KEY", "defense"],					["VAL",		"Côtte de maille"],
 											["ONASK",	onAskArmureCarnaum]
 											],
 
@@ -170,6 +170,12 @@ function tellMeMoreCarnaum() {
 			return tellMeMoreArmureCarnaum();
 		case "magie":
 			return tellMeMoreMagieCarnaum();
+		default:
+			var elem = document.getElementById('litetalkchatbox');
+			var s = elem.value;
+			liste = ['Quoi, "' + s + '" ?', 'Chaque question en son temps. Une tournée des crus avant de faire les vendanges ?', 'Garde tes questions pour plus tard tu veux ?'];
+			var card = Math.floor(Math.random() * liste.length);
+			return liste[card];
 	}
 }
 
@@ -205,43 +211,43 @@ function tellMeMoreArmeCarnaum() {
 function onAskArmureCarnaum() {
 	nbAskArmureCarnaum++;
 
-	liste = ["Je me sens super bien loti dans ma côte de maille.",
-	"Je me sens super bien loti dans ma côte de maille.",
+	liste = ["Je me sens super bien loti dans ma côtte de maille.",
+	"Je me sens super bien loti dans ma côtte de maille.",
 	["C'est pas facile à nettoyer n'empêche une côtte de maille"],
 	"Booeerg, j'ai dégobié dessus..."];
 
-	return genericCarnaum(liste, nbAskArmeCarnaum);
+	return genericCarnaum(liste, nbAskArmureCarnaum);
 }
 
 function tellMeMoreArmureCarnaum() {
 	nbTMMArmureCarnaum++;
 
-	liste = ["Certe, ma côte de maille est un peu lourde, mais elle résiste des Trolls !",
-	"Impossible de briser ma côte de maille !",
-	["Certe, ma côte de maille est un peu lourde, mais elle résiste des Trolls !", "Je ne me balade pas en chemise, moi."],
+	liste = ["Certe, ma côtte de maille est un peu lourde, mais elle résiste des Trolls !",
+	"Impossible de briser ma côtte de maille !",
+	["Certe, ma côtte de maille est un peu lourde, mais elle résiste des Trolls !", "Je ne me balade pas en chemise, moi."],
 	"C'est pas le tout, mais faut boire"];
 
-	return genericCarnaum(liste, nbAskArmeCarnaum);
+	return genericCarnaum(liste, nbTMMArmureCarnaum);
 }
 
 function onAskMagieCarnaum() {
 	nbAskMagieCarnaum++;
 
 	liste = ["Je suis le champion au saut de l'extrême !",
-	"Dans je saute d'une falaise de 30 métres, c'est pas moins de 4 litres de sang qu'on peut retrouver dans mon corps",
+	"Quand je saute d'une falaise de 30 métres, c'est pas moins de 4 litres de sang qu'on peut retrouver dans mon corps",
 	["Une fois j'ai glissé en sautant...", "Je vais te le dire à toi, parce que tu ne me lance pas des carreaux d'arbalète à moitié cassés : j'ai un peu le vertige"],
 	"Je ne saute jamais vers le haut ! Ce doit être un rêve fabuleux á accomplir."];
 
-	return genericCarnaum(liste, nbAskArmeCarnaum);
+	return genericCarnaum(liste, nbAskMagieCarnaum);
 }
 
 function tellMeMoreMagieCarnaum() {
 	nbTMMMagieCarnaum++;
 
-	liste = ["Certe, ma côte de maille est un peu lourde, mais elle résiste des Trolls !",
-	"Impossible de briser ma côte de maille !",
-	["Certe, ma côte de maille est un peu lourde, mais elle résiste des Trolls !", "Je ne me balade pas en chemise, moi."],
+	liste = ["Certe, ma côtte de maille est un peu lourde, mais elle résiste des Trolls !",
+	"Impossible de briser ma côtte de maille !",
+	["Certe, ma côtte de maille est un peu lourde, mais elle résiste des Trolls !", "Je ne me balade pas en chemise, moi."],
 	"C'est pas le tout, mais faut boire"];
 
-	return genericCarnaum(liste, nbAskArmeCarnaum);
+	return genericCarnaum(liste, nbTMMMagieCarnaum);
 }
