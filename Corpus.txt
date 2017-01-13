@@ -1,9 +1,6 @@
-# Greetings
 Bonjour !
 Bonjour à tous
 Bonjour tout le monde
-
-# commande au tavernier
 Une biere
 Une choppe
 Je voudrais une biere tavernier
@@ -12,8 +9,6 @@ A boire patron
 Qu'est-ce que vous avez chef ?
 Votre meilleur cru monsieur !
 Mon seigneur, un tonnelet de biere, s'il vous plait
-
-# explication recherche
 Je cherche à former une équipe
 Je recherche des coéquipiers
 Je cherche des aventuriers
@@ -21,8 +16,6 @@ Je voudrais constituer un groupe de valeureux glandus !
 Je voudrais réunir un équipe de soldats sans peur et sans reproches
 Qui voudrait se joindre à moi ?
 Ça intéresse quelqu'un ?
-
-# Recrutement
 Quelles sont tes compétences ?
 Comment tu pourrais m'aider ?
 Que pourrais-tu apporter à l'équipe ?
@@ -32,14 +25,386 @@ Qu'attends-tu de cette quête ?
 Qu'attends-tu de ce voyage ?
 Tu fais quoi ?
 Ça te dit de partir à l'aventure ?
-Serais-tu capable / Est-ce que tu sais faire ... ?
+Serais-tu capable
+Est-ce que tu sais faire ... ?
 Dites m'en plus
-
-
-
-# fin du jeu
 Partons à l'aventure !
-
-
-# Supplémentaire
 Alors ça ! C'est une belle arme que tu tiens là !
+Il me reste bières bibine vin  cru
+Je m'appelle Tao Jim ! Pourquoi ? T'as un problème avec les noms composés ? Parlons d'autre chose, tu veux bien !
+Parce que je suis Mi-Orc et qu'on vit un peu plus longtemps que vous autres.
+Chez les Orcs je peux paraître très efféminé, mais si tu veux je peux te prouver je suis un homme en te flanquant une bonne raclée !
+C'est une bonne question, je me le suis toujours demandé. Malheureusement c'est trop tard pour changer.
+Lance-pierre
+J'aime bien dégommer les ennemis de loin, je ne supporte pas la violence de trop près.
+Robe de magicien
+Je l'ai récupérée de mon grand-père, le magicien à la plus grand longévité du monde. Il avait un sort de protection infaillible.
+Imitation du cri des lapins
+Les lapins c'est trop mignon et doux. J'aime les lapins
+Si tu veux de la boisson, demande au tavernier. Et puis ramène m'en une louche hein
+Malheureux, ne parle pas d'eau ici *chuchotte à haute voix*
+You must type a valid javascript expression
+Je suis quand même assez vieux, mais seulement pour les humains
+Attention à ne pas froisser tes aïeux !
+Pour un Orc, je serais assez jeune, je n'ai que 164 ans !
+Je te l'ai déjà dit, t'as une vraie mémoire de poisson rouge !
+Mon Lance-pierre ne paye pas de mine, mais je l'ai depuis mon enfance.
+J'ai un beau lance-pierre qui tire loin !
+L'autre folle avec son armure qui brille, elle a dit qu'elle allait contrôler mon esprit puisque je suis presque un animal. Dommage pour elle que son pouvoir ne fonctionne que sur beaucoup plus petit qu'un humain !
+Pour me défendre, je mets toujours la robe de magicien dont j'ai hérité de mon grand-père, ce grand sage millénaire.
+Ma robe protectrice me rappelle mon grand-père mort il y a peu, au doux âge de 1385 ans
+L'autre guignol avec sa côte de maille, j'ai essayé de le frapper pour lui faire fermer son clapet, mais bon sang, c'est du lourd sa protection !
+Je sais crier comme les lapins ! C'est trop mignon les lapins !
+Mon cri de lapin est connu dans le monde entier pour sa douceur.
+Hey, si j'étais toi, je n'irais pas trop près de la fille en vert, quand elle parle aux plantes, celles-ci font tout ce qu'elle veut, j'ai failli être étranglé par des lianes la dernière fois !
+J'ai effectivement quelques avantages avec mon lance-pierre, mais ce n'est pas ça qui ferait la différence.
+Bon, j'ai un Lance-pierre et je remplace peut-être les pierres par des billes de plomb enflammées. Et puis avec ma force de semi-orc, c'est souvent mortel. Mais c'est pas de ma faute si vous êtes fragiles, les humains !
+Oulaaa j'ai vu tirer cette fille avec une arbalette il y a pas longtemps. Elle a pas touché une seule cible ! Huhu
+Mon grand-père était le plus grand magicien de tous les temps ! J'ai sa robe, ça devrait en dire long sur mes capacités !
+C'est vrai que ma robe protectrice a beau venir de mon aïeul magicien, elle n'en est pas moins normale... Mais elle est magnifique, et puis elle me fait de jolies fesses, tu trouves pas ?
+Ils m'entraînent, au bout de la nuit ! Les démons de minuit !
+Lorsque j'imite les lapins, je ne sais pas trop pourquoi, mais tout le monde fuit le village... C'est dommage !
+Mon imitation du cri des lapins est si parfaite que j'ai pu faire ami ami avec un lapin que j'aime beaucoup. Il fait deux fois ma taille et il lui est arrivé de ne pas savoir s'arrêter pour me protéger, mais il m'adore...
+Là-bas, au Connemara, On sait tout le prix de la guerre. Là-bas, au Connemara !!!!
+Garde-le pour toi, c'est pas ma tasse du tout.
+C'est parti, arrose !
+Hein ? Dois-je comprendre quelque chose ?
+Ça rafraîchit le vestibule ! Merci l'ami. *TaoJim boit cul-sec votre choppe de bière*
+Ah, tu me donne soif. *Vous n'avez pas de bière*
+C'est limite hein. Mais tant que ça coule bien ;) *TaoJim prend votre verre de vin*
+C'est pas un drame, tu peux aller m'acheter autre chose ;). *Vous n'avez pas de vin*
+Ah non, C'est trop doux pour moi ça
+La prochaine fois, garde-les pour toi. *Vous n'avez pas de cru*
+Les grands esprits se rencontrent. C'est bien, comme moi t'es LeaderPrice ! *TaoJim prend votre choppe de bibine*
+Reviens me dès que tu en as de trop ;) *Vous n'avez pas de bibine*
+J'ai pas saisi. Qu'est-ce qu'il y a ?
+Humain aux dents lisses
+Je m'appelle Tavernier ! Tu peux te le tatouer sur la peau, si tu veux devenir plus populaire
+Je ne suis pas là pour faire causette, vous m'excuserez j'ai du travail
+J'ai entendu de l'eau !? Pas de ça ici, vous m'entendez !?
+You must type a valid javascript expression
+J'arrive ! Alors, une bière c'est 7 ronds, un verre de vin ça vous en fera 13, 5 pour une bibine et 17 pour le cru de la maison
+Je suis à vous l'ami ! Ça sera 13 rond pour du vin, 17 pour le cru de la maison, 5 pour une bibine et puis enfin 7 pour une bière
+Je ne suis pas certain d'avoir saisi...
+Et voilà ! une boisson
+Avec modération *clin d'oeil*
+Dégustez Savourez
+Tu n'oublieras jamais mon doux nom, Aventurier. Je m'appelle Maelis
+T'es débile ou bien ?
+T'es bigleux ou quoi ? Mon décolleté te crève pas assez les yeux ?
+Parce que j'ai choisi d'être intelligente EN PLUS d'être forte.
+Me regarde pas avec ces yeux avide quand tu pense à boire. Dirige toi vers le tarvernier
+Les amazones, on a arrêté d'utiliser des arcs. Se couper le sein gauche ça va cinq minutes !
+armure de mithrill
+C'est sentimental, on la garde dans la famille depuis quelques temps.
+Mon pouvoir s'est développé quand j'étais adolescente, enfermée dans une poubelle... Je ne sais pas trop pourquoi.
+Ne me parle pas de ça, tu veux ?
+Mais t'es sourd gringalet ?
+Mon âge ne peut-il pas se déduire à mon beau minois
+Mais tu sais que t'es relouuuuu ?
+Tu sais que t'es mignon toi !
+Bon sang, tout à l'heure j'ai failli me prendre un boomerang sur la tronche. Ça paraît pas, mais celui qui se l'est pris à ma place ne s'est jamais relevé.
+Je ne quitte jamais mon arbalete. C'est du bon matériel, depuis que j'ai échangé mon arc.
+Je me balade toujours avec une arbalete. Ça aurait pu être du bois de platane, pour nous venger des arbres qu'on se prend lorsque la monture fait un pas de travers.
+L'autre aux dents lisses là-bas, il a essayé de m'attaquer mais il ne pourrait pas couper mon pain avec son arme même s'il le voulait.
+J'ai une petite armure, mais elle ne date pas d'hier
+Mon armure c'est la plus forte !
+Pouah ! La semaine dernière y'a un siphoné du ciboulot qui a crié comme un lapin. Je devais être dans le même état que maintenant, je jurerais avoir vu un lapin géant courir à ses côtés ensuite.
+Je maîtrise le contrôle mental mieux que personne, mon ami !
+Bon, j'avoue que je contrôle mentalement des animaux, mais ça ne fonctionne pas réellement sur les humains
+Hahaha ! Comment c'est pourri de pas avoir le courage de sauter alors qu'on survivrait à la chute !
+Mon arme a en effet un petit secret, mais il va falloir être plus gentil pour que j'accepte d'en dire plus.
+D'accord, j'avoue... Je n'ai pas d'argent pour acheter des flèches alors je les construits moi-même. Il arrive qu'elles ne partent pas tout à fait droit...
+Wouhouuuu ! La soirée ne fait que commencer !!!
+Mon armure est très belle. Je pourrais en dire plus, mais je préfère qu'on se connaisse mieux.
+Dans ma famille, on a eu de la chance, un pélerin nous a offert cette armure en mithrill. Elle est totalement indestructible.
+Iiiiiil est des nôôôôôôtres !
+Je peux contrôler mentalement les créatures, mais il ne faut pas qu'elles soient trop trop grosses, mais ça ne gêne pas vraiment.
+C'est dur à avouer, mais en fait quand j'exerce mon pouvoir, il ne fonctionne que sur des rongeurs de moins de 10cm
+Vazy Aventurier montre-nous tes fesses ! Vazy Aventurier montre-nous ton c** !
+Ah je suis partante pour un verre, en effet
+De quoi ? Je ne vois pas de quoi tu parles
+Moui, c'est mieux que rien. *Mealis boit cul-sec votre choppe de bière*
+Bon, tant pis. *Vous n'avez pas de bière*
+Ça me changera de la bière, tiens. *Maelis prend votre verre de vin*
+Dommage, j'en aurais bien voulu. *Vous n'avez pas de vin*
+Ah ! Là je dis oui ! Merci ! *Maelis prend votre verre de cru*
+Pourquoi donner tant de faux espoirs ? *Vous n'avez pas de cru*
+Heu, non merci, je ne bois pas de cette eau là
+De toute façon, je n'en aurais pas bu ! *Vous n'avez pas de bibine*
+J'ai pas saisi. Qu'est-ce qu'il y a ?
+Je m'appelle Lucrecia ! Tu peux te le tatouer sur la peau, si tu veux devenir plus populaire
+Pour les boissons, c'est au tavernier qu'il faut s'adresser
+Je suis certaine que quoi qu'il qrrive, il me reviendra.
+Chemise épaisse
+Parler à la flore
+Ah ! De l'eau ! ça fait longtemps aue je n'en avais pas entendu parler. Dis, au fait, ça a quel goût ? *chuchotte à haute voix*
+J'ai bientôt l'âge du monde
+Disons que je suis plus âgée aue toi
+Tu ferais mieux de me parler de ta quête si tu veux m'intéresser
+Tiens, et l'autre là-bas, tu veux pas lui demander ?
+Je me sens sereine quand je suis à coté de mon boomerang, tu n'imagines pas.
+Si tu veux, je peux briser le verre de cette pouf de Maelis, tu verra l'efficacité de mon boomerang
+Je suis un jour passée chez le forgeron pour mon boomerang. A cause des moqueries, des têtes sont tombées.
+Je tiendrai l'alcool ! Quoi qu'il arrive !
+Quoi, Tu veux bien t'exprimer calmement. On a tout notre temps, Non alors, je t'arrête tout de suite : tu vas devoir te détendre si tu veux pas me saouler
+Je m'en suis toujours sorti avec mon boomerang dans les mains
+Il ne m'a jamais fait mal, il se contente surtout de couper l'ennemi.
+T'as remarqué, il tranche de toute part ! C'est pas comme la dagounette de l'autre rustre là-bas, haha
+Tout ce qu'il y a à savoir, c'est c'est pas à mettre entre les mains des mignonnes comme toi
+Je n'ai pas d'inquiétude à avoir, je porte toujours une chemise bien épaisse ! Je te la montrerai
+C'est que, les chemises, c'est pas mal confortable, surtout pour les lancés, on garde l'amplitude des mouvements
+Je fais toujours très attention à la couleur de ma chemise, toujours éviter de passer DERRIERE les vaches.
+Allez, top là, et file m'en payer une !
+Certe, ma côte de maille est un peu lourde, mais elle résiste des Trolls !
+Impossible de briser ma côte de maille !
+Parfois j'ai froid, c'est pour ça que je viens me réchauffer devant une bonne pinte
+Je ne la voudrais pour rien au monde sa côtte de maille, il a sué dedans et tout, ...
+Je parle à la flore, et elle m'écoute. C'est si agréable de se détendre au pied d'un chêne bien mou
+Personne n'a jamais contesté la beauté de cette puissance ! Sans la flore, que serions-nous ?
+Je trouve ça drole, de chatouiller des gens endormis au nombril avec des orties", "Quand je me fais mal, c'est vers les plantes aue je me tourne.
+Quand j'étais jeune, je voulais devenir une belle hortensia
+Une forêt, ça peut être bavard, et très utile en des temps sombres et troubles
+Ça peut nous arriver de jouer ensemble, mais c'est à y laisser des mèches. Avec précaution
+Faire danser les fleurs à deux atouts : en plus de surprendre, ça peut piquer les yeux !
+Bon ! Et une bière menthelée, tu voudrais pas m'amener ça ?
+Mes pauvres plantes... Devoir désaouler une gaillarde comme moi tous les soirs
+Très sympa, je ne dis pas nom
+Quand je n'ai pas envie de répondre, il m'arrive de quand même parler.
+Commencer avec une bonne biere, c'est génial. Continuer à en boire, c'est tellement mieux. *Lucrecia boit cul-sec votre choppe de bière*
+Mieux vaut attendre la soif, on n'en ai que plus récompensé au moment de se remplir la panse de bière. *Vous n'avez pas de bière*
+Je trouve que ça à l'air bon pour la santé, ce truc. *Lucrecia prend votre verre de vin*
+A chaque fois que j'en bois, ça me transporte. Tu m'as donné des illusions, et ça a tendance à m'irriter. *Vous n'avez pas de vin*
+Le saint Graal ! Je porterai cette coupe à mes lèvres comme lors des grandes cérémonies
+Dommage pour toi, tu as raté l'occasion de faire une bonne action. *Vous n'avez pas de cru*
+Une petite tasse, ça pars vite *Lucrecia prend votre choppe de bibine*
+C'est pas comme si que je ratais grand chose. *Vous n'avez pas de bibine*
+J'ai pas saisi. Qu'est-ce qu'il y a ?
+Je m'appelle Carnaum ! Tu peux te le tatouer sur la peau, si tu veux devenir plus populaire
+Ne tente pas de négocier avec moi, tu ne tiens pas la route. Si tu veux de la boisson, va voir le tavernier
+Dans la vie, faut faire des choix, et moi, le voilà.
+Côtte de maille
+Chute extrême
+Ahaha ! T'as dit eau !
+Mêle toi de tes affaires
+Tu vas me laisser tranquille espèce de larve
+Je te le dis si tu me payes une autre pinte camarade !
+Une autre pinte d'abord, j'ai dit !!!
+Mon age tourbillonne comme le fond de mon verre...
+Regarde moi donc cette lame, j'ai un joli cimeterre.
+Ca me flatte tu sais. Mais faudrait arreter de demander, ce truc c'est un cimeterre.
+Ca coupe ! Quand on force...
+Tout à l'heure, l'autre m'a lancé un caillou sur la tête, ça fait très mal...
+Gardons la tete sur les épaules, quand ca roule, ca bouleverse...
+Avec le temps, elle s'est émoussée... comme mon verre...
+Chaque question en son temps. Une tournée des crus avant de faire les vendanges ?
+Garde tes questions pour plus tard tu veux ?
+Elle m'a énormément suivi dans mes escapades
+On en a encaissé des coups
+Faut pas écouter les autres, ça s'émousse, tout au plus
+De toute façon, le mien je l'ai acheté de chez un grand forgeron !
+Je pense que même ébréchée comme elle l'est, je peut quand même te faire mal...
+Je me sens super bien loti dans ma côtte de maille.
+Je me sens super bien loti dans ma côtte de maille.
+C'est pas facile à nettoyer n'empêche une côtte de maille
+Booeerg, j'ai dégobié dessus...
+Certe, ma côtte de maille est un peu lourde, mais elle résiste des Trolls !
+Impossible de briser ma côtte de maille !
+Certe, ma cotte de maille est un peu lourde, mais elle résiste des Trolls !", "Je ne me balade pas en chemise, moi.
+C'est pas le tout, mais faut boire
+Je suis le champion au saut de l'extrême !
+Quand je saute d'une falaise de 30 métres, c'est pas moins de 4 litres de sang qu'on peut retrouver dans mon corps
+Une fois j'ai glissé en sautant...
+Je vais te le dire à toi, parce que tu ne me lance pas des carreaux d'arbalète à moitié cassés : j'ai un peu le vertige
+Je ne saute jamais vers le haut ! Ce doit être un rêve fabuleux á accomplir.
+Certe, ma côtte de maille est un peu lourde, mais elle résiste des Trolls !
+Impossible de briser ma côtte de maille !
+Certe, ma côtte de maille est un peu lourde, mais elle résiste des Trolls !
+Je ne me balade pas en chemise, moi.
+C'est pas le tout, mais faut boire
+Ah, je veux bien !
+Voilà une boisson infaillible, tout comme moi. *Carnaum boit cul-sec votre choppe de bière*
+Pfff... Je peux m'en acheter tout seul de toute façon. *Vous n'avez pas de bière*
+Eh bien, tu ne te fais pas chier. *Carnaum prend votre verre de vin*
+Je ne demande que ça, d'en boire, alors fais péter. *Vous n'avez pas de vin*
+Wahou ! Excellent, merci !. *Carnaum prend votre verre de cru*
+J'en ai vu des faux-cul, mais me proposer un cru que tu n'as pas... *Vous n'avez pas de cru*
+Ça passera le temps. *Carnaum prend votre choppe de bibine*
+Je veux bien boire tout ce que tu veux, mais faudrait que tu m'en donnes. *Vous n'avez pas de bibine*
+J'ai pas saisi. Qu'est-ce qu'il y a ?
+"Zzzzz
+Heuu...
+bwork
+Hic!
+Gnouf
+Slurp
+Gnalaacool
+dites m en plus
+dis m en plus
+et donc
+et alors
+expliquez
+explique
+quoi d autre
+comment
+c est quoi
+quete
+voyage
+pepriple
+aventure
+quête
+expédition
+vadrouille
+chasse aux monstres
+quete
+voyages
+pepriples
+aventures
+quêtes
+expéditions
+vadrouilles
+chasses aux monstres
+recrue
+recrues
+aventurier
+soldat
+camarade
+equipier
+co-equipier
+coequipier
+glandu
+inconscient
+gars
+ami
+tenancier
+aubergiste
+barman
+patron
+chef
+monsieu
+mr.
+mr
+msgr
+monseigneur
+seigneur
+madame
+mm
+mme
+mademoiselle
+mlle.
+mlle
+saoul
+bourre
+torche
+rond
+gris
+je veux
+je voudrais
+donnez moi
+passez moi
+combien
+quels
+quel
+quelles
+quelle
+quoi
+qu
+que fais
+que faites
+qui
+c est un
+c est une
+c est de
+c est du
+bonjour
+salut
+hola
+heho
+hohe
+eho
+ohe
+ca va
+boire
+boisson
+biere
+choppe
+cru
+tonnelet
+tonneau
+vin
+gnôle
+binouze
+pinte
+litre
+bibine
+pouvoir
+pouvoirs
+competences
+competence
+magie
+maniement
+maitrise
+boule de feu
+psychique
+aider
+sais faire
+defense
+equipement
+armure
+protection
+fais quoi
+sais faire quoi
+bouclier
+defenses
+equipements
+armures
+protections
+boucliers
+arme
+epee
+force
+hache
+arbalete
+arc
+armes
+epees
+forces
+haches
+arbaletes
+arcs
+la
+de
+le
+du
+un
+une
+coute
+coûte
+reste
+bourse
+argent
+des sous
+de sous
+piece
+pognon
+monaie
+propose
+tu veux
+veux-tu
+vous prendrez
+tu prendra
+veux tu
+vous voulez
+voulez-vous
+voulez vous
+offre
+tiens
+Tiens
+tien
+Tien
+tennez
+Tennez
+prends
+Prends
+prennez
+Prennez
