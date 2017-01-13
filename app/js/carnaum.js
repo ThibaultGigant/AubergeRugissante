@@ -2,7 +2,7 @@
 var carnaumTopic = [
 	// INFO
 	[["KEY", "_class"],						["VAL", "bot"], ["BOT","carnaumBot"]],
-	[["KEY", "_reference"],					["VAL", ["carnaum","carna", "tu"]] ],
+	[["KEY", "_reference"],					["VAL", ["carnaum","carna"]] ],
 	[["KEY", "_charprefix"],				["VAL", "carnaum"]],
 	[["KEY", "_read"],						["VAL", ["userTopic", "maelisTopic", "lucreciaTopic", "taojimTopic", "tavernierTopic"]]],
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],

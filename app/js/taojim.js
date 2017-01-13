@@ -265,25 +265,25 @@ function drinkTaoJim(boisson) {
 	switch (boisson) {
 		case "biere":
 			i = 1
-			drunkThresholdTaoJim -= 1;
+			drunkThresholdTaojim -= 1;
 			break;
 		case "vin":
 			i = 2;
-			drunkThresholdTaoJim -= 2;
+			drunkThresholdTaojim -= 2;
 			break;
 		case "bibine":
 			i = 1;
-			drunkThresholdTaoJim -= 1;
+			drunkThresholdTaojim -= 1;
 			break;
 		case "cru":
 			i = 2;
-			drunkThresholdTaoJim -= 2;
+			drunkThresholdTaojim -= 2;
 			break;
 		default:
 			break;
 	}
-	if ( i != -1 && (drunkThresholdTaoJim - i == 6 ||
-				drunkThresholdTaoJim - i == 1))
+	if ( i != -1 && (drunkThresholdTaojim - i == 6 ||
+				drunkThresholdTaojim - i == 1))
 			{
 				var nbAskAgeTaoJim = 0;
 				var nbAskArmeTaoJim = 0;
