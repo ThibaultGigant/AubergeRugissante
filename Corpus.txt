@@ -39,3 +39,7 @@ Dites m'en plus
 
 # fin du jeu
 Partons à l'aventure !
+
+
+# Supplémentaire
+Alors ça ! C'est une belle arme que tu tiens là !
