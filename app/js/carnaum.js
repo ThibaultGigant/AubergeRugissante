@@ -70,7 +70,11 @@ var carnaumTopic = [
 // ===================== Variables =====================//
 var nbAskAgeCarnaum = 0;
 var nbAskArmeCarnaum = 0;
-var onWhyArmeCarnaum = 0;
+var nbAskArmureCarnaum = 0;
+var nbAskMagieCarnaum = 0;
+var nbTMMArmeCarnaum = 0;
+var nbTMMArmureCarnaum = 0;
+var nbTMMMagieCarnaum = 0;
 var drunkSteps = [10,7,4];
 var drunkThresholdCarnaum = 10;
 
@@ -147,7 +151,6 @@ function onAskAgeCarnaum()
 }
 
 function onAskArmeCarnaum() {
-	lastAsk = "arme";
 	nbAskArmeCarnaum++;
 
 	liste = ["Regarde moi donc cette lame, j'ai un joli cimeterre.",
@@ -165,6 +168,8 @@ function tellMeMoreCarnaum() {
 			return tellMeMoreArmeCarnaum();
 		case "defense":
 			return tellMeMoreArmureCarnaum();
+		case "magie":
+			return tellMeMoreMagieCarnaum();
 	}
 }
 
@@ -198,8 +203,7 @@ function tellMeMoreArmeCarnaum() {
 }
 
 function onAskArmureCarnaum() {
-	lastAsk = "arme";
-	nbAskArmeCarnaum++;
+	nbAskArmureCarnaum++;
 
 	liste = ["Je me sens super bien loti dans ma côte de maille.",
 	"Je me sens super bien loti dans ma côte de maille.",
@@ -210,8 +214,7 @@ function onAskArmureCarnaum() {
 }
 
 function tellMeMoreArmureCarnaum() {
-	lastAsk = "arme";
-	nbAskArmeCarnaum++;
+	nbTMMArmureCarnaum++;
 
 	liste = ["Certe, ma côte de maille est un peu lourde, mais elle résiste des Trolls !",
 	"Impossible de briser ma côte de maille !",
@@ -222,8 +225,7 @@ function tellMeMoreArmureCarnaum() {
 }
 
 function onAskMagieCarnaum() {
-	lastAsk = "arme";
-	nbAskArmeCarnaum++;
+	nbAskMagieCarnaum++;
 
 	liste = ["Je suis le champion au saut de l'extrême !",
 	"Dans je saute d'une falaise de 30 métres, c'est pas moins de 4 litres de sang qu'on peut retrouver dans mon corps",
@@ -234,8 +236,7 @@ function onAskMagieCarnaum() {
 }
 
 function tellMeMoreMagieCarnaum() {
-	lastAsk = "arme";
-	nbAskArmeCarnaum++;
+	nbTMMMagieCarnaum++;
 
 	liste = ["Certe, ma côte de maille est un peu lourde, mais elle résiste des Trolls !",
 	"Impossible de briser ma côte de maille !",
