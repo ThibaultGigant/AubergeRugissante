@@ -37,7 +37,7 @@ var stockCruAventurier = 0;
 var stockVinAventurier = 0;
 var stockBiereAventurier = 0;
 var stockBibineAventurier = 0;
-var bourseAventurier = 45;
+var bourseAventurier = 100;
 
 function onAskBoisson()
 {

@@ -32,6 +32,18 @@ var taojimTopic = [
 											["WHY", "Les lapins c'est trop mignon et doux. J'aime les lapins !"]
 											],
 
+	[["KEY", ["offreZZZ","boissonZZZ"]],	["VAL", "offre"],
+											["ONASK", onAskOffreTaoJim]
+											],
+
+	[["KEY", ["proposeZZZ","boissonZZZ"]],	["VAL", "propose"],
+											["ONASK", onAskProposeTaoJim]
+											],
+
+	// Eau
+	[["KEY", "eau"],						["VAL", "NON"],
+											["ONASK", "Malheureux, ne parle pas d'eau ici *chuchotte à haute voix*"]],
+
 	// Tell me more
 	[["KEY", "TMM"],						["VAL", tellMeMoreTaojim]],
 
@@ -176,4 +188,109 @@ function tellMeMoreMagieTaojim() {
 		return "Là-bas, au Connemara, On sait tout le prix de la guerre. Là-bas, au Connemara !!!!";
 	var card = Math.floor(Math.random() * drunk_sentences.length);
 	return drunk_sentences[card];
+}
+
+function onAskProposeTaoJim() {
+	var elem = document.getElementById('litetalkchatbox');
+	var s = elem.value;
+
+	if (s.includes("cru"))
+		return "Garde-le pour toi, c'est pas ma tasse du tout.";
+	if (s.includes("vin") ||
+		s.includes("bibine") ||
+		s.includes("biere") ||
+		s.includes("bière"))
+		return "C'est parti, arrose !";
+	return "Hein ? Dois-je comprendre quelque chose ?";
+}
+
+function onAskOffreTaoJim() {
+	var elem = document.getElementById('litetalkchatbox');
+	var s = elem.value;
+
+	if (s.includes("bière") || s.includes("biere"))
+	{
+		if (stockBiereAventurier >= 0)
+		{
+			drinkTaoJim("biere");
+			stockBiereAventurier --;
+			return "Ça rafraîchit le vestibule ! Merci l'ami. *TaoJim boit cul-sec votre choppe de bière*";
+		}
+		else {
+			return "Ah, tu me donne soif. *Vous n'avez pas de bière*"
+		}
+	}
+	else if (s.includes("vin"))
+	{
+		if (stockVinAventurier >= 0)
+		{
+			drinkTaoJim("vin");
+			stockVinAventurier --;
+			return "C'est limite hein. Mais tant que ça coule bien ;) *TaoJim prend votre verre de vin*";
+		}
+		else {
+			return "C'est pas un drame, tu peux aller m'acheter autre chose ;). *Vous n'avez pas de vin*"
+		}
+
+	}
+	else if (s.includes("cru"))
+	{
+		if (stockCruAventurier > 0)
+		{
+			return "Ah non, C'est trop doux pour moi ça";
+		}
+		else {
+			return "La prochaine fois, garde-les pour toi. *Vous n'avez pas de cru*"
+		}
+	}
+	else if (s.includes("bibine"))
+	{
+		if (stockBibineAventurier > 0)
+		{
+			drinkTaoJim("bibine");
+			stockBibineAventurier --;
+			return "Les grands esprits se rencontrent. C'est bien, comme moi t'es LeaderPrice ! *TaoJim prend votre choppe de bibine*";
+		}
+		else {
+			return "Reviens me dès que tu en as de trop ;) *Vous n'avez pas de bibine*"
+		}
+	}
+	else {
+		return "J'ai pas saisi. Qu'est-ce qu'il y a ?"
+	}
+}
+
+function drinkTaoJim(boisson) {
+	var i = -1;
+	switch (boisson) {
+		case "biere":
+			i = 1
+			drunkThresholdTaoJim -= 1;
+			break;
+		case "vin":
+			i = 2;
+			drunkThresholdTaoJim -= 2;
+			break;
+		case "bibine":
+			i = 1;
+			drunkThresholdTaoJim -= 1;
+			break;
+		case "cru":
+			i = 2;
+			drunkThresholdTaoJim -= 2;
+			break;
+		default:
+			break;
+	}
+	if ( i != -1 && (drunkThresholdTaoJim - i == 6 ||
+				drunkThresholdTaoJim - i == 1))
+			{
+				var nbAskAgeTaoJim = 0;
+				var nbAskArmeTaoJim = 0;
+				var nbAskArmureTaoJim = 0;
+				var nbAskMagieTaoJim = 0;
+				var nbTMMArmeTaoJim = 0;
+				var nbTMMArmureTaoJim = 0;
+				var nbTMMMagieTaoJim = 0;
+			}
 }
