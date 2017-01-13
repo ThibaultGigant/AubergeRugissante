@@ -20,7 +20,7 @@ var maelisTopic = [
 											["ONASK", "T'es bigleux ou quoi ? Mon décolleté te crève pas assez les yeux ?"],
 											["WHY", "Parce que j'ai choisi d'être intelligente EN PLUS d'être forte."]
 											],
-	[["KEY", "armeZZZ"],					["VAL", "arbalette"],
+	[["KEY", "armeZZZ"],					["VAL", "arbalete"],
 											["ONASK", onAskArmeMaelis],
 											["WHY", "Les amazones, on a arrêté d'utiliser des arcs. Se couper le sein gauche ça va cinq minutes !"]
 											],
@@ -127,9 +127,9 @@ function onAskAgeMaelis()
 function onAskArmeMaelis()
 {
 	if (drunkThresholdMaelis >= 8)
-		return "Je ne quitte jamais mon arbalette. C'est du bon matériel, depuis que j'ai échangé mon arc.";
+		return "Je ne quitte jamais mon arbalete. C'est du bon matériel, depuis que j'ai échangé mon arc.";
 	else if (drunkThresholdMaelis >= 4)
-		return "Je me balade toujours avec une arbalette. Ça aurait pu être du bois de platane, pour nous venger des arbres qu'on se prend lorsque la monture fait un pas de travers.";
+		return "Je me balade toujours avec une arbalete. Ça aurait pu être du bois de platane, pour nous venger des arbres qu'on se prend lorsque la monture fait un pas de travers.";
 	else if (drunkThresholdMaelis > 0)
 		return "L'autre aux dents lisses là-bas, il a essayé de m'attaquer mais il ne pourrait pas couper mon pain avec son arme même s'il le voulait.";
 	var card = Math.floor(Math.random() * drunk_sentences.length);
