@@ -24,6 +24,10 @@ var tavernierTopic = [
 											["ONASK",	onAskBoissonTavernier]
 											],
 
+	// Eau
+	[["KEY", "eau"],						["VAL", "NON"],
+											["ONASK", "J'ai entendu \"de l'eau\" !? Pas de ça ici, vous m'entendez !?"]],
+
 	// REL
 	[["KEY", "maelis"],						["VAL", "maelisTopic"],["CAT","REL"]],
 	[["KEY", "taojim"],						["VAL", "taojimTopic"],["CAT","REL"]],

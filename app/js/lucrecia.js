@@ -74,8 +74,8 @@ var nbAskMagieLucrecia = 0;
 var nbTMMArmeLucrecia = 0;
 var nbTMMArmureLucrecia = 0;
 var nbTMMMagieLucrecia = 0;
-var drunkSteps = [8,3,1];
-var drunkThresholdLucrecia = drunkSteps[0];
+var drunkStepsLucrecia = [8,3,1];
+var drunkThresholdLucrecia = drunkStepsLucrecia[0];
 
 
 //BOT_theLastAttribute
@@ -90,7 +90,7 @@ function genericLucrecia(liste, counter)
 	tx3 = liste[2];
 	tx4 = liste[3];
 
-	if (drunkThresholdLucrecia >= drunkSteps[1])
+	if (drunkThresholdLucrecia >= drunkStepsLucrecia[1])
 	{
 		if (counter < 3)
 		{
@@ -101,7 +101,7 @@ function genericLucrecia(liste, counter)
 			return  tx2;
 		}
 	}
-	else if (drunkThresholdLucrecia >= drunkSteps[2])
+	else if (drunkThresholdLucrecia >= drunkStepsLucrecia[2])
 	{
 		var card = Math.floor(Math.random() * tx3.length);
 		return liste[card];
@@ -118,7 +118,7 @@ function onAskAgeLucrecia()
 {
 	nbAskAgeLucrecia++;
 
-	if (drunkThresholdLucrecia >= drunkSteps[1])
+	if (drunkThresholdLucrecia >= drunkStepsLucrecia[1])
 	{
 		if (nbAskAgeLucrecia < 3)
 		{
@@ -129,7 +129,7 @@ function onAskAgeLucrecia()
 			return "Disons que je suis plus âgée aue toi";
 		}
 	}
-	else if (drunkThresholdLucrecia >= drunkSteps[2])
+	else if (drunkThresholdLucrecia >= drunkStepsLucrecia[2])
 	{
 		if (nbAskAgeLucrecia < 2)
 		{

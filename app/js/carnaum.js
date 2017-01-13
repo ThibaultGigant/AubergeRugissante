@@ -38,6 +38,14 @@ var carnaumTopic = [
 											["ONASK", onAskOffreCarnaum]
 											],
 
+	[["KEY", ["proposeZZZ","boissonZZZ"]],	["VAL", "propose"],
+											["ONASK", onAskProposeCarnaum]
+											],
+
+	// Eau
+	[["KEY", "eau"],						["VAL", "NON"],
+											["ONASK", "Ahaha ! T'as dit \"eau\" !"]],
+
 
 
 
@@ -79,7 +87,7 @@ var nbAskMagieCarnaum = 0;
 var nbTMMArmeCarnaum = 0;
 var nbTMMArmureCarnaum = 0;
 var nbTMMMagieCarnaum = 0;
-var drunkSteps = [10,7,4];
+var drunkStepsCarnaum = [10,7,4];
 var drunkThresholdCarnaum = 10;
 
 
@@ -95,7 +103,7 @@ function genericCarnaum(liste, counter)
 	tx3 = liste[2];
 	tx4 = liste[3];
 
-	if (drunkThresholdCarnaum >= drunkSteps[1])
+	if (drunkThresholdCarnaum >= drunkStepsCarnaum[1])
 	{
 		if (counter < 3)
 		{
@@ -106,7 +114,7 @@ function genericCarnaum(liste, counter)
 			return  tx2;
 		}
 	}
-	else if (drunkThresholdCarnaum >= drunkSteps[2])
+	else if (drunkThresholdCarnaum >= drunkStepsCarnaum[2])
 	{
 		var card = Math.floor(Math.random() * tx3.length);
 		return liste[card];
@@ -124,7 +132,7 @@ function onAskAgeCarnaum()
 	lastAsk = "";
 	nbAskAgeCarnaum++;
 
-	if (drunkThresholdCarnaum >= drunkSteps[1])
+	if (drunkThresholdCarnaum >= drunkStepsCarnaum[1])
 	{
 		if (nbAskAgeCarnaum < 3)
 		{
@@ -135,7 +143,7 @@ function onAskAgeCarnaum()
 			return  "Tu vas me laisser tranquille espèce de larve";
 		}
 	}
-	else if (drunkThresholdCarnaum >= drunkSteps[2])
+	else if (drunkThresholdCarnaum >= drunkStepsCarnaum[2])
 	{
 		if (nbAskAgeCarnaum < 2)
 		{
@@ -186,7 +194,7 @@ function tellMeMoreCarnaum() {
 function tellMeMoreArmeCarnaum() {
 	nbTMMArmeCarnaum++;
 
-	if (drunkThresholdCarnaum >= drunkSteps[1])
+	if (drunkThresholdCarnaum >= drunkStepsCarnaum[1])
 	{
 		if (nbTMMArmeCarnaum < 3)
 		{
@@ -197,7 +205,7 @@ function tellMeMoreArmeCarnaum() {
 			return  "On en a encaissé des coups";
 		}
 	}
-	else if (drunkThresholdCarnaum >= drunkSteps[2])
+	else if (drunkThresholdCarnaum >= drunkStepsCarnaum[2])
 	{
 		liste = ["Faut pas écouter les autres, ça s'émousse, tout au plus", "De toute façon, le mien je l'ai acheté de chez un grand forgeron !"];
 		var card = Math.floor(Math.random() * liste.length);
@@ -310,7 +318,7 @@ function onAskOffreCarnaum() {
 			return "Ça passera le temps. *Carnaum prend votre choppe de bibine*";
 		}
 		else {
-			return "Je veux bien boire tout ce aue tu veux, mais faudrait que tu m'en donnes. *Vous n'avez pas de bibine*"
+			return "Je veux bien boire tout ce que tu veux, mais faudrait que tu m'en donnes. *Vous n'avez pas de bibine*"
 		}
 	}
 	else {
@@ -340,8 +348,8 @@ function drinkCarnaum(boisson) {
 		default:
 			break;
 	}
-	if ( i != -1 && (drunkThresholdCarnaum - i < drunkSteps[1] ||
-				drunkThresholdCarnaum - i < drunkSteps[2]))
+	if ( i != -1 && (drunkThresholdCarnaum - i == drunkStepsCarnaum[1] ||
+				drunkThresholdCarnaum - i == drunkStepsCarnaum[2]))
 			{
 				var nbAskAgeCarnaum = 0;
 				var nbAskArmeCarnaum = 0;

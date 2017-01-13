@@ -28,10 +28,22 @@ var maelisTopic = [
 											["ONASK", onAskDefenseMaelis],
 											["WHY", "C'est sentimental, on la garde dans la famille depuis quelques temps."]
 											],
-	[["KEY", "competenceZZZ"],						["VAL", "controle mental"],
+	[["KEY", "competenceZZZ"],				["VAL", "controle mental"],
 											["ONASK", onAskMagieMaelis],
 											["WHY", "Mon pouvoir s'est développé quand j'étais adolescente, enfermée dans une poubelle... Je ne sais pas trop pourquoi."]
 											],
+
+	[["KEY", ["offreZZZ","boissonZZZ"]],	["VAL", "offre"],
+											["ONASK", onAskOffreMaelis]
+											],
+
+	[["KEY", ["proposeZZZ","boissonZZZ"]],	["VAL", "propose"],
+											["ONASK", onAskProposeMaelis]
+											],
+
+	// Eau
+	[["KEY", "eau"],						["VAL", "NON"],
+											["ONASK", "Ne me parle pas de ça, tu veux ?"]],
 
 	// Tell me more
 	[["KEY", "TMM"],						["VAL", tellMeMoreMaelis]],
@@ -191,4 +203,108 @@ function tellMeMoreMagieMaelis() {
 		return "Vazy Aventurier montre-nous tes fesses ! Vazy Aventurier montre-nous ton c** !";
 	var card = Math.floor(Math.random() * drunk_sentences.length);
 	return drunk_sentences[card];
+}
+
+
+function onAskProposeMaelis() {
+	var elem = document.getElementById('litetalkchatbox');
+	var s = elem.value;
+
+	if (s.includes("bibine"))
+		return "Non merci, ça ira";
+	if (s.includes("vin") ||
+		s.includes("cru") ||
+		s.includes("biere") ||
+		s.includes("bière"))
+		return "Ah je suis partante pour un verre, en effet";
+	return "De quoi ? Je ne vois pas de quoi tu parles";
+}
+
+function onAskOffreMaelis() {
+	var elem = document.getElementById('litetalkchatbox');
+	var s = elem.value;
+
+	if (s.includes("bière") || s.includes("biere"))
+	{
+		if (stockBiereAventurier >= 0)
+		{
+			drinkCarnaum("biere");
+			stockBiereAventurier --;
+			return "Moui, c'est mieux que rien. *Mealis boit cul-sec votre choppe de bière*";
+		}
+		else {
+			return "Bon, tant pis. *Vous n'avez pas de bière*"
+		}
+	}
+	else if (s.includes("vin"))
+	{
+		if (stockVinAventurier >= 0)
+		{
+			drinkCarnaum("vin");
+			stockVinAventurier --;
+			return "Ça me changera de la bière, tiens. *Maelis prend votre verre de vin*";
+		}
+		else {
+			return "Dommage, j'en aurais bien voulu. *Vous n'avez pas de vin*"
+		}
+
+	}
+	else if (s.includes("cru"))
+	{
+		if (stockCruAventurier > 0)
+		{
+			drinkCarnaum("cru");
+			stockCruAventurier --;
+			return "Ah ! Là je dis oui ! Merci ! *Carnaum prend votre verre de cru*";
+		}
+		else {
+			return "Pourauoi donner tant de faux espoirs ? *Vous n'avez pas de cru*"
+		}
+	}
+	else if (s.includes("bibine"))
+	{
+		if (stockBibineAventurier > 0)
+		{
+			drinkCarnaum("bibine");
+			stockBibineAventurier --;
+			return "Heu, non merci, je ne bois pas de cette eau là";
+		}
+		else {
+			return "De toute façon, je n'en aurais pas bu ! *Vous n'avez pas de bibine*"
+		}
+	}
+	else {
+		return "J'ai pas saisi. Qu'est-ce qu'il y a ?"
+	}
+}
+
+function drinkCarnaum(boisson) {
+	var i = -1;
+	switch (boisson) {
+		case "biere":
+			i = 1
+			drunkThresholdMaelis -= 1;
+			break;
+		case "vin":
+			i = 2;
+			drunkThresholdMaelis -= 2;
+			break;
+		case "cru":
+			i = 2;
+			drunkThresholdMaelis -= 2;
+			break;
+		default:
+			break;
+	}
+	if ( i != -1 && (drunkThresholdMaelis - i == 8 ||
+				drunkThresholdMaelis - i == 4))
+			{
+				var nbAskAgeMaelis = 0;
+				var nbAskArmeMaelis = 0;
+				var nbAskArmureMaelis = 0;
+				var nbAskMagieMaelis = 0;
+				var nbTMMArmeMaelis = 0;
+				var nbTMMArmureMaelis = 0;
+				var nbTMMMagieMaelis = 0;
+			}
 }
