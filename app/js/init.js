@@ -36,8 +36,15 @@ BOT_basicSynonymList = BOT_basicSynonymList.concat(BOT_SynonymList);
 
 
 function BOT_onSwitchBot(oldbotid,newbotid) {
-	COUNTER_frameBot(oldbotid,"0px");
-	COUNTER_frameBot(newbotid,"4px solid yellow");
+	var leftimage = document.getElementById("leftimage");
+	var rightimage = document.getElementById("rightimage");
+	var toMove = document.getElementById(oldbotid);
+	var toGet = document.getElementById(newbotid);
+
+	leftimage.removeChild(toMove);
+	rightimage.removeChild(toGet);
+	leftimage.addChild(toGet);
+	rightimage.addChild(toMove);
 }
 
 
