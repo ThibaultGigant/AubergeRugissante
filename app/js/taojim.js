@@ -2,22 +2,39 @@
 var taojimTopic = [
 	// INFO
 	[["KEY", "_class"],						["VAL", "bot"], ["BOT","taojimBot"]],
-	[["KEY", "_reference"],					["VAL", ["lucrecia","lucress"]]],
+	[["KEY", "_reference"],					["VAL", ["taojim","tao", "jim", "tj"]]],
 	[["KEY", "_charprefix"],				["VAL", "taojim"]],
 	[["KEY", "_read"],						["VAL", ["userTopic", "maelisTopic", "carnaumTopic", "lucreciaTopic"]]],
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],
 	[["KEY", "_exec"],						["VAL", ["userTopic"]]], // try
-	[["KEY", "type"],						["VAL", ["Humain aux dents lisses","Humain"]]],
+	[["KEY", "type"],						["VAL", ["Mi-Orc","Mi-Humain"]]],
 	[["KEY", "name"],						["VAL", "Tao Jim"],   				
-											["ONASK","Je m'appelle Tao Jim ! Tu peux te le tatouer sur la peau, si tu veux devenir plus populaire"]
+											["ONASK","Je m'appelle Tao Jim ! Pourquoi ? T'as un problème avec les noms composés ? Parlons d'autre chose, tu veux bien !"]
 											],
-	[["KEY", "age"],						["VAL", "?"],
-											["ONASK", onAskAgeCarnaum], 
-											["WHY","I was born thirty years ago"]
+	[["KEY", "age"],						["VAL", 164],
+											["ONASK", onAskAgeTaojim],
+											["WHY","Parce que je suis Mi-Orc et qu'on vit un peu plus longtemps que vous autres."]
 											],
 	[["KEY", "gender"],						["VAL", "male"],
-											["ONASK", function(s) { return ((s == "male") ? "I am proud to be a man!" : "Just a woman") }]
+											["ONASK", "Chez les Orcs je peux paraître très efféminé, mais si tu veux je peux te prouver je suis un homme en te flanquant une bonne raclée !"],
+											["WHY", "C'est une bonne question, je me le suis toujours demandé. Malheureusement c'est trop tard pour changer."]
 											],
+	[["KEY", "arme"],						["VAL", "Lance-pierre"],
+											["ONASK", onAskArmeTaojim],
+											["WHY", "J'aime bien dégommer les ennemis de loin, je ne supporte pas la violence de trop près."]
+											],
+	[["KEY", "defense"],					["VAL", "Robe de magicien"],
+											["ONASK", onAskDefenseTaojim],
+											["WHY", "Je l'ai récupérée de mon grand-père, le magicien à la plus grand longévité du monde. Il avait un sort de protection infaillible."]
+											],
+	[["KEY", "magie"],						["VAL", "Imitation du cri des lapins"],
+											["ONASK", onAskMagieTaojim],
+											["WHY", "Les lapins c'est trop mignon et doux. J'aime les lapins !"]
+											],
+
+	// Tell me more
+	[["KEY", "TMM"],						["VAL", tellMeMoreTaojim]],
+
 	// REL
 	[["KEY", "maelis"],						["VAL", "maelisTopic"],["CAT","REL"]],
 	[["KEY", "carnaum"],					["VAL", "carnaumTopic"],["CAT","REL"]],
@@ -45,37 +62,118 @@ var taojimTopic = [
 ];
 
 // ===================== Variables =====================//
-var nbAskAgeCarnaum = 0;
-var drunkThresholdCarnaum = 10;
+var nbAskAgeTaojim = 0;
+var drunkThresholdTaojim = 8;
 
 
 //==================== Functions ==================//
-function onAskAgeCarnaum()
+function onAskAgeTaojim()
 {
-	nbAskAgeCarnaum++;
+	nbAskAgeTaojim++;
 
-	if (drunkThresholdCarnaum >= 7)
+	if (drunkThresholdTaojim >= 6)
 	{
-		if (nbAskAgeCarnaum < 3)
+		if (nbAskAgeTaojim < 3)
 		{
-			return "Mêle toi de tes affaires";
+			return "Je suis quand même assez vieux, mais seulement pour les humains";
 		}
-		else if (nbAskAgeCarnaum >= 3)
+		else if (nbAskAgeTaojim >= 3)
 		{
-			return  "Tu vas me laisser tranquille espèce de larve";
+			return  "Attention à ne pas froisser tes aïeux !";
 		}
 	}
-	else if (drunkThresholdCarnaum >= 4)
+	else if (drunkThresholdTaojim >= 1)
 	{
-		if (nbAskAgeCarnaum < 2)
+		if (nbAskAgeTaojim < 2)
 		{
-			return "Je te le dis si tu me payes une autre pinte camarade !";
+			return "Pour un Orc, je serais assez jeune, je n'ai que 164 ans !";
 		}
-		else if (nbAskAgeCarnaum >= 2)
+		else if (nbAskAgeTaojim >= 2)
 		{
-			return  "Une autre pinte d'abord, j'ai dit !!!";
+			return  "Je te l'ai déjà dit, t'as une vraie mémoire de poisson rouge !";
 		}
 	}
+	var card = Math.floor(Math.random() * drunk_sentences.length);
+	return drunk_sentences[card];
+}
+
+function onAskArmeTaojim()
+{
+	if (drunkThresholdTaojim >= 6)
+		return "Mon Lance-pierre ne paye pas de mine, mais je l'ai depuis mon enfance.";
+	else if (drunkThresholdTaojim >= 1)
+		return "J'ai un beau lance-pierre qui tire loin !";
+	else if (drunkThresholdTaojim > 0)
+		return "L'autre folle avec son armure qui brille, elle a dit qu'elle allait contrôler mon esprit puisque je suis presque un animal. Dommage pour elle que son pouvoir ne fonctionne que sur beaucoup plus petit qu'un humain !";
+	var card = Math.floor(Math.random() * drunk_sentences.length);
+	return drunk_sentences[card];
+}
+
+function onAskDefenseTaojim()
+{
+	if (drunkThresholdTaojim >= 6)
+		return "Pour me défendre, je mets toujours la robe de magicien dont j'ai hérité de mon grand-père, ce grand sage millénaire.";
+	else if (drunkThresholdTaojim >= 1)
+		return "Ma robe protectrice me rappelle mon grand-père mort il y a peu, au doux âge de 1385 ans :'(";
+	else if (drunkThresholdTaojim > 0)
+		return "L'autre guignol avec sa côte de maille, j'ai essayé de le frapper pour lui faire fermer son clapet, mais bon sang, c'est du lourd sa protection !";
+	var card = Math.floor(Math.random() * drunk_sentences.length);
+	return drunk_sentences[card];
+}
+
+function onAskMagieTaojim()
+{
+	if (drunkThresholdTaojim >= 6)
+		return "Je sais crier comme les lapins ! C'est trop mignon les lapins !";
+	else if (drunkThresholdTaojim >= 1)
+		return "Mon cri de lapin est connu dans le monde entier pour sa douceur.";
+	else if (drunkThresholdTaojim > 0)
+		return "Hey, si j'étais toi, je n'irais pas trop près de la fille en vert, quand elle parle aux plantes, celles-ci font tout ce qu'elle veut, j'ai failli être étranglé par des lianes la dernière fois !";
+	var card = Math.floor(Math.random() * drunk_sentences.length);
+	return drunk_sentences[card];
+}
+
+function tellMeMoreTaojim() {
+	switch(BOT_theLastAttribute)
+	{
+		case "arme":
+			return tellMeMoreArmeTaojim();
+		case "defense":
+			return tellMeMoreDefenseTaojim();
+		case "magie":
+			return tellMeMoreMagieTaojim()
+	}
+}
+
+function tellMeMoreArmeTaojim() {
+	if (drunkThresholdTaojim >= 6)
+		return "J'ai effectivement quelques avantages avec mon lance-pierre, mais ce n'est pas ça qui ferait la différence.";
+	else if (drunkThresholdTaojim >= 1)
+		return "Bon, j'ai un Lance-pierre et je remplace peut-être les pierres par des billes de plomb enflammées. Et puis avec ma force de semi-orc, c'est souvent mortel. Mais c'est pas de ma faute si vous êtes fragiles, les humains !";
+	else if (drunkThresholdTaojim > 0)
+		return "Oulaaa j'ai vu tirer cette fille avec une arbalette il y a pas longtemps. Elle a pas touché une seule cible ! Huhu ^^";
+	var card = Math.floor(Math.random() * drunk_sentences.length);
+	return drunk_sentences[card];
+}
+
+function tellMeMoreDefenseTaojim() {
+	if (drunkThresholdTaojim >= 6)
+		return "Mon grand-père était le plus grand magicien de tous les temps ! J'ai sa robe, ça devrait en dire long sur mes capacités !";
+	else if (drunkThresholdTaojim >= 1)
+		return "C'est vrai que ma robe protectrice a beau venir de mon aïeul magicien, elle n'en est pas moins normale... Mais elle est magnifique, et puis elle me fait de jolies fesses, tu trouves pas ?";
+	else if (drunkThresholdTaojim > 0)
+		return "Ils m'entraînent, au bout de la nuit ! Les démons de minuit !";
+	var card = Math.floor(Math.random() * drunk_sentences.length);
+	return drunk_sentences[card];
+}
+
+function tellMeMoreMagieTaojim() {
+	if (drunkThresholdTaojim >= 6)
+		return "Lorsque j'imite les lapins, je ne sais pas trop pourquoi, mais tout le monde fuit le village... C'est dommage !";
+	else if (drunkThresholdTaojim >= 1)
+		return "Mon imitation du cri des lapins est si parfaite que j'ai pu faire ami ami avec un lapin que j'aime beaucoup. Il fait deux fois ma taille et il lui est arrivé de ne pas savoir s'arrêter pour me protéger, mais il m'adore...";
+	else if (drunkThresholdTaojim > 0)
+		return "Là-bas, au Connemara, On sait tout le prix de la guerre. Là-bas, au Connemara !!!!";
 	var card = Math.floor(Math.random() * drunk_sentences.length);
 	return drunk_sentences[card];
 }
