@@ -6,8 +6,8 @@ var lucreciaBot = new BOT_makeBot("lucreciaBot","lucreciaTopic");
 var tavernierBot = new BOT_makeBot("tavernierBot","tavernierTopic");
 BOT_declareTopics(["userTopic"]); 
 
-BOT_theBotId		= "carnaumBot";		// sets current bot id 
-BOT_theTopicId		= "carnaumTopic";		// sets current topic id
+BOT_theBotId		= "tavernierBot";		// sets current bot id 
+BOT_theTopicId		= "tavernierTopic";		// sets current topic id
 BOT_theUserTopicId	= "userTopic";		// sets topic of current user id
 
 
@@ -44,14 +44,19 @@ BOT_basicSynonymList = BOT_basicSynonymList.concat(BOT_SynonymList);
 
 function BOT_onSwitchBot(oldbotid,newbotid) {
 	var leftimage = document.getElementById("leftimage");
-	var rightimage = document.getElementById("rightimage");
+	var rightimage = document.getElementById("rightimages");
 	var toMove = document.getElementById(oldbotid);
 	var toGet = document.getElementById(newbotid);
 
-	leftimage.removeChild(toMove);
-	rightimage.removeChild(toGet);
-	leftimage.addChild(toGet);
-	rightimage.addChild(toMove);
+	toMove.parentNode.removeChild(toMove);
+	toGet.parentNode.removeChild(toGet);
+
+	leftimage.appendChild(toGet);
+	rightimage.appendChild(toMove);
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 

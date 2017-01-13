@@ -17,6 +17,7 @@
 		<script type="text/javascript" src="../js/maelis.js">  </script>
 		<script type="text/javascript" src="../js/taojim.js">  </script>
 		<script type="text/javascript" src="../js/lucrecia.js">  </script>
+		<script type="text/javascript" src="../js/tavernier.js">  </script>
 		<script type="text/javascript" src="../js/init.js">  </script>
 
 		<!--[if lt IE 9]>
@@ -26,25 +27,34 @@
 
 	<body class="animated bounceInDown">
 		<h1 class="title"> L'Auberge Rugissante</h1>
+		<div class="content">
 		<p>Admirez l'enseigne de ce prestigieux établissement</p>
 		<p>Voilà une bonne occasion d'enrôler de braves guerriers et manieurs d'épée. Abreuvez-vous, faites connaissance, et pourquoi pas, soudoyez les clients et tarvernier afin de vous garantir gloire et succès.</p>
-		<div class="avatar" id="leftimage">
-			<div id="imagecarnaum"><img src="../picts/carnaum.jpg" alt="imagecarnaum" /><br>Carnaum</div>
-		</div>
+		<ul class="avatar" id="leftimage">
+			<li id="tavernierBot"><img src="../picts/tavernier.jpg" alt="tavernierBot" /><br>Tavernier</li>
+		</ul>
 
-		<div class="content">
 			<!--<h1 class="title">L'Auberge Rugissante</h1>-->
-			<p>Ecrivez vos douces paroles à cet endroit :</p>
+			<p class="">Ecrivez vos douces paroles à cet endroit :</p>
 			<input id="litetalkchatbox" type="text" size="40" value="ask age" onKeyPress="BOT_chatboxOnKeypress(this,event);">
 
-  			<input type="submit" name="sendButton" id="sendButton" value="Valider" onClick="BOT_chatboxOnSend('litetalkchatbox');"><BR>
+  			<input type="submit" name="sendButton" id="sendButton" value="Valider" onClick="BOT_chatboxOnSend('litetalkchatbox');">
+
 			<input id="litetalkballoonshort" type="text" size="58" value="."> 
+
 		</div>
 
-		<div id="rightimages">
-			<div id="imagemaelis"><img src="../picts/maelis.jpg" alt="imagemaelis" /><br>Maelis</div>
-			<div id="imagelucrecia"><img src="../picts/lucrecia.jpg" alt="imagelucrecia" /><br>Lucrecia</div>
-			<div id="imagetaojim"><img src="../picts/taojim.jpg" alt="imagetaojim" /><br>Taojim</div>
-		</div>
+		<ul id="rightimages">
+			<li id="carnaumBot"><img src="../picts/carnaum.jpg" alt="carnaumBot" /><br>Carnaum</li>
+			<li id="maelisBot"><img src="../picts/maelis.jpg" alt="maelisBot" /><br>Maelis</li>
+			<li id="lucreciaBot"><img src="../picts/lucrecia.jpg" alt="lucreciaBot" /><br>Lucrecia</li>
+			<li id="taojimBot"><img src="../picts/taojim.jpg" alt="taojimBot" /><br>Taojim</li>
+		</ul>
+
+<script type="text/javascript">
+	BOT_theInterface 	= "DEVELOPER";
+	BOT_traceFlag		= true; 
+	BOT_statusFlag		= true;
+</script>
 	</body>
 </html>
