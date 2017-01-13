@@ -34,6 +34,10 @@ var carnaumTopic = [
 											["ONASK",	onAskMagieCarnaum]
 											],
 
+	[["KEY", ["offreZZZ","boissonZZZ"]],	["VAL", "offre"],
+											["ONASK", onAskOffreCarnaum]
+											],
+
 
 
 
@@ -250,4 +254,101 @@ function tellMeMoreMagieCarnaum() {
 	"C'est pas le tout, mais faut boire"];
 
 	return genericCarnaum(liste, nbTMMMagieCarnaum);
+}
+
+function onAskProposeCarnaum() {
+	return "Ah, je veux bien !";
+}
+
+function onAskOffreCarnaum() {
+	var elem = document.getElementById('litetalkchatbox');
+	var s = elem.value;
+
+	if (s.includes("bière") || s.includes("biere"))
+	{
+		if (stockBiereAventurier >= 0)
+		{
+			drinkCarnaum("biere");
+			stockBiereAventurier --;
+			return "Voilà une boisson infaillible, tout comme moi. *Carnaum boit cul-sec votre choppe de bière*";
+		}
+		else {
+			return "Pfff... Je peux m'en acheter tout seul de toute façon. *Vous n'avez pas de bière*"
+		}
+	}
+	else if (s.includes("vin"))
+	{
+		if (stockVinAventurier >= 0)
+		{
+			drinkCarnaum("vin");
+			stockVinAventurier --;
+			return "Eh bien, tu ne te fais pas chier. *Carnaum prend votre verre de vin*";
+		}
+		else {
+			return "Je ne demande que ça, d'en boire, alors fais péter. *Vous n'avez pas de vin*"
+		}
+
+	}
+	else if (s.includes("cru"))
+	{
+		if (stockCruAventurier > 0)
+		{
+			drinkCarnaum("cru");
+			stockCruAventurier --;
+			return "Wahou ! Excellent, merci !. *Carnaum prend votre verre de cru*";
+		}
+		else {
+			return "J'en ai vu des faux-cul, mais me proposer un cru que tu n'as pas... *Vous n'avez pas de cru*"
+		}
+	}
+	else if (s.includes("bibine"))
+	{
+		if (stockBibineAventurier > 0)
+		{
+			drinkCarnaum("bibine");
+			stockBibineAventurier --;
+			return "Ça passera le temps. *Carnaum prend votre choppe de bibine*";
+		}
+		else {
+			return "Je veux bien boire tout ce aue tu veux, mais faudrait que tu m'en donnes. *Vous n'avez pas de bibine*"
+		}
+	}
+	else {
+		return "J'ai pas saisi. Qu'est-ce qu'il y a ?"
+	}
+}
+
+function drinkCarnaum(boisson) {
+	var i = -1;
+	switch (boisson) {
+		case "biere":
+			i = 1
+			drunkThresholdCarnaum -= 1;
+			break;
+		case "vin":
+			i = 2;
+			drunkThresholdCarnaum -= 2;
+			break;
+		case "bibine":
+			i = 1;
+			drunkThresholdCarnaum -= 1;
+			break;
+		case "cru":
+			i = 2;
+			drunkThresholdCarnaum -= 2;
+			break;
+		default:
+			break;
+	}
+	if ( i != -1 && (drunkThresholdCarnaum - i < drunkSteps[1] ||
+				drunkThresholdCarnaum - i < drunkSteps[2]))
+			{
+				var nbAskAgeCarnaum = 0;
+				var nbAskArmeCarnaum = 0;
+				var nbAskArmureCarnaum = 0;
+				var nbAskMagieCarnaum = 0;
+				var nbTMMArmeCarnaum = 0;
+				var nbTMMArmureCarnaum = 0;
+				var nbTMMMagieCarnaum = 0;
+			}
 }

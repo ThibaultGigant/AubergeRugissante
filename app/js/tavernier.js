@@ -63,24 +63,23 @@ function onAskBoissonTavernier() {
 	var elem = document.getElementById('litetalkchatbox');
 	var s = elem.value;
 
-	alert(s);
-
-	/*if (s.includes("combien") or
-		s.includes("Combien") or
-		s.includes("propose") or
-		s.includes("proposez"))
+	if (s.includes("combien") ||
+		s.includes("Combien") ||
+		s.includes("propose") ||
+		s.includes("proposez") ||
+		s.includes("avez"))
 	{
-		str = ["Rarrive ! Alors, une bière c'est 7 ronds, un verre de vin ça vous en fera 13, 5 pour une bibine et 17 pour le cru de la maison",
+		str = ["J'arrive ! Alors, une bière c'est 7 ronds, un verre de vin ça vous en fera 13, 5 pour une bibine et 17 pour le cru de la maison",
 		"Je suis à vous l'ami ! Ça sera 13 rond pour du vin, 17 pour le cru de la maison, 5 pour une bibine et puis enfin 7 pour une bière" ]
 		var card = Math.floor(Math.random() * str.length);
 		return str[card];
 	}
 
-	if (s.includes("bière") or s.includes("biere"))
+	if (s.includes("bière") || s.includes("biere"))
 	{
 		if (bourseAventurier >= 7)
 		{
-			str = "bière";
+			boisson = "bière";
 			stockBiereAventurier ++;
 			bourseAventurier -= 7;
 		}
@@ -89,7 +88,7 @@ function onAskBoissonTavernier() {
 	{
 		if (bourseAventurier >= 13)
 		{
-			str = "vin";
+			boisson = "vin";
 			stockVinAventurier ++;
 			bourseAventurier -= 13;
 		}
@@ -99,7 +98,7 @@ function onAskBoissonTavernier() {
 	{
 		if (bourseAventurier >= 17)
 		{
-			str = "cru";
+			boisson = "cru";
 			stockCruAventurier ++;
 			bourseAventurier -= 17;
 		}
@@ -108,7 +107,7 @@ function onAskBoissonTavernier() {
 	{
 		if (bourseAventurier >= 5)
 		{
-			str = "bibine";
+			boisson = "bibine";
 			stockBibineAventurier ++;
 			bourseAventurier -= 5;
 		}
