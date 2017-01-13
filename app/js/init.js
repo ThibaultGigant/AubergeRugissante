@@ -17,7 +17,8 @@ var drunk_sentences = ["Zzzzz", "Heuu...", "bwork", "Hic!", "Gnouf", "Slurp", "G
 
 var BOT_SynonymList	=  [
 	["_a TMM",			["dites m en plus", "dis m en plus", "et donc", "et alors", "expliquez", "explique", "quoi d autre", "comment", "c est quoi"]],
-	["quêteZZZ",		["quete","voyage", "pepriple", "aventure", "quête", "expédition", "vadrouille", "chasse aux monstres"]],
+	["quêteZZZ",		["quete","voyage", "pepriple", "aventure", "quête", "expédition", "vadrouille", "chasse aux monstres",
+						"quetes","voyages", "pepriples", "aventures", "quêtes", "expéditions", "vadrouilles", "chasses aux monstres"]],
 	["aventurier",		["aventurier","soldat", "camarade", "equipier", "co-equipier", "coequipier", "glandu", "inconscient", "gars", "ami"]],
 	["tavernier",		["tenancier", "aubergiste", "barman", "patron", "chef"]],
 	["monsieur",		["monsieur","mr.", "mr", "msgr", "monseigneur", "seigneur"]],
@@ -28,9 +29,11 @@ var BOT_SynonymList	=  [
 	["_g",				["bonjour", "salut", "hola", "heho", "hohe", "eho", "ohe", "ca va"]],
 	["boissonZZZ",		["boisson","biere", "choppe", "cru", "tonnelet", "tonneau", "vin", "gnôle", "binouze", "pinte", "litre", "bibine"]],
 	["competenceZZZ",	["competences","competence", "magie", "maniement", "maitrise","boule de feu", "psychique", "aider", "sais faire"]],
-	["defenseZZZ",		["defense", "equipement", "armure", "protection", "fais quoi", "sais faire quoi", "bouclier"]],
-	["armeZZZ",			["arme", "epee", "force", "hache", "arbalete", "arc"]],
-	["",				["tien", "tiens", "la", "de", "le", "du", "un", "une", "coute", "coûte", "reste"]],
+	["defenseZZZ",		["defense", "equipement", "armure", "protection", "fais quoi", "sais faire quoi", "bouclier",
+						"defenses", "equipements", "armures", "protections", "boucliers"]],
+	["armeZZZ",			["arme", "epee", "force", "hache", "arbalete", "arc",
+						"armes", "epees", "forces", "haches", "arbaletes", "arcs"]],
+	["",				["tien", "tiens", "la", "de", "le", "les", "du", "un", "une", "coute", "coûte", "reste"]],
 	["bourseZZZ",		["bourse", "argent", "des sous", "de sous", "piece", "pognon", "monaie"]],
 	["proposeZZZ",		["propose", "tu veux", "veux-tu", "vous prendrez", "tu prendras", "veux tu", "vous voulez", "voulez-vous", "voulez vous"]],
 	["_a offreZZZ",		["offre", "tiens", "Tiens", "tien", "Tien", "tennez", "Tennez", "prends", "Prends", "prennez", "Prennez"]]
