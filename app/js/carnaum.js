@@ -2,9 +2,9 @@
 var carnaumTopic = [
 	// INFO
 	[["KEY", "_class"],						["VAL", "bot"], ["BOT","carnaumBot"]],
-	[["KEY", "_reference"],					["VAL", ["carnaum","carna"]] ],
+	[["KEY", "_reference"],					["VAL", ["carnaum","carna", "tu"]] ],
 	[["KEY", "_charprefix"],				["VAL", "carnaum"]],
-	[["KEY", "_read"],						["VAL", ["userTopic", "maelisTopic", "lucreciaTopic", "taojimTopic"]]],
+	[["KEY", "_read"],						["VAL", ["userTopic", "maelisTopic", "lucreciaTopic", "taojimTopic", "tavernierTopic"]]],
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],
 	[["KEY", "_exec"],						["VAL", ["userTopic"]]], // try
 	[["KEY", "type"],						["VAL", ["Humain aux dents lisses","Humain"]]],
@@ -20,17 +20,17 @@ var carnaumTopic = [
 											],
 
 	// Arme
-	[["KEY", "arme"],						["VAL",		"Cimeterre"],
+	[["KEY", "armeZZZ"],					["VAL",		"Cimeterre"],
 											["ONASK",	onAskArmeCarnaum],
 											["ONWHY",	"Dans la vie, faut faire des choix, et moi, le voilà."]
 											],
 	// armure
-	[["KEY", "defense"],					["VAL",		"Côtte de maille"],
+	[["KEY", "defenseZZZ"],					["VAL",		"Côtte de maille"],
 											["ONASK",	onAskArmureCarnaum]
 											],
 
 	// magie
-	[["KEY", "magie"],						["VAL",		"Chute extrême"],
+	[["KEY", "competenceZZZ"],				["VAL",		"Chute extrême"],
 											["ONASK",	onAskMagieCarnaum]
 											],
 

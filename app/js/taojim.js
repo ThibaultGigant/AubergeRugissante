@@ -4,7 +4,7 @@ var taojimTopic = [
 	[["KEY", "_class"],						["VAL", "bot"], ["BOT","taojimBot"]],
 	[["KEY", "_reference"],					["VAL", ["taojim","tao", "jim", "tj"]]],
 	[["KEY", "_charprefix"],				["VAL", "taojim"]],
-	[["KEY", "_read"],						["VAL", ["userTopic", "maelisTopic", "carnaumTopic", "lucreciaTopic"]]],
+	[["KEY", "_read"],						["VAL", ["userTopic", "maelisTopic", "carnaumTopic", "lucreciaTopic", "tavernierTopic"]]],
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],
 	[["KEY", "_exec"],						["VAL", ["userTopic"]]], // try
 	[["KEY", "type"],						["VAL", ["Mi-Orc","Mi-Humain"]]],
@@ -19,15 +19,15 @@ var taojimTopic = [
 											["ONASK", "Chez les Orcs je peux paraître très efféminé, mais si tu veux je peux te prouver je suis un homme en te flanquant une bonne raclée !"],
 											["WHY", "C'est une bonne question, je me le suis toujours demandé. Malheureusement c'est trop tard pour changer."]
 											],
-	[["KEY", "arme"],						["VAL", "Lance-pierre"],
+	[["KEY", "armeZZZ"],					["VAL", "Lance-pierre"],
 											["ONASK", onAskArmeTaojim],
 											["WHY", "J'aime bien dégommer les ennemis de loin, je ne supporte pas la violence de trop près."]
 											],
-	[["KEY", "defense"],					["VAL", "Robe de magicien"],
+	[["KEY", "defenseZZZ"],					["VAL", "Robe de magicien"],
 											["ONASK", onAskDefenseTaojim],
 											["WHY", "Je l'ai récupérée de mon grand-père, le magicien à la plus grand longévité du monde. Il avait un sort de protection infaillible."]
 											],
-	[["KEY", "magie"],						["VAL", "Imitation du cri des lapins"],
+	[["KEY", "competenceZZZ"],				["VAL", "Imitation du cri des lapins"],
 											["ONASK", onAskMagieTaojim],
 											["WHY", "Les lapins c'est trop mignon et doux. J'aime les lapins !"]
 											],

@@ -4,7 +4,7 @@ var maelisTopic = [
 	[["KEY", "_class"],						["VAL", "bot"], ["BOT","maelisBot"]],
 	[["KEY", "_reference"],					["VAL", ["mae","maelis","mael", "mel", "maeli"]]],
 	[["KEY", "_charprefix"],				["VAL", "maelis"]],
-	[["KEY", "_read"],						["VAL", ["userTopic", "carnaumTopic", "lucreciaTopic", "taojimTopic"]]],
+	[["KEY", "_read"],						["VAL", ["userTopic", "carnaumTopic", "lucreciaTopic", "taojimTopic", "tavernierTopic"]]],
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],
 	[["KEY", "_exec"],						["VAL", ["userTopic"]]], // try
 	[["KEY", "type"],						["VAL", ["amazone","Homme"]]],
@@ -20,15 +20,15 @@ var maelisTopic = [
 											["ONASK", "T'es bigleux ou quoi ? Mon décolleté te crève pas assez les yeux ?"],
 											["WHY", "Parce que j'ai choisi d'être intelligente EN PLUS d'être forte."]
 											],
-	[["KEY", "arme"],						["VAL", "arbalette"],
+	[["KEY", "armeZZZ"],					["VAL", "arbalette"],
 											["ONASK", onAskArmeMaelis],
 											["WHY", "Les amazones, on a arrêté d'utiliser des arcs. Se couper le sein gauche ça va cinq minutes !"]
 											],
-	[["KEY", "defense"],					["VAL", "armure de mithrill"],
+	[["KEY", "defenseZZZ"],					["VAL", "armure de mithrill"],
 											["ONASK", onAskDefenseMaelis],
 											["WHY", "C'est sentimental, on la garde dans la famille depuis quelques temps."]
 											],
-	[["KEY", "magie"],						["VAL", "controle mental"],
+	[["KEY", "competenceZZZ"],						["VAL", "controle mental"],
 											["ONASK", onAskMagieMaelis],
 											["WHY", "Mon pouvoir s'est développé quand j'étais adolescente, enfermée dans une poubelle... Je ne sais pas trop pourquoi."]
 											],

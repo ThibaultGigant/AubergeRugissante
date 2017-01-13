@@ -4,7 +4,7 @@ var lucreciaTopic = [
 	[["KEY", "_class"],						["VAL", "bot"], ["BOT","lucreciaBot"]],
 	[["KEY", "_reference"],					["VAL", ["lucrecia","lucress"]]],
 	[["KEY", "_charprefix"],				["VAL", "lucrecia"]],
-	[["KEY", "_read"],						["VAL", ["userTopic", "maelisTopic", "carnaumTopic", "taojimTopic"]]],
+	[["KEY", "_read"],						["VAL", ["userTopic", "maelisTopic", "carnaumTopic", "taojimTopic", "tavernierTopic"]]],
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],
 	[["KEY", "_exec"],						["VAL", ["userTopic"]]], // try
 	[["KEY", "type"],						["VAL", ["Humain aux dents lisses","Humain"]]],
@@ -20,17 +20,17 @@ var lucreciaTopic = [
 											],
 
 	// Arme
-	[["KEY", "arme"],						["VAL",		"Boomerang"],
+	[["KEY", "armeZZZ"],					["VAL",		"Boomerang"],
 											["ONASK",	onAskArmeLucrecia],
 											["ONWHY",	"Je suis certaine que quoi qu'il qrrive, il me reviendra."]
 											],
 	// armure
-	[["KEY", "defense"],					["VAL",		"Chemise épaisse"],
+	[["KEY", "defenseZZZ"],					["VAL",		"Chemise épaisse"],
 											["ONASK",	onAskArmureLucrecia]
 											],
 
 	// magie
-	[["KEY", "magie"],						["VAL",		"Parler à la flore"],
+	[["KEY", "competenceZZZ"],					["VAL",		"Parler à la flore"],
 											["ONASK",	onAskMagieLucrecia]
 											],
 

@@ -2,7 +2,7 @@
 var userTopic = [
 	// INFO 
 	[["KEY", "_class"],			["VAL", "user"]],
-	[["KEY", "_reference"],		["VAL", ["me","my","user"]]],
+	[["KEY", "_reference"],		["VAL", ["je","moi","aventurier"]]],
 	[["KEY", "type"],			["VAL", ["person"]]],
 	// VAR 
 	[["KEY", "name"],			["VAL", "User"], ["CAT","VAR"],
@@ -11,6 +11,9 @@ var userTopic = [
 	[["KEY", "age"],			["VAL", "unknown"],	["CAT","VAR"]],
 	[["KEY", "gender"],			["VAL", "unknown"],	["CAT","VAR"]],
 	[["KEY", "job"],			["VAL", "unknown"],	["CAT","VAR"]],
+	[["KEY", "bourse"],			["VAL", bourseAventurier], ["TYPE", "INT"]],
+	[["KEY", "boissonZZZ"],		["VAL", "stock de boisson"],
+								["ONASK", onAskBoisson]],
 	// OPINIONS
 	[["KEY", "judgement"],		["VAL", []], ["CAT","VAR"], ["ONASK",BOT_printJudgementList]], // 6 standard opinions 
 	[["KEY", "preference"],		["VAL", []], ["CAT","VAR"], ["ONASK",BOT_printPreferenceList]], 
@@ -30,3 +33,14 @@ var userTopic = [
 	[["KEY", "relative"],		["VAL", []]] // none
 ];
 
+var stockCruAventurier = 0;
+var stockVinAventurier = 0;
+var stockBiereAventurier = 0;
+var stockBibineAventurier = 0;
+var bourseAventurier = 45;
+
+function onAskBoisson()
+{
+	return "Il me reste " + stockBiereAventurier + " bière(s), " + stockBibineAventurier + " bibine(s)"
+		+ stockVinAventurier + " vin(s) et " + stockCruAventurier + "cru(s).";
+}
