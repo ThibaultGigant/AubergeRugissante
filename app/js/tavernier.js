@@ -2,7 +2,7 @@
 var tavernierTopic = [
 	// INFO
 	[["KEY", "_class"],						["VAL", "bot"], ["BOT","tavernierBot"]],
-	[["KEY", "_reference"],					["VAL", ["tavernier","carna", "tu"]] ],
+	[["KEY", "_reference"],					["VAL", ["tavernier"]] ],
 	[["KEY", "_charprefix"],				["VAL", "tavernier"]],
 	[["KEY", "_read"],						["VAL", ["userTopic", "maelisTopic", "lucreciaTopic", "taojimTopic", "carnaumTopic"]]],
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],

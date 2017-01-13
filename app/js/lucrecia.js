@@ -2,7 +2,7 @@
 var lucreciaTopic = [
 	// INFO
 	[["KEY", "_class"],						["VAL", "bot"], ["BOT","lucreciaBot"]],
-	[["KEY", "_reference"],					["VAL", ["lucrecia","lucress"]]],
+	[["KEY", "_reference"],					["VAL", ["lucrecia","lucres"]]],
 	[["KEY", "_charprefix"],				["VAL", "lucrecia"]],
 	[["KEY", "_read"],						["VAL", ["userTopic", "maelisTopic", "carnaumTopic", "taojimTopic", "tavernierTopic"]]],
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],
@@ -19,6 +19,9 @@ var lucreciaTopic = [
 											["ONASK", function(s) { return ((s == "male") ? "I am proud to be a man!" : "Just a woman") }]
 											],
 
+	[["KEY", "boissonZZZ"],					["VAL", "boisson"],
+											["ONASK","Pour les boissons, c'est au tavernier qu'il faut s'adresser"]],
+
 	// Arme
 	[["KEY", "armeZZZ"],					["VAL",		"Boomerang"],
 											["ONASK",	onAskArmeLucrecia],
@@ -33,6 +36,18 @@ var lucreciaTopic = [
 	[["KEY", "competenceZZZ"],					["VAL",		"Parler à la flore"],
 											["ONASK",	onAskMagieLucrecia]
 											],
+
+	[["KEY", ["offreZZZ","boissonZZZ"]],	["VAL", "offre"],
+											["ONASK", onAskOffreLucrecia]
+											],
+
+	[["KEY", ["proposeZZZ","boissonZZZ"]],	["VAL", "propose"],
+											["ONASK", onAskProposeLucrecia]
+											],
+
+	// Eau
+	[["KEY", "eau"],						["VAL", "NON"],
+											["ONASK", "Ah ! De l'eau ! ça fait longtemps aue je n'en avais pas entendu parler. Dis, au fait, ça a quel goût ? *chuchotte à haute voix*"]],
 
 
 
@@ -230,4 +245,97 @@ function tellMeMoreMagieLucrecia() {
 	"Mes pauvres plantes... Devoir désaouler une gaillarde comme moi tous les soirs"];
 
 	return genericLucrecia(liste, nbTMMMagieLucrecia);
+}
+
+function onAskProposeLucrecia() {
+	var elem = document.getElementById('litetalkchatbox');
+	var s = elem.value;
+
+	if (s.includes("vin") ||
+		s.includes("bibine") ||
+		s.includes("biere") ||
+		s.includes("bière") ||
+		s.includes("cru"))
+		return "Très sympa, je ne dis pas nom";
+	return "Quand je n'ai pas envie de répondre, il m'arrive de quand même parler.";
+}
+
+function onAskOffreLucrecia() {
+	var elem = document.getElementById('litetalkchatbox');
+	var s = elem.value;
+
+	if (s.includes("bière") || s.includes("biere"))
+	{
+		if (stockBiereAventurier >= 0)
+		{
+			drinkLucrecia("biere");
+			stockBiereAventurier --;
+			return "Commencer avec une bonne biere, c'est génial. Continuer à en boire, c'est tellement mieux. *Lucrecia boit cul-sec votre choppe de bière*";
+		}
+		else {
+			return "Mieux vaut attendre la soif, on n'en ai que plus récompensé au moment de se remplir la panse de bière. *Vous n'avez pas de bière*"
+		}
+	}
+	else if (s.includes("vin"))
+	{
+		if (stockVinAventurier >= 0)
+		{
+			drinkLucrecia("vin");
+			stockVinAventurier --;
+			return "Je trouve que ça à l'air bon pour la santé, ce truc. *Lucrecia prend votre verre de vin*";
+		}
+		else {
+			return "A chaque fois que j'en bois, ça me transporte. Tu m'as donné des illusions, et ça a tendance à m'irriter. *Vous n'avez pas de vin*"
+		}
+
+	}
+	else if (s.includes("cru"))
+	{
+		if (stockCruAventurier > 0)
+		{
+			return "Le saint Graal ! Je porterai cette coupe à mes lèvres comme lors des grandes cérémonies";
+		}
+		else {
+			return "Dommage pour toi, tu as raté l'occasion de faire une bonne action. *Vous n'avez pas de cru*"
+		}
+	}
+	else if (s.includes("bibine"))
+	{
+		if (stockBibineAventurier > 0)
+		{
+			drinkLucrecia("bibine");
+			stockBibineAventurier --;
+			return "Une petite tasse, ça pars vite *Lucrecia prend votre choppe de bibine*";
+		}
+		else {
+			return "C'est pas comme si que je ratais grand chose. *Vous n'avez pas de bibine*"
+		}
+	}
+	else {
+		return "J'ai pas saisi. Qu'est-ce qu'il y a ?"
+	}
+}
+
+function drinkLucrecia(boisson) {
+	var i = -1;
+	switch (boisson) {
+		case "biere":
+			i = 1
+			drunkThresholdLucrecia -= 1;
+			break;
+		case "vin":
+			i = 2;
+			drunkThresholdLucrecia -= 2;
+			break;
+		case "bibine":
+			i = 1;
+			drunkThresholdLucrecia -= 1;
+			break;
+		case "cru":
+			i = 2;
+			drunkThresholdLucrecia -= 2;
+			break;
+		default:
+			break;
+	}
 }

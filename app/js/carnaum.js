@@ -19,6 +19,9 @@ var carnaumTopic = [
 											["ONASK", function(s) { return ((s == "male") ? "I am proud to be a man!" : "Just a woman") }]
 											],
 
+	[["KEY", "boissonZZZ"],					["VAL", "boisson"],
+											["ONASK","Ne tente pas de négocier avec moi, tu ne tiens pas la route. Si tu veux de la boisson, va voir le tavernier"]],
+
 	// Arme
 	[["KEY", "armeZZZ"],					["VAL",		"Cimeterre"],
 											["ONASK",	onAskArmeCarnaum],
@@ -90,6 +93,7 @@ var nbTMMMagieCarnaum = 0;
 var drunkStepsCarnaum = [10,7,4];
 var drunkThresholdCarnaum = 10;
 
+var happyCarnaum = 0;
 
 //BOT_theLastAttribute
 
@@ -132,6 +136,11 @@ function onAskAgeCarnaum()
 	lastAsk = "";
 	nbAskAgeCarnaum++;
 
+	if (nbAskAgeCarnaum == 3)
+	{
+		happyCarnaum --;
+	}
+
 	if (drunkThresholdCarnaum >= drunkStepsCarnaum[1])
 	{
 		if (nbAskAgeCarnaum < 3)
@@ -164,6 +173,11 @@ function onAskAgeCarnaum()
 
 function onAskArmeCarnaum() {
 	nbAskArmeCarnaum++;
+
+	if (nbAskArmeCarnaum == 3)
+	{
+		happyCarnaum--;
+	}
 
 	liste = ["Regarde moi donc cette lame, j'ai un joli cimeterre.",
 	"Ca me flatte tu sais. Mais faudrait arreter de demander, ce truc c'est un cimeterre.",
@@ -223,6 +237,11 @@ function tellMeMoreArmeCarnaum() {
 function onAskArmureCarnaum() {
 	nbAskArmureCarnaum++;
 
+	if (nbAskArmureCarnaum == 3)
+	{
+		happyCarnaum--;
+	}
+
 	liste = ["Je me sens super bien loti dans ma côtte de maille.",
 	"Je me sens super bien loti dans ma côtte de maille.",
 	["C'est pas facile à nettoyer n'empêche une côtte de maille"],
@@ -244,6 +263,11 @@ function tellMeMoreArmureCarnaum() {
 
 function onAskMagieCarnaum() {
 	nbAskMagieCarnaum++;
+
+	if (nbAskMagieCarnaum == 3)
+	{
+		happyCarnaum--;
+	}
 
 	liste = ["Je suis le champion au saut de l'extrême !",
 	"Quand je saute d'une falaise de 30 métres, c'est pas moins de 4 litres de sang qu'on peut retrouver dans mon corps",
@@ -278,6 +302,10 @@ function onAskOffreCarnaum() {
 		{
 			drinkCarnaum("biere");
 			stockBiereAventurier --;
+
+			if (drunkThresholdCarnaum == drunkStepsCarnaum[0])
+			happyCarnaum++;
+
 			return "Voilà une boisson infaillible, tout comme moi. *Carnaum boit cul-sec votre choppe de bière*";
 		}
 		else {
@@ -290,6 +318,11 @@ function onAskOffreCarnaum() {
 		{
 			drinkCarnaum("vin");
 			stockVinAventurier --;
+
+
+			if (drunkThresholdCarnaum > drunkStepsCarnaum[0]-2)
+			happyCarnaum++;
+
 			return "Eh bien, tu ne te fais pas chier. *Carnaum prend votre verre de vin*";
 		}
 		else {
@@ -303,6 +336,11 @@ function onAskOffreCarnaum() {
 		{
 			drinkCarnaum("cru");
 			stockCruAventurier --;
+
+
+			if (drunkThresholdCarnaum > drunkStepsCarnaum[1])
+			happyCarnaum++;
+
 			return "Wahou ! Excellent, merci !. *Carnaum prend votre verre de cru*";
 		}
 		else {
@@ -348,15 +386,4 @@ function drinkCarnaum(boisson) {
 		default:
 			break;
 	}
-	if ( i != -1 && (drunkThresholdCarnaum - i == drunkStepsCarnaum[1] ||
-				drunkThresholdCarnaum - i == drunkStepsCarnaum[2]))
-			{
-				var nbAskAgeCarnaum = 0;
-				var nbAskArmeCarnaum = 0;
-				var nbAskArmureCarnaum = 0;
-				var nbAskMagieCarnaum = 0;
-				var nbTMMArmeCarnaum = 0;
-				var nbTMMArmureCarnaum = 0;
-				var nbTMMMagieCarnaum = 0;
-			}
 }

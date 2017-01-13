@@ -29,6 +29,7 @@ var userTopic = [
 	[["KEY", "respect"],		["VAL", 0], ["CAT","VAR"], ["TYPE","INT"]],
 	[["KEY", "force"],			["VAL", 0], ["CAT","VAR"], ["TYPE","INT"]],
 	[["KEY", "excitement"],		["VAL", 0], ["CAT","VAR"], ["TYPE","INT"]],
+	[["KEY", "gagner"],			["VAL", "Fin"], ["ONASK", onAskGagner]],
 	// REL
 	[["KEY", "relative"],		["VAL", []]] // none
 ];
@@ -50,4 +51,9 @@ function onAskBoisson()
 function onAskBourseAventurier()
 {
 	return bourseAventurier;
+}
+
+function onAskGagner()
+{
+	return false;
 }

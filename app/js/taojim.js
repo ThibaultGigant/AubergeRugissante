@@ -32,6 +32,9 @@ var taojimTopic = [
 											["WHY", "Les lapins c'est trop mignon et doux. J'aime les lapins !"]
 											],
 
+	[["KEY", "boissonZZZ"],					["VAL", "boisson"],
+											["ONASK","Si tu veux de la boisson, demande au tavernier. Et puis ramène m'en une louche hein ;)"]],
+
 	[["KEY", ["offreZZZ","boissonZZZ"]],	["VAL", "offre"],
 											["ONASK", onAskOffreTaoJim]
 											],
@@ -282,15 +285,4 @@ function drinkTaoJim(boisson) {
 		default:
 			break;
 	}
-	if ( i != -1 && (drunkThresholdTaojim - i == 6 ||
-				drunkThresholdTaojim - i == 1))
-			{
-				var nbAskAgeTaoJim = 0;
-				var nbAskArmeTaoJim = 0;
-				var nbAskArmureTaoJim = 0;
-				var nbAskMagieTaoJim = 0;
-				var nbTMMArmeTaoJim = 0;
-				var nbTMMArmureTaoJim = 0;
-				var nbTMMMagieTaoJim = 0;
-			}
 }

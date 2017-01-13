@@ -20,6 +20,10 @@ var maelisTopic = [
 											["ONASK", "T'es bigleux ou quoi ? Mon décolleté te crève pas assez les yeux ?"],
 											["WHY", "Parce que j'ai choisi d'être intelligente EN PLUS d'être forte."]
 											],
+
+	[["KEY", "boissonZZZ"],					["VAL", "boisson"],
+											["ONASK","Me regarde pas avec ces yeux avide quand tu pense à boire. Dirige toi vers le tarvernier"]],
+
 	[["KEY", "armeZZZ"],					["VAL", "arbalete"],
 											["ONASK", onAskArmeMaelis],
 											["WHY", "Les amazones, on a arrêté d'utiliser des arcs. Se couper le sein gauche ça va cinq minutes !"]
@@ -296,15 +300,4 @@ function drinkCarnaum(boisson) {
 		default:
 			break;
 	}
-	if ( i != -1 && (drunkThresholdMaelis - i == 8 ||
-				drunkThresholdMaelis - i == 4))
-			{
-				var nbAskAgeMaelis = 0;
-				var nbAskArmeMaelis = 0;
-				var nbAskArmureMaelis = 0;
-				var nbAskMagieMaelis = 0;
-				var nbTMMArmeMaelis = 0;
-				var nbTMMArmureMaelis = 0;
-				var nbTMMMagieMaelis = 0;
-			}
 }
