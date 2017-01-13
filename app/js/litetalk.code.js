@@ -2353,7 +2353,6 @@ function BOT_onWhy() {
 }
 
 
-
 function BOT_onHow() {
 	var how;
 	if(BOT_theReqAction) {
