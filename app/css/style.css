@@ -126,7 +126,9 @@ body {
     min-height: 50px;
     width: 70%;
 }
-
+p.last {
+    margin-bottom: 30px;
+}
 
 
 /*------------------------------------*\
@@ -138,8 +140,8 @@ ul, ol, dl,
     margin-bottom: 20px;
 }
 p {
+    text-align: justify;
     font-weight: bold;
-    margin-bottom: 40px;
     font-size: 15px;
 }
 ul, ol, dl {
