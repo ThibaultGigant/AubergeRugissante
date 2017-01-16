@@ -59,9 +59,33 @@ function onAskBourseAventurier()
 
 function isGameOver()
 {
-	var bool = false;
+	var couple1drunk = [];
+	var couple2drunk = [];
+	var couple1 = [];
+	var couple2 = [];
+	couple1.push("carnaum");
+	couple1drunk.push([drunkThresholdCarnaum, drunkStepsCarnaum[1]]);
+	couple2.push("lucrecia");
+	couple2drunk.push([drunkThresholdLucrecia, drunkStepsLucrecia[1]]);
+	couple1.push("maelis");
+	couple1drunk.push([drunkThresholdMaelis, 8]);
+	couple2.push("taojim");
+	couple2drunk.push([drunkThresholdTaojim, 6]);
 
+	var bool1 = false;
+	for (var i = 0; i < couple1.length; i++) {
+		if (couple1drunk[i][0] > couple1drunk[i][1])
+			bool2 = true;
+	}
+	var bool2 = false;
+	for (var i = 0; i < couple2.length; i++) {
+		if (couple2drunk[i][0] > couple2drunk[i][1])
+			bool2 = true;
+	}
 
+	if (couple1.length > 0 && couple2.length > 0)
+		return true;
+	return false;
 }
 
 function onAskGagner()
@@ -113,7 +137,8 @@ function onAskGagner()
 			    end += equipe[i] + ", ";
 			}
 			end += "et " + equipe[equipe.length-1];
-			end += ", vous avez pu braver les tréfond des gouffres les plus tumultueux, passant par moments du bon temps. Le boomerang de Lucrecia fut d'une sacrée vivacitée, et votre sens du jugement " +
+			str = (equipe.includes("taojim")) ? "Le lance-pierre de Taojim fit un joyeux carnage" : "Le boomerang de Lucrecia fut d'une sacrée vivacitée";
+			end += ", vous avez pu braver les tréfond des gouffres les plus tumultueux, passant par moments du bon temps. " + str + ", et votre sens du jugement " +
 			"a su guider le groupe vers la lumière de la gloire. En route pour la taverne !";
 
 			return end;
@@ -121,7 +146,7 @@ function onAskGagner()
 		return "Après être sortis de la taverne, avec certains coéquipiers plus ou moins saoul, vous vous êtes retrouvés devant une grotte pourprée d'horreur. Vous avez su faire preuve de " +
 			"bon sens, et avec décider de vous carapater. Allons nous remonter le moral à la taverne";
 	}
-	if (couple1.length > 0 && couple2.length > 0)
+	/*if (couple1.length > 0 && couple2.length > 0)
 	{
 		if (drunkThresholdTaojim >= 6 && 
 			drunkThresholdMaelis >= 8)
@@ -132,14 +157,15 @@ function onAskGagner()
 			    end += equipe[i] + ", ";
 			}
 			end += "et " + equipe[equipe.length-1];
-			end += ", vous avez pu braver les tréfond des gouffres les plus tumultueux, passant par moments du bon temps. Le lance-pierre de Taojim fut d'une sacrée vivacitée, et votre sens du jugement " +
+			str = (equipe.includes("taojim")) ? "Le lance-pierre de Taojim fit un joyeux carnage" : "Le boomerang de Lucrecia fut d'une sacrée vivacitée";
+			end += ", vous avez pu braver les tréfond des gouffres les plus tumultueux, passant par moments du bon temps. " + str + ", et votre sens du jugement " +
 			"a su guider le groupe vers la lumière de la gloire. En route pour la taverne !";
 
 			return end;
 		}
 		return "Après être sortis de la taverne, avec certains coéquipiers plus ou moins saoul, vous vous êtes retrouvés devant une grotte pourprée d'horreur. Vous avez su faire preuve de " +
 			"bon sens, et avec décider de vous carapater. Allons nous remonter le moral à la taverne";
-	}
+	}*/
 
 	if ((drunkThresholdCarnaum < drunkStepsCarnaum[1] && (drunkThresholdLucrecia <= drunkStepsLucrecia[1] || drunkThresholdMaelis < 8))
 		&& (drunkThresholdTaojim < 6 && (drunkThresholdLucrecia <= drunkStepsLucrecia[1] || drunkThresholdMaelis < 8)))
