@@ -2188,6 +2188,7 @@ function BOT_onCriticize() {
 }
 
 
+
 // TODO update moods
 function BOT_onGreet() {
 	var thebotobject   = eval(BOT_theBotId);

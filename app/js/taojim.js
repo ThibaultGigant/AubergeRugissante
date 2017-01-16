@@ -32,6 +32,11 @@ var taojimTopic = [
 											["WHY", "Les lapins c'est trop mignon et doux. J'aime les lapins !"]
 											],
 
+	[["KEY", ["proposeZZZ","equipeZZZ"]],						["VAL", "equipe"],
+											["ONASK", onAskEquipeTao]],
+	[["KEY", "aventurier"],						["VAL", "equipe"],
+											["ONASK", onAskEquipeTao]],
+
 	[["KEY", "boissonZZZ"],					["VAL", "boisson"],
 											["ONASK","Si tu veux de la boisson, demande au tavernier. Et puis ramène m'en une louche hein ;)"]],
 
@@ -51,9 +56,9 @@ var taojimTopic = [
 	[["KEY", "TMM"],						["VAL", tellMeMoreTaojim]],
 
 	// REL
-	[["KEY", "maelis"],						["VAL", "maelisTopic"],["CAT","REL"]],
-	[["KEY", "carnaum"],					["VAL", "carnaumTopic"],["CAT","REL"]],
-	[["KEY", "lucrecia"],					["VAL", "lucreciaTopic"],["CAT","REL"]],
+	//[["KEY", "maelis"],						["VAL", "maelisTopic"],["CAT","REL"]],
+	//[["KEY", "carnaum"],					["VAL", "carnaumTopic"],["CAT","REL"]],
+	//[["KEY", "lucrecia"],					["VAL", "lucreciaTopic"],["CAT","REL"]],
 	//[["KEY", "tavernier"],					["VAL", "tavernierTopic"],["CAT","REL"]],
 	// FEELINGS
 	[["KEY", "happiness"],		["VAL", 0.8], ["CAT","VAR"], ["TYPE","INT"]], // 7 standard feelings iniitated
@@ -80,6 +85,9 @@ var taojimTopic = [
 var nbAskAgeTaojim = 0;
 var drunkThresholdTaojim = 8;
 
+var happyTao = 0;
+
+var lastAskTao = "";
 
 //==================== Functions ==================//
 function onAskAgeTaojim()
@@ -114,6 +122,7 @@ function onAskAgeTaojim()
 
 function onAskArmeTaojim()
 {
+	lastAskTao = "arme";
 	if (drunkThresholdTaojim >= 6)
 		return "Mon Lance-pierre ne paye pas de mine, mais je l'ai depuis mon enfance.";
 	else if (drunkThresholdTaojim >= 1)
@@ -126,6 +135,7 @@ function onAskArmeTaojim()
 
 function onAskDefenseTaojim()
 {
+	lastAskTao = "defense";
 	if (drunkThresholdTaojim >= 6)
 		return "Pour me défendre, je mets toujours la robe de magicien dont j'ai hérité de mon grand-père, ce grand sage millénaire.";
 	else if (drunkThresholdTaojim >= 1)
@@ -138,6 +148,7 @@ function onAskDefenseTaojim()
 
 function onAskMagieTaojim()
 {
+	lastAskTao = "magie";
 	if (drunkThresholdTaojim >= 6)
 		return "Je sais crier comme les lapins ! C'est trop mignon les lapins !";
 	else if (drunkThresholdTaojim >= 1)
@@ -149,7 +160,10 @@ function onAskMagieTaojim()
 }
 
 function tellMeMoreTaojim() {
-	switch(BOT_theLastAttribute)
+	if (Math.random() < 0.7)
+		happyTao--;
+	//switch(BOT_theLastAttribute)
+	switch(lastAskTao)
 	{
 		case "arme":
 			return tellMeMoreArmeTaojim();
@@ -157,6 +171,8 @@ function tellMeMoreTaojim() {
 			return tellMeMoreDefenseTaojim();
 		case "magie":
 			return tellMeMoreMagieTaojim();
+		default:
+			return "demande moi quelque chose de concret avant de m'en demander plus, t'es gentil"
 	}
 }
 
@@ -217,6 +233,7 @@ function onAskOffreTaoJim() {
 		{
 			drinkTaoJim("biere");
 			stockBiereAventurier --;
+			happyTao++;
 			return "Ça rafraîchit le vestibule ! Merci l'ami. *TaoJim boit cul-sec votre choppe de bière*";
 		}
 		else {
@@ -229,6 +246,7 @@ function onAskOffreTaoJim() {
 		{
 			drinkTaoJim("vin");
 			stockVinAventurier --;
+			happyTao++;
 			return "C'est limite hein. Mais tant que ça coule bien ;) *TaoJim prend votre verre de vin*";
 		}
 		else {
@@ -240,7 +258,7 @@ function onAskOffreTaoJim() {
 	{
 		if (stockCruAventurier > 0)
 		{
-			return "Ah non, C'est trop doux pour moi ça";
+			return "Ah non merci, C'est trop doux pour moi ça";
 		}
 		else {
 			return "La prochaine fois, garde-les pour toi. *Vous n'avez pas de cru*";
@@ -252,6 +270,7 @@ function onAskOffreTaoJim() {
 		{
 			drinkTaoJim("bibine");
 			stockBibineAventurier --;
+			happyTao += 2;
 			return "Les grands esprits se rencontrent. C'est bien, comme moi t'es LeaderPrice ! *TaoJim prend votre choppe de bibine*";
 		}
 		else {
@@ -285,4 +304,16 @@ function drinkTaoJim(boisson) {
 		default:
 			break;
 	}
+}
+
+function onAskEquipeTao() {
+	if (happyTao >= 2)
+	{
+		equipe.push("taojim");
+		return "Je suis partant ! Juste le temps d'une dernière.";
+	}
+	else if (happyTao < -2) {
+		return "C'est mort, on va pas être copains.";
+	}
+	return "Attendons de faire plus ample connaissance... A moins que tu ne sois fauché";
 }

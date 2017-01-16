@@ -28,7 +28,7 @@ var tavernierTopic = [
 											["ONASK",	onAskBoissonTavernier]
 											],
 
-	[["KEY", ["faire", "je"]],				["VAL", "Objectif"],
+	[["KEY", "objectifZZZ"],				["VAL", "Objectif"],
 											["ONASK", objectif]
 											],
 
@@ -147,8 +147,7 @@ function onAskBoissonTavernier() {
 
 function objectif() {
 	str = ["Recruter en taverne, c'est d'un banal, j'en vois tout les jours. Pense donc à leur offrir deux trois verres pour apprendre à mieux les connaître. Armes, armures et compétences, le moindre soucis et c'est la mort assurée !",
-	"Eh bien me voilà ! Un petit conseil ? Eh bien fais attention",
-	"Dégustez", "Savourez" ];
+	"Eh bien me voilà ! Un petit conseil ? Eh bien fais attention à ne pas te faire avoir, sonde bien chacun des aventuriers de cette salle, détermine leurs atouts, leurs armements, et leurs compétences.	Moi personellement, je me bat à la fourchette, mais ça ne m'empêche pas de foutre des mendales au premier venu une fois sortie de la cuisine" ];
 	var card = Math.floor(Math.random() * str.length);
 	return str[card];
 	return 

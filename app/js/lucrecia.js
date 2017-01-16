@@ -38,6 +38,11 @@ var lucreciaTopic = [
 											["ONASK",	onAskMagieLucrecia]
 											],
 
+	[["KEY", ["proposeZZZ","equipeZZZ"]],						["VAL", "equipe"],
+											["ONASK", onAskEquipeLucrecia]],
+	[["KEY", "aventurier"],						["VAL", "equipe"],
+											["ONASK", onAskEquipeLucrecia]],
+
 	[["KEY", ["offreZZZ","boissonZZZ"]],	["VAL", "offre"],
 											["ONASK", onAskOffreLucrecia]
 											],
@@ -93,6 +98,9 @@ var nbTMMMagieLucrecia = 0;
 var drunkStepsLucrecia = [8,3,1];
 var drunkThresholdLucrecia = drunkStepsLucrecia[0];
 
+var happyLucrecia = 0;
+
+var lastAskLucrecia = "";
 
 //BOT_theLastAttribute
 
@@ -132,6 +140,7 @@ function genericLucrecia(liste, counter)
 
 function onAskAgeLucrecia()
 {
+	lastAskLucrecia = "";
 	nbAskAgeLucrecia++;
 
 	if (drunkThresholdLucrecia >= drunkStepsLucrecia[1])
@@ -165,6 +174,7 @@ function onAskAgeLucrecia()
 }
 
 function onAskArmeLucrecia() {
+	lastAskLucrecia = "arme";
 	nbAskArmeLucrecia++;
 
 	liste = ["Je me sens sereine quand je suis à coté de mon boomerang, tu n'imagines pas.",
@@ -176,7 +186,11 @@ function onAskArmeLucrecia() {
 }
 
 function tellMeMoreLucrecia() {
-	switch(BOT_theLastAttribute)
+	if (Math.random() < 0.7)
+		happyLucrecia--;
+
+	//switch(BOT_theLastAttribute)
+	switch(lastAskLucrecia)
 	{
 		case "arme":
 			return tellMeMoreArmeLucrecia();
@@ -205,6 +219,7 @@ function tellMeMoreArmeLucrecia() {
 }
 
 function onAskArmureLucrecia() {
+	lastAskLucrecia = "defense";
 	nbAskArmureLucrecia++;
 
 	liste = ["Je n'ai pas d'inquiétude à avoir, je porte toujours une chemise bien épaisse ! Je te la montrerai",
@@ -227,6 +242,7 @@ function tellMeMoreArmureLucrecia() {
 }
 
 function onAskMagieLucrecia() {
+	lastAskLucrecia = "magie";
 	nbAskMagieLucrecia++;
 
 	liste = ["Je parle à la flore, et elle m'écoute. C'est si agréable de se détendre au pied d'un chêne bien mou",
@@ -271,6 +287,7 @@ function onAskOffreLucrecia() {
 		{
 			drinkLucrecia("biere");
 			stockBiereAventurier --;
+			happyLucrecia++;
 			return "Commencer avec une bonne biere, c'est génial. Continuer à en boire, c'est tellement mieux. *Lucrecia boit cul-sec votre choppe de bière*";
 		}
 		else {
@@ -283,6 +300,7 @@ function onAskOffreLucrecia() {
 		{
 			drinkLucrecia("vin");
 			stockVinAventurier --;
+			happyLucrecia ++;
 			return "Je trouve que ça à l'air bon pour la santé, ce truc. *Lucrecia prend votre verre de vin*";
 		}
 		else {
@@ -294,6 +312,8 @@ function onAskOffreLucrecia() {
 	{
 		if (stockCruAventurier > 0)
 		{
+			stockCruAventurier--;
+			happyLucrecia += 2;
 			return "Le saint Graal ! Je porterai cette coupe à mes lèvres comme lors des grandes cérémonies";
 		}
 		else {
@@ -306,6 +326,7 @@ function onAskOffreLucrecia() {
 		{
 			drinkLucrecia("bibine");
 			stockBibineAventurier --;
+			happyLucrecia++;
 			return "Une petite tasse, ça pars vite *Lucrecia prend votre choppe de bibine*";
 		}
 		else {
@@ -339,4 +360,16 @@ function drinkLucrecia(boisson) {
 		default:
 			break;
 	}
+}
+
+function onAskEquipeLucrecia() {
+	if (happyLucrecia >= 2)
+	{
+		equipe.push("lucrecia");
+		return "Je suis partant ! Juste le temps d'une dernière.";
+	}
+	else if (happyLucrecia < -2) {
+		return "C'est mort, on va pas être copains.";
+	}
+	return "Attendons de faire plus ample connaissance... A moins que tu ne sois fauché";
 }

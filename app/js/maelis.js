@@ -37,6 +37,11 @@ var maelisTopic = [
 											["WHY", "Mon pouvoir s'est développé quand j'étais adolescente, enfermée dans une poubelle... Je ne sais pas trop pourquoi."]
 											],
 
+	[["KEY", ["proposeZZZ","equipeZZZ"]],						["VAL", "equipe"],
+											["ONASK", onAskEquipeMae]],
+	[["KEY", "aventurier"],						["VAL", "equipe"],
+											["ONASK", onAskEquipeMae]],
+
 	[["KEY", ["offreZZZ","boissonZZZ"]],	["VAL", "offre"],
 											["ONASK", onAskOffreMaelis]
 											],
@@ -84,6 +89,9 @@ var maelisTopic = [
 var nbAskAgeMaelis = 0;
 var drunkThresholdMaelis = 13;
 
+var happyMae = 0;
+
+lastAskMaelis = "";
 
 //==================== Functions ==================//
 function onAskAgeMaelis()
@@ -130,6 +138,7 @@ function onAskAgeMaelis()
 
 function onAskArmeMaelis()
 {
+	lastAskMaelis = "Arme";
 	if (drunkThresholdMaelis >= 8)
 		return "Je ne quitte jamais mon arbalete. C'est du bon matériel, depuis que j'ai échangé mon arc.";
 	else if (drunkThresholdMaelis >= 4)
@@ -142,6 +151,7 @@ function onAskArmeMaelis()
 
 function onAskDefenseMaelis()
 {
+	lastAskMaelis = "Defense";
 	if (drunkThresholdMaelis >= 8)
 		return "J'ai une petite armure, mais elle ne date pas d'hier";
 	else if (drunkThresholdMaelis >= 4)
@@ -154,6 +164,7 @@ function onAskDefenseMaelis()
 
 function onAskMagieMaelis()
 {
+	lastAskMaelis = "Magie";
 	if (drunkThresholdMaelis >= 8)
 		return "Je maîtrise le contrôle mental mieux que personne, mon ami !";
 	else if (drunkThresholdMaelis >= 4)
@@ -165,14 +176,23 @@ function onAskMagieMaelis()
 }
 
 function tellMeMoreMaelis() {
-	switch(BOT_theLastAttribute)
+	if (Math.random() < 0.7)
+		happyMae--;
+	//switch(BOT_theLastAttribute)
+	switch(lastAskMaelis)
 	{
-		case "arme":
+		case "Arme":
 			return tellMeMoreArmeMaelis();
-		case "defense":
+		case "Defense":
 			return tellMeMoreDefenseMaelis();
-		case "magie":
+		case "Magie":
 			return tellMeMoreMagieMaelis()
+		default:
+			var elem = document.getElementById('litetalkchatbox');
+			var s = elem.value;
+			liste = ['Quoi, "' + s + '" ?', 'Chaque question en son temps. Une tournée des crus avant de faire les vendanges ?', 'Garde tes questions pour plus tard tu veux ?'];
+			var card = Math.floor(Math.random() * liste.length);
+			return liste[card];
 	}
 }
 
@@ -234,6 +254,7 @@ function onAskOffreMaelis() {
 		{
 			drinkMaelis("biere");
 			stockBiereAventurier --;
+			happyMae++;
 			return "Moui, c'est mieux que rien. *Mealis boit cul-sec votre choppe de bière*";
 		}
 		else {
@@ -246,6 +267,7 @@ function onAskOffreMaelis() {
 		{
 			drinkMaelis("vin");
 			stockVinAventurier --;
+			happyMae++;
 			return "Ça me changera de la bière, tiens. *Maelis prend votre verre de vin*";
 		}
 		else {
@@ -259,6 +281,7 @@ function onAskOffreMaelis() {
 		{
 			drinkMaelis("cru");
 			stockCruAventurier --;
+			happyMae += 2;
 			return "Ah ! Là je dis oui ! Merci ! *Maelis prend votre verre de cru*";
 		}
 		else {
@@ -270,7 +293,6 @@ function onAskOffreMaelis() {
 		if (stockBibineAventurier > 0)
 		{
 			drinkMaelis("bibine");
-			stockBibineAventurier --;
 			return "Heu, non merci, je ne bois pas de cette eau là";
 		}
 		else {
@@ -300,4 +322,16 @@ function drinkMaelis(boisson) {
 		default:
 			break;
 	}
+}
+
+function onAskEquipeMae() {
+	if (happyMae >= 2)
+	{
+		equipe.push("maelis");
+		return "Je suis partant ! Juste le temps d'une dernière.";
+	}
+	else if (happyMae < -2) {
+		return "C'est mort, on va pas être copains.";
+	}
+	return "Attendons de faire plus ample connaissance... A moins que tu ne sois fauché";
 }

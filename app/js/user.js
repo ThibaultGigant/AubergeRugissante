@@ -15,6 +15,7 @@ var userTopic = [
 	[["KEY", "bourseZZZ"],		["VAL", "bourseAventurier"], ["ONASK", onAskBourseAventurier]],
 	[["KEY", "boissonZZZ"],		["VAL", "stock de boisson"],
 								["ONASK", onAskBoisson]],
+
 	// OPINIONS
 	[["KEY", "judgement"],		["VAL", []], ["CAT","VAR"], ["ONASK",BOT_printJudgementList]], // 6 standard opinions 
 	[["KEY", "preference"],		["VAL", []], ["CAT","VAR"], ["ONASK",BOT_printPreferenceList]], 
@@ -56,30 +57,55 @@ function onAskBourseAventurier()
 	return bourseAventurier;
 }
 
+function isGameOver()
+{
+	var bool = false;
+
+
+}
+
 function onAskGagner()
 {
-	var couple1 = 0;
-	var couple2 = 0;
+	var couple1drunk = [];
+	var couple2drunk = [];
+	var couple1 = [];
+	var couple2 = [];
 	if (equipe.includes("carnaum"))
 	{
-		couple1 ++;
+		couple1.push("carnaum");
+		couple1drunk.push([drunkThresholdCarnaum, drunkStepsCarnaum[1]]);
 	}
 	if (equipe.includes("lucrecia"))
 	{
-		couple1 ++;
+		couple2.push("lucrecia");
+		couple2drunk.push([drunkThresholdLucrecia, drunkStepsLucrecia[1]]);
 	}
 	if (equipe.includes("maelis"))
 	{
-		couple2 ++;
+		couple1.push("maelis");
+		couple1drunk.push([drunkThresholdMaelis, 8]);
 	}
 	if (equipe.includes("taojim"))
 	{
-		couple2 ++;
+		couple2.push("taojim");
+		couple2drunk.push([drunkThresholdTaojim, 6]);
 	}
-	if (couple1 == 2)
+
+	var bool1 = false;
+	for (var i = 0; i < couple1.length; i++) {
+		if (couple1drunk[i][0] > couple1drunk[i][1])
+			bool2 = true;
+	}
+	var bool2 = false;
+	for (var i = 0; i < couple2.length; i++) {
+		if (couple2drunk[i][0] > couple2drunk[i][1])
+			bool2 = true;
+	}
+
+	if (couple1.length > 0 && couple2.length > 0)
 	{
-		if (drunkThresholdCarnaum >= drunkStepsCarnaum[1] && 
-			drunkThresholdLucrecia >= drunkStepsLucrecia[1])
+
+		if (bool1 && bool2)
 		{
 			end = "Avec";
 
@@ -95,7 +121,7 @@ function onAskGagner()
 		return "Après être sortis de la taverne, avec certains coéquipiers plus ou moins saoul, vous vous êtes retrouvés devant une grotte pourprée d'horreur. Vous avez su faire preuve de " +
 			"bon sens, et avec décider de vous carapater. Allons nous remonter le moral à la taverne";
 	}
-	if (couple1 == 1)
+	if (couple1.length > 0 && couple2.length > 0)
 	{
 		if (drunkThresholdTaojim >= 6 && 
 			drunkThresholdMaelis >= 8)
@@ -114,5 +140,8 @@ function onAskGagner()
 		return "Après être sortis de la taverne, avec certains coéquipiers plus ou moins saoul, vous vous êtes retrouvés devant une grotte pourprée d'horreur. Vous avez su faire preuve de " +
 			"bon sens, et avec décider de vous carapater. Allons nous remonter le moral à la taverne";
 	}
+
+	if ((drunkThresholdCarnaum < drunkStepsCarnaum[1] && (drunkThresholdLucrecia <= drunkStepsLucrecia[1] || drunkThresholdMaelis < 8))
+		&& (drunkThresholdTaojim < 6 && (drunkThresholdLucrecia <= drunkStepsLucrecia[1] || drunkThresholdMaelis < 8)))
 	return "Une fois de plus, vous n'avez pas su trouver santiags à vos pieds, et êtes retourné bredouille. Une bonne soupée vous attend au chaud.";
 }
