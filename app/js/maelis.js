@@ -54,9 +54,9 @@ var maelisTopic = [
 
 	// REL
 
-	[["KEY", "carnaum"],				["VAL", "carnaumTopic"],["CAT","REL"]],
-	[["KEY", "taojim"],					["VAL", "taojimTopic"],["CAT","REL"]],
-	[["KEY", "lucrecia"],				["VAL", "lucreciaTopic"],["CAT","REL"]],
+	//[["KEY", "carnaum"],				["VAL", "carnaumTopic"],["CAT","REL"]],
+	//[["KEY", "taojim"],					["VAL", "taojimTopic"],["CAT","REL"]],
+	//[["KEY", "lucrecia"],				["VAL", "lucreciaTopic"],["CAT","REL"]],
 	//[["KEY", "tavernier"],				["VAL", "tavernierTopic"],["CAT","REL"]],
 	
 	// FEELINGS

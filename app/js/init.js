@@ -16,6 +16,7 @@ BOT_theUserTopicId	= "userTopic";		// sets topic of current user id
 var drunk_sentences = ["Zzzzz", "Heuu...", "bwork", "Hic!", "Gnouf", "Slurp", "Gnalaacool"];
 
 var BOT_SynonymList	=  [
+	["_a proposeZZZ",	["propose", "tu veux", "veux-tu", "vous prendrez", "tu prendra", "veux tu", "vous voulez", "voulez-vous", "voulez vous", "voudrez", "voudrais", "aimerais", "je veux que"]],
 	["_a TMM",			["dites m en plus", "dis m en plus", "et donc", "et alors", "expliquez", "explique", "quoi d autre", "comment", "c est quoi"]],
 	["quêteZZZ",		["quete","voyage", "pepriple", "aventure", "quête", "expédition", "vadrouille", "chasse aux monstres",
 						"quetes","voyages", "pepriples", "aventures", "quêtes", "expéditions", "vadrouilles", "chasses aux monstres"]],
@@ -25,7 +26,7 @@ var BOT_SynonymList	=  [
 	["madame",			["madame", "mm", "mme"]],
 	["mademoiselle",	["mademoiselle","mlle.", "mlle"]],
 	["saoulZZZ",		["saoul","bourre", "torche", "rond", "gris"]],
-	["_a",				["rappelez moi", "je veux", "je voudrais", "donnez moi", "passez moi","combien", "quels", "quel", "quelles", "quelle", "quoi", "qu", "que fais", "que faites", "qui","c est un", "c est une", "c est de", "c est du"]],
+	["_a",				["parle moi", "rappelez moi", "je veux", "je voudrais", "donnez moi", "passez moi","combien", "quels", "quel", "quelles", "quelle", "quoi", "qu", "que fais", "que faites", "qui","c est un", "c est une", "c est de", "c est du"]],
 	["_g",				["bonjour", "salut", "hola", "heho", "hohe", "eho", "ohe", "ca va"]],
 	["boissonZZZ",		["beuvrie", "boire","carte","boisson","boissons","biere", "choppe", "cru", "tonnelet", "tonneau", "vin", "gnôle", "binouze", "pinte", "litre", "bibine"]],
 	["competenceZZZ",	["pouvoir","pouvoirs","competences","competence", "magie", "maniement", "maitrise","boule de feu", "psychique", "aider", "sais faire","capacites","capacite"]],
@@ -34,17 +35,16 @@ var BOT_SynonymList	=  [
 	["armeZZZ",			["arme", "epee", "force", "hache", "arbalete", "arc",
 						"armes", "epees", "forces", "haches", "arbaletes", "arcs","combat"]],
 	["bourseZZZ",		["bourse", "argent", "des sous", "de sous", "piece", "pognon", "monaie"]],
-	["_a proposeZZZ",	["propose", "tu veux", "veux-tu", "vous prendrez", "tu prendra", "veux tu", "vous voulez", "voulez-vous", "voulez vous", "voudrez"]],
 	["_a offreZZZ",		["offre", "tiens", "Tiens", "tien", "Tien", "tennez", "Tennez", "prends", "Prends", "prennez", "Prennez"]],
-	["name",			["nom", "prenom", "appelle"]],
-	["equipeZZZ",		["equipe", "troupe", "compagnie", "confrerie"]],
-	["",				["la", "de", "le", "du", "un", "une", "coute", "coûte", "reste", "t-il"]]
+	["name",			["nom", "prenom", "appelle", "toi"]],
+	["equipeZZZ",		["equipe", "troupe", "compagnie", "confrerie", "queteZZZ"]],
+	["",				["la", "de", "le", "du", "un", "une", "coute", "coûte", "reste", "t-il", "donc"]]
 
 	];
 BOT_basicSynonymList = BOT_basicSynonymList.concat(BOT_SynonymList);
 
 var BOT_pluralList = [
-		"voudrais","gars","maelis", "sous"];
+		"voudrais","gars","maelis", "sous", "aimerais"];
 
 BOT_pluralExceptionList = BOT_pluralExceptionList.concat(BOT_pluralList);
 
@@ -79,7 +79,7 @@ function COUNTER_frameBot(botid,borderdata) {
 	if(elem) { elem.style.border = borderdata; }
 }
 
-//Bonjour, Je recherche des coéquipiers pour faire équipe
+// Bonjour, Je recherche des coéquipiers pour faire équipe
 // J'aimerais que tu rejoignes mon equipe
 // Parle moi donc de toi (alors)
 // Qu'est ce que tu fais la ?
@@ -88,3 +88,6 @@ function COUNTER_frameBot(botid,borderdata) {
 
 // TMM -> sinon OnAsk
 // quelle est ta technique de défense ?
+
+// Je veux que
+// Serais-tu intéressé de rejoindre mon équipe

@@ -57,9 +57,9 @@ var lucreciaTopic = [
 	// Tell me more
 	[["KEY", "TMM"],						["VAL", tellMeMoreLucrecia]],
 	// REL
-	[["KEY", "maelis"],					["VAL", "maelisTopic"],["CAT","REL"]],
-	[["KEY", "taojim"],					["VAL", "taojimTopic"],["CAT","REL"]],
-	[["KEY", "carnaum"],				["VAL", "carnaumTopic"],["CAT","REL"]],
+	//[["KEY", "maelis"],					["VAL", "maelisTopic"],["CAT","REL"]],
+	//[["KEY", "taojim"],					["VAL", "taojimTopic"],["CAT","REL"]],
+	//[["KEY", "carnaum"],				["VAL", "carnaumTopic"],["CAT","REL"]],
 	//[["KEY", "tavernier"],				["VAL", "tavernierTopic"],["CAT","REL"]],
 	// FEELINGS
 	[["KEY", "happiness"],		["VAL", 0.8], ["CAT","VAR"], ["TYPE","INT"]], // 7 standard feelings iniitated

@@ -28,14 +28,18 @@ var tavernierTopic = [
 											["ONASK",	onAskBoissonTavernier]
 											],
 
+	[["KEY", ["faire", "je"]],				["VAL", "Objectif"],
+											["ONASK", objectif]
+											],
+
 	// Eau
 	[["KEY", "eau"],						["VAL", "NON"],
 											["ONASK", "J'ai entendu \"de l'eau\" !? Pas de ça ici, vous m'entendez !?"]],
 
 	// REL
-	[["KEY", "maelis"],						["VAL", "maelisTopic"],["CAT","REL"]],
-	[["KEY", "taojim"],						["VAL", "taojimTopic"],["CAT","REL"]],
-	[["KEY", "lucrecia"],					["VAL", "lucreciaTopic"],["CAT","REL"]],
+	//[["KEY", "maelis"],						["VAL", "maelisTopic"],["CAT","REL"]],
+	//[["KEY", "taojim"],						["VAL", "taojimTopic"],["CAT","REL"]],
+	//[["KEY", "lucrecia"],					["VAL", "lucreciaTopic"],["CAT","REL"]],
 	//[["KEY", "tavernier"],				["VAL", "tavernierTopic"],["CAT","REL"]],
 	// FEELINGS
 	[["KEY", "happiness"],					["VAL", 0.8], ["CAT","VAR"], ["TYPE","INT"]], // 7 standard feelings iniitated
@@ -139,4 +143,13 @@ function onAskBoissonTavernier() {
 	"Avec le temps, elle s'est émoussée... comme mon verre..."];
 
 	return genericTavernier(liste, nbAskArmeTavernier);*/
+}
+
+function objectif() {
+	str = ["Recruter en taverne, c'est d'un banal, j'en vois tout les jours. Pense donc à leur offrir deux trois verres pour apprendre à mieux les connaître. Armes, armures et compétences, le moindre soucis et c'est la mort assurée !",
+	"Eh bien me voilà ! Un petit conseil ? Eh bien fais attention",
+	"Dégustez", "Savourez" ];
+	var card = Math.floor(Math.random() * str.length);
+	return str[card];
+	return 
 }

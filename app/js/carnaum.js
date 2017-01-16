@@ -17,7 +17,7 @@ var carnaumTopic = [
 											["WHY","I was born thirty years ago"]
 											],
 	[["KEY", "gender"],						["VAL", "male"],
-											["ONASK", function(s) { return ((s == "male") ? "I am proud to be a man!" : "Just a woman") }]
+											["ONASK", "Chez les mâles, je suis "]
 											],
 
 	[["KEY", "boissonZZZ"],					["VAL", "boisson"],
@@ -64,9 +64,9 @@ var carnaumTopic = [
 	[["KEY", "TMM"],						["VAL", tellMeMoreCarnaum]],
 
 	// REL
-	[["KEY", "maelis"],						["VAL", "maelisTopic"],["CAT","REL"]],
-	[["KEY", "taojim"],						["VAL", "taojimTopic"],["CAT","REL"]],
-	[["KEY", "lucrecia"],					["VAL", "lucreciaTopic"],["CAT","REL"]],
+	//[["KEY", "maelis"],						["VAL", "maelisTopic"],["CAT","REL"]],
+	//[["KEY", "taojim"],						["VAL", "taojimTopic"],["CAT","REL"]],
+	//[["KEY", "lucrecia"],					["VAL", "lucreciaTopic"],["CAT","REL"]],
 	//[["KEY", "tavernier"],				["VAL", "tavernierTopic"],["CAT","REL"]],
 	// FEELINGS
 	[["KEY", "happiness"],					["VAL", 0.8], ["CAT","VAR"], ["TYPE","INT"]], // 7 standard feelings iniitated
