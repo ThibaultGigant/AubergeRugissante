@@ -9,11 +9,10 @@ var tavernierTopic = [
 	[["KEY", "_exec"],						["VAL", ["userTopic"]]], // try
 	[["KEY", "type"],						["VAL", ["Humain aux dents lisses","Humain"]]],
 	[["KEY", "name"],						["VAL", "Tavernier"],   				
-											["ONASK","Je m'appelle Tavernier ! Tu peux te le tatouer sur la peau, si tu veux devenir plus populaire"]
+											["ONASK","Je suis le tenancier du bar !"]
 											],
 	[["KEY", "age"],						["VAL", "?"],
-											["ONASK", "Je ne suis pas là pour faire causette, vous m'excuserez j'ai du travail"], 
-											["WHY","I was born thirty years ago"]
+											["ONASK", "Je ne suis pas là pour faire causette, vous m'excuserez j'ai du travail"]
 											],
 	[["KEY", "gender"],						["VAL", "male"],
 											["ONASK", function(s) { return ((s == "male") ? "I am proud to be a man!" : "Just a woman") }]
@@ -21,6 +20,11 @@ var tavernierTopic = [
 
 	// Arme
 	[["KEY", "boissonZZZ"],					["VAL",		"Tarverne"],
+											["ONASK",	onAskBoissonTavernier]
+											],
+
+	// Arme
+	[["KEY", "proposeZZZ"],					["VAL",		"Tarverne"],
 											["ONASK",	onAskBoissonTavernier]
 											],
 
@@ -117,7 +121,10 @@ function onAskBoissonTavernier() {
 		}
 	}
 	else {
-		return "Je ne suis pas certain d'avoir saisi..."
+		str = ["J'arrive ! Alors, une bière c'est 7 ronds, un verre de vin ça vous en fera 13, 5 pour une bibine et 17 pour le cru de la maison",
+		"Je suis à vous l'ami ! Ça sera 13 rond pour du vin, 17 pour le cru de la maison, 5 pour une bibine et puis enfin 7 pour une bière" ];
+		var card = Math.floor(Math.random() * str.length);
+		return str[card];
 	}
 
 	str = ["Et voilà ! une " + boisson,

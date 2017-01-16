@@ -232,7 +232,7 @@ function onAskOffreMaelis() {
 	{
 		if (stockBiereAventurier >= 0)
 		{
-			drinkCarnaum("biere");
+			drinkMaelis("biere");
 			stockBiereAventurier --;
 			return "Moui, c'est mieux que rien. *Mealis boit cul-sec votre choppe de bière*";
 		}
@@ -244,7 +244,7 @@ function onAskOffreMaelis() {
 	{
 		if (stockVinAventurier >= 0)
 		{
-			drinkCarnaum("vin");
+			drinkMaelis("vin");
 			stockVinAventurier --;
 			return "Ça me changera de la bière, tiens. *Maelis prend votre verre de vin*";
 		}
@@ -257,9 +257,9 @@ function onAskOffreMaelis() {
 	{
 		if (stockCruAventurier > 0)
 		{
-			drinkCarnaum("cru");
+			drinkMaelis("cru");
 			stockCruAventurier --;
-			return "Ah ! Là je dis oui ! Merci ! *Carnaum prend votre verre de cru*";
+			return "Ah ! Là je dis oui ! Merci ! *Maelis prend votre verre de cru*";
 		}
 		else {
 			return "Pourauoi donner tant de faux espoirs ? *Vous n'avez pas de cru*"
@@ -269,7 +269,7 @@ function onAskOffreMaelis() {
 	{
 		if (stockBibineAventurier > 0)
 		{
-			drinkCarnaum("bibine");
+			drinkMaelis("bibine");
 			stockBibineAventurier --;
 			return "Heu, non merci, je ne bois pas de cette eau là";
 		}
@@ -282,7 +282,7 @@ function onAskOffreMaelis() {
 	}
 }
 
-function drinkCarnaum(boisson) {
+function drinkMaelis(boisson) {
 	var i = -1;
 	switch (boisson) {
 		case "biere":

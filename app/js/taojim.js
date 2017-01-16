@@ -156,7 +156,7 @@ function tellMeMoreTaojim() {
 		case "defense":
 			return tellMeMoreDefenseTaojim();
 		case "magie":
-			return tellMeMoreMagieTaojim()
+			return tellMeMoreMagieTaojim();
 	}
 }
 
@@ -220,7 +220,7 @@ function onAskOffreTaoJim() {
 			return "Ça rafraîchit le vestibule ! Merci l'ami. *TaoJim boit cul-sec votre choppe de bière*";
 		}
 		else {
-			return "Ah, tu me donne soif. *Vous n'avez pas de bière*"
+			return "Ah, tu me donne soif. *Vous n'avez pas de bière*";
 		}
 	}
 	else if (s.includes("vin"))
@@ -232,7 +232,7 @@ function onAskOffreTaoJim() {
 			return "C'est limite hein. Mais tant que ça coule bien ;) *TaoJim prend votre verre de vin*";
 		}
 		else {
-			return "C'est pas un drame, tu peux aller m'acheter autre chose ;). *Vous n'avez pas de vin*"
+			return "C'est pas un drame, tu peux aller m'acheter autre chose ;). *Vous n'avez pas de vin*";
 		}
 
 	}
@@ -243,7 +243,7 @@ function onAskOffreTaoJim() {
 			return "Ah non, C'est trop doux pour moi ça";
 		}
 		else {
-			return "La prochaine fois, garde-les pour toi. *Vous n'avez pas de cru*"
+			return "La prochaine fois, garde-les pour toi. *Vous n'avez pas de cru*";
 		}
 	}
 	else if (s.includes("bibine"))
@@ -255,11 +255,11 @@ function onAskOffreTaoJim() {
 			return "Les grands esprits se rencontrent. C'est bien, comme moi t'es LeaderPrice ! *TaoJim prend votre choppe de bibine*";
 		}
 		else {
-			return "Reviens me dès que tu en as de trop ;) *Vous n'avez pas de bibine*"
+			return "Reviens me dès que tu en as de trop ;) *Vous n'avez pas de bibine*";
 		}
 	}
 	else {
-		return "J'ai pas saisi. Qu'est-ce qu'il y a ?"
+		return "J'ai pas saisi. Qu'est-ce qu'il y a ?";
 	}
 }
 

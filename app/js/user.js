@@ -4,6 +4,7 @@ var userTopic = [
 	[["KEY", "_class"],			["VAL", "user"]],
 	[["KEY", "_reference"],		["VAL", ["j", "je","moi", "me", "aventurier"]]],
 	[["KEY", "type"],			["VAL", ["person"]]],
+	[["KEY", "je suis"],		["VAL"]]
 	// VAR 
 	[["KEY", "name"],			["VAL", "User"], ["CAT","VAR"],
 								["WHY", "because I don't know it yet"]
@@ -40,6 +41,8 @@ var stockBiereAventurier = 0;
 var stockBibineAventurier = 0;
 var bourseAventurier = 100;
 
+var equipe = [];
+
 function onAskBoisson()
 {
 	return "Il me reste " + stockBiereAventurier + " bière" + (stockBiereAventurier>1?"s":"") + ", "
@@ -55,5 +58,61 @@ function onAskBourseAventurier()
 
 function onAskGagner()
 {
-	return false;
+	var couple1 = 0;
+	var couple2 = 0;
+	if (equipe.includes("carnaum"))
+	{
+		couple1 ++;
+	}
+	if (equipe.includes("lucrecia"))
+	{
+		couple1 ++;
+	}
+	if (equipe.includes("maelis"))
+	{
+		couple2 ++;
+	}
+	if (equipe.includes("taojim"))
+	{
+		couple2 ++;
+	}
+	if (couple1 == 2)
+	{
+		if (drunkThresholdCarnaum >= drunkStepsCarnaum[1] && 
+			drunkThresholdLucrecia >= drunkStepsLucrecia[1])
+		{
+			end = "Avec";
+
+			for (i = 0; i < equipe.length-1; i++) { 
+			    end += equipe[i] + ", ";
+			}
+			end += "et " + equipe[equipe.length-1];
+			end += ", vous avez pu braver les tréfond des gouffres les plus tumultueux, passant par moments du bon temps. Le boomerang de Lucrecia fut d'une sacrée vivacitée, et votre sens du jugement " +
+			"a su guider le groupe vers la lumière de la gloire. En route pour la taverne !";
+
+			return end;
+		}
+		return "Après être sortis de la taverne, avec certains coéquipiers plus ou moins saoul, vous vous êtes retrouvés devant une grotte pourprée d'horreur. Vous avez su faire preuve de " +
+			"bon sens, et avec décider de vous carapater. Allons nous remonter le moral à la taverne";
+	}
+	if (couple1 == 1)
+	{
+		if (drunkThresholdTaojim >= 6 && 
+			drunkThresholdMaelis >= 8)
+		{
+			end = "Avec";
+
+			for (i = 0; i < equipe.length-1; i++) { 
+			    end += equipe[i] + ", ";
+			}
+			end += "et " + equipe[equipe.length-1];
+			end += ", vous avez pu braver les tréfond des gouffres les plus tumultueux, passant par moments du bon temps. Le lance-pierre de Taojim fut d'une sacrée vivacitée, et votre sens du jugement " +
+			"a su guider le groupe vers la lumière de la gloire. En route pour la taverne !";
+
+			return end;
+		}
+		return "Après être sortis de la taverne, avec certains coéquipiers plus ou moins saoul, vous vous êtes retrouvés devant une grotte pourprée d'horreur. Vous avez su faire preuve de " +
+			"bon sens, et avec décider de vous carapater. Allons nous remonter le moral à la taverne";
+	}
+	return "Une fois de plus, vous n'avez pas su trouver santiags à vos pieds, et êtes retourné bredouille. Une bonne soupée vous attend au chaud.";
 }

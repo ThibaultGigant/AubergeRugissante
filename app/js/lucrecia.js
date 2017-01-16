@@ -7,7 +7,8 @@ var lucreciaTopic = [
 	[["KEY", "_read"],						["VAL", ["userTopic", "maelisTopic", "carnaumTopic", "taojimTopic", "tavernierTopic"]]],
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],
 	[["KEY", "_exec"],						["VAL", ["userTopic"]]], // try
-	[["KEY", "type"],						["VAL", ["Humain aux dents lisses","Humain"]]],
+	[["KEY", "type"],						["VAL", ["Humain aux dents lisses","Humain"]],
+											["ONASK", "Je suis un humain aux dents lisses. Détail qu'il serait malheureux d'omettre."]],
 	[["KEY", "name"],						["VAL", "Lucrecia"],   				
 											["ONASK","Je m'appelle Lucrecia ! Tu peux te le tatouer sur la peau, si tu veux devenir plus populaire"]
 											],
@@ -273,7 +274,7 @@ function onAskOffreLucrecia() {
 			return "Commencer avec une bonne biere, c'est génial. Continuer à en boire, c'est tellement mieux. *Lucrecia boit cul-sec votre choppe de bière*";
 		}
 		else {
-			return "Mieux vaut attendre la soif, on n'en ai que plus récompensé au moment de se remplir la panse de bière. *Vous n'avez pas de bière*"
+			return "Mieux vaut attendre la soif, on n'en ai que plus récompensé au moment de se remplir la panse de bière. *Vous n'avez pas de bière*";
 		}
 	}
 	else if (s.includes("vin"))
@@ -285,7 +286,7 @@ function onAskOffreLucrecia() {
 			return "Je trouve que ça à l'air bon pour la santé, ce truc. *Lucrecia prend votre verre de vin*";
 		}
 		else {
-			return "A chaque fois que j'en bois, ça me transporte. Tu m'as donné des illusions, et ça a tendance à m'irriter. *Vous n'avez pas de vin*"
+			return "A chaque fois que j'en bois, ça me transporte. Tu m'as donné des illusions, et ça a tendance à m'irriter. *Vous n'avez pas de vin*";
 		}
 
 	}
@@ -296,7 +297,7 @@ function onAskOffreLucrecia() {
 			return "Le saint Graal ! Je porterai cette coupe à mes lèvres comme lors des grandes cérémonies";
 		}
 		else {
-			return "Dommage pour toi, tu as raté l'occasion de faire une bonne action. *Vous n'avez pas de cru*"
+			return "Dommage pour toi, tu as raté l'occasion de faire une bonne action. *Vous n'avez pas de cru*";
 		}
 	}
 	else if (s.includes("bibine"))
@@ -308,11 +309,11 @@ function onAskOffreLucrecia() {
 			return "Une petite tasse, ça pars vite *Lucrecia prend votre choppe de bibine*";
 		}
 		else {
-			return "C'est pas comme si que je ratais grand chose. *Vous n'avez pas de bibine*"
+			return "C'est pas comme si que je ratais grand chose. *Vous n'avez pas de bibine*";
 		}
 	}
 	else {
-		return "J'ai pas saisi. Qu'est-ce qu'il y a ?"
+		return "J'ai pas saisi. Qu'est-ce qu'il y a ?";
 	}
 }
 
@@ -320,7 +321,7 @@ function drinkLucrecia(boisson) {
 	var i = -1;
 	switch (boisson) {
 		case "biere":
-			i = 1
+			i = 1;
 			drunkThresholdLucrecia -= 1;
 			break;
 		case "vin":
