@@ -8,7 +8,7 @@ var taojimTopic = [
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],
 	[["KEY", "_exec"],						["VAL", ["userTopic"]]], // try
 	[["KEY", "type"],						["VAL", ["Mi-Orc","Mi-Humain"]]],
-	[["KEY", "name"],						["VAL", "Tao Jim"],   				
+	[["KEY", "name"],						["VAL", "Tao Jim"],
 											["ONASK","Je m'appelle Tao Jim ! Pourquoi ? T'as un problème avec les noms composés ? Parlons d'autre chose, tu veux bien !"]
 											],
 	[["KEY", "age"],						["VAL", 164],
@@ -69,10 +69,10 @@ var taojimTopic = [
 	[["KEY", "force"],			["VAL", 0], ["CAT","VAR"], ["TYPE","INT"]],
 	[["KEY", "excitement"],		["VAL", 0], ["CAT","VAR"], ["TYPE","INT"]],
 	// PREFS
-	[["KEY", "preference"],		["VAL", [["taojimTopic","name"]]], ["CAT","VAR"], 	["ONASK",BOT_printPreferenceList]],  
-	[["KEY", "distaste"],		["VAL", [["carnaumTopic","name"]]],  ["CAT","VAR"], 	["ONASK",BOT_printDistasteList]], 
-	[["KEY", "suggestion"],		["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printSuggestionList]], 
-	[["KEY", "intention"],		["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printIntentionList]],  
+	[["KEY", "preference"],		["VAL", [["taojimTopic","name"]]], ["CAT","VAR"], 	["ONASK",BOT_printPreferenceList]],
+	[["KEY", "distaste"],		["VAL", [["carnaumTopic","name"]]],  ["CAT","VAR"], 	["ONASK",BOT_printDistasteList]],
+	[["KEY", "suggestion"],		["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printSuggestionList]],
+	[["KEY", "intention"],		["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printIntentionList]],
 	// FUNC
 	[["KEY", "action"],			["VAL", ["compute"]]],
 	[["KEY", "compute"],		["VAL", "func_compute"], ["CAT","ACT"],
@@ -84,6 +84,7 @@ var taojimTopic = [
 // ===================== Variables =====================//
 var nbAskAgeTaojim = 0;
 var drunkThresholdTaojim = 8;
+var drunkStepsTaojim = [8,6,1];
 
 var happyTao = 0;
 
@@ -94,7 +95,7 @@ function onAskAgeTaojim()
 {
 	nbAskAgeTaojim++;
 
-	if (drunkThresholdTaojim >= 6)
+	if (drunkThresholdTaojim >= drunkStepsTaojim[1])
 	{
 		if (nbAskAgeTaojim < 3)
 		{
@@ -105,7 +106,7 @@ function onAskAgeTaojim()
 			return  "Attention à ne pas froisser tes aïeux !";
 		}
 	}
-	else if (drunkThresholdTaojim >= 1)
+	else if (drunkThresholdTaojim >= drunkStepsTaojim[2])
 	{
 		if (nbAskAgeTaojim < 2)
 		{
@@ -123,9 +124,9 @@ function onAskAgeTaojim()
 function onAskArmeTaojim()
 {
 	lastAskTao = "arme";
-	if (drunkThresholdTaojim >= 6)
+	if (drunkThresholdTaojim >= drunkStepsTaojim[1])
 		return "Mon Lance-pierre ne paye pas de mine, mais je l'ai depuis mon enfance.";
-	else if (drunkThresholdTaojim >= 1)
+	else if (drunkThresholdTaojim >= drunkStepsTaojim[2])
 		return "J'ai un beau lance-pierre qui tire loin !";
 	else if (drunkThresholdTaojim > 0)
 		return "L'autre folle avec son armure qui brille, elle a dit qu'elle allait contrôler mon esprit puisque je suis presque un animal. Dommage pour elle que son pouvoir ne fonctionne que sur beaucoup plus petit qu'un humain !";
@@ -136,9 +137,9 @@ function onAskArmeTaojim()
 function onAskDefenseTaojim()
 {
 	lastAskTao = "defense";
-	if (drunkThresholdTaojim >= 6)
+	if (drunkThresholdTaojim >= drunkStepsTaojim[1])
 		return "Pour me défendre, je mets toujours la robe de magicien dont j'ai hérité de mon grand-père, ce grand sage millénaire.";
-	else if (drunkThresholdTaojim >= 1)
+	else if (drunkThresholdTaojim >= drunkStepsTaojim[2])
 		return "Ma robe protectrice me rappelle mon grand-père mort il y a peu, au doux âge de 1385 ans :'(";
 	else if (drunkThresholdTaojim > 0)
 		return "L'autre guignol avec sa côte de maille, j'ai essayé de le frapper pour lui faire fermer son clapet, mais bon sang, c'est du lourd sa protection !";
@@ -149,9 +150,9 @@ function onAskDefenseTaojim()
 function onAskMagieTaojim()
 {
 	lastAskTao = "magie";
-	if (drunkThresholdTaojim >= 6)
+	if (drunkThresholdTaojim >= drunkStepsTaojim[1])
 		return "Je sais crier comme les lapins ! C'est trop mignon les lapins !";
-	else if (drunkThresholdTaojim >= 1)
+	else if (drunkThresholdTaojim >= drunkStepsTaojim[2])
 		return "Mon cri de lapin est connu dans le monde entier pour sa douceur.";
 	else if (drunkThresholdTaojim > 0)
 		return "Hey, si j'étais toi, je n'irais pas trop près de la fille en vert, quand elle parle aux plantes, celles-ci font tout ce qu'elle veut, j'ai failli être étranglé par des lianes la dernière fois !";
@@ -177,9 +178,9 @@ function tellMeMoreTaojim() {
 }
 
 function tellMeMoreArmeTaojim() {
-	if (drunkThresholdTaojim >= 6)
+	if (drunkThresholdTaojim >= drunkStepsTaojim[1])
 		return "J'ai effectivement quelques avantages avec mon lance-pierre, mais ce n'est pas ça qui ferait la différence.";
-	else if (drunkThresholdTaojim >= 1)
+	else if (drunkThresholdTaojim >= drunkStepsTaojim[2])
 		return "Bon, j'ai un Lance-pierre et je remplace peut-être les pierres par des billes de plomb enflammées. Et puis avec ma force de semi-orc, c'est souvent mortel. Mais c'est pas de ma faute si vous êtes fragiles, les humains !";
 	else if (drunkThresholdTaojim > 0)
 		return "Oulaaa j'ai vu tirer cette fille avec une arbalette il y a pas longtemps. Elle a pas touché une seule cible ! Huhu ^^";
@@ -188,9 +189,9 @@ function tellMeMoreArmeTaojim() {
 }
 
 function tellMeMoreDefenseTaojim() {
-	if (drunkThresholdTaojim >= 6)
+	if (drunkThresholdTaojim >= drunkStepsTaojim[1])
 		return "Mon grand-père était le plus grand magicien de tous les temps ! J'ai sa robe, ça devrait en dire long sur mes capacités !";
-	else if (drunkThresholdTaojim >= 1)
+	else if (drunkThresholdTaojim >= drunkStepsTaojim[2])
 		return "C'est vrai que ma robe protectrice a beau venir de mon aïeul magicien, elle n'en est pas moins normale... Mais elle est magnifique, et puis elle me fait de jolies fesses, tu trouves pas ?";
 	else if (drunkThresholdTaojim > 0)
 		return "Ils m'entraînent, au bout de la nuit ! Les démons de minuit !";
@@ -199,9 +200,9 @@ function tellMeMoreDefenseTaojim() {
 }
 
 function tellMeMoreMagieTaojim() {
-	if (drunkThresholdTaojim >= 6)
+	if (drunkThresholdTaojim >= drunkStepsTaojim[1])
 		return "Lorsque j'imite les lapins, je ne sais pas trop pourquoi, mais tout le monde fuit le village... C'est dommage !";
-	else if (drunkThresholdTaojim >= 1)
+	else if (drunkThresholdTaojim >= drunkStepsTaojim[2])
 		return "Mon imitation du cri des lapins est si parfaite que j'ai pu faire ami ami avec un lapin que j'aime beaucoup. Il fait deux fois ma taille et il lui est arrivé de ne pas savoir s'arrêter pour me protéger, mais il m'adore...";
 	else if (drunkThresholdTaojim > 0)
 		return "Là-bas, au Connemara, On sait tout le prix de la guerre. Là-bas, au Connemara !!!!";
@@ -307,13 +308,26 @@ function drinkTaoJim(boisson) {
 }
 
 function onAskEquipeTao() {
+	var str;
 	if (happyTao >= 2)
 	{
 		equipe.push("taojim");
-		return "Je suis partant ! Juste le temps d'une dernière.";
+		str = "Je suis partant ! Juste le temps d'une dernière.";
 	}
 	else if (happyTao < -2) {
-		return "C'est mort, on va pas être copains.";
+		str = "C'est mort, on va pas être copains.";
 	}
-	return "Attendons de faire plus ample connaissance... A moins que tu ne sois fauché";
+	else {
+		str = "Attendons de faire plus ample connaissance... A moins que tu ne sois fauché";
+	}
+
+	if (isGameWon())
+	{
+		return str + onAskGagner();
+	}
+	if (isGameLost())
+	{
+		return str + onAskPerdre();
+	}
+	return str;
 }

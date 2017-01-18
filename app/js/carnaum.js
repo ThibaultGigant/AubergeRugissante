@@ -9,11 +9,11 @@ var carnaumTopic = [
 	[["KEY", "_exec"],						["VAL", ["userTopic"]]], // try
 	[["KEY", "type"],						["VAL", ["Humain aux dents lisses","Humain"]],
 											["ONASK", "Je suis un humain aux dents lisses. Détail qu'il serait malheureux d'omettre."]],
-	[["KEY", "name"],						["VAL", "Carnaum"],   				
+	[["KEY", "name"],						["VAL", "Carnaum"],
 											["ONASK","Je m'appelle Carnaum ! Tu peux te le tatouer sur la peau, si tu veux devenir plus populaire"]
 											],
 	[["KEY", "age"],						["VAL", "?"],
-											["ONASK", onAskAgeCarnaum], 
+											["ONASK", onAskAgeCarnaum],
 											["WHY","I was born thirty years ago"]
 											],
 	[["KEY", "gender"],						["VAL", "male"],
@@ -77,10 +77,10 @@ var carnaumTopic = [
 	[["KEY", "force"],						["VAL", 0], ["CAT","VAR"], ["TYPE","INT"]],
 	[["KEY", "excitement"],					["VAL", 0], ["CAT","VAR"], ["TYPE","INT"]],
 	// PREFS
-	[["KEY", "preference"],					["VAL", [["carnaumTopic","name"]]], ["CAT","VAR"], 	["ONASK",BOT_printPreferenceList]],  
-	[["KEY", "distaste"],					["VAL", [["maelisTopic","name"]]],  ["CAT","VAR"], 	["ONASK",BOT_printDistasteList]], 
-	[["KEY", "suggestion"],					["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printSuggestionList]], 
-	[["KEY", "intention"],					["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printIntentionList]],  
+	[["KEY", "preference"],					["VAL", [["carnaumTopic","name"]]], ["CAT","VAR"], 	["ONASK",BOT_printPreferenceList]],
+	[["KEY", "distaste"],					["VAL", [["maelisTopic","name"]]],  ["CAT","VAR"], 	["ONASK",BOT_printDistasteList]],
+	[["KEY", "suggestion"],					["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printSuggestionList]],
+	[["KEY", "intention"],					["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printIntentionList]],
 	// FUNC
 	[["KEY", "action"],						["VAL", ["compute"]]],
 	[["KEY", "compute"],					["VAL", "func_compute"], ["CAT","ACT"],
@@ -392,13 +392,25 @@ function drinkCarnaum(boisson) {
 }
 
 function onAskEquipeCarnaum() {
+	var str;
 	if (happyCarnaum >= 2)
 	{
 		equipe.push("carnaum");
-		return "Je suis partant ! Juste le temps d'une dernière.";
+		str = "Je suis partant ! Juste le temps d'une dernière.";
 	}
 	else if (happyCarnaum < -2) {
-		return "C'est mort, on va pas être copains.";
+		str = "C'est mort, on va pas être copains.";
 	}
-	return "Attendons de faire plus ample connaissance... A moins que tu ne sois fauché";
+	else {
+		str = "Attendons de faire plus ample connaissance... A moins que tu ne sois fauché.";
+	}
+	if (isGameWon())
+	{
+		return str + onAskGagner();
+	}
+	if (isGameLost())
+	{
+		return str + onAskPerdre();
+	}
+	return str;
 }
