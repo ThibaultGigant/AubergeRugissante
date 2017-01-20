@@ -16,7 +16,7 @@ BOT_theUserTopicId	= "userTopic";		// sets topic of current user id
 var drunk_sentences = ["Zzzzz", "Heuu...", "bwork", "Hic!", "Gnouf", "Slurp", "Gnalaacool"];
 
 var BOT_SynonymList	=  [
-	["_a objectifZZZ",		["je faire", "je dois faire", "objectif", "conseil", "conseille", "dois-je faire", "puis-je faire", "je peux faire"]],
+	["_a objectifZZZ",	["je faire", "je dois faire", "objectif", "conseil", "conseille", "dois-je faire", "puis-je faire", "je peux faire"]],
 	["_a proposeZZZ",	["propose", "tu veux", "veux-tu", "vous prendrez", "tu prendra", "veux tu", "vous voulez", "voulez-vous", "voulez vous", "voudrez", "voudrais", "aimerais", "je veux que"]],
 	["_a TMM",			["dites m en plus", "dis m en plus", "et donc", "et alors", "expliquez", "explique", "quoi d autre", "comment", "c est quoi"]],
 	["quêteZZZ",		["quete","voyage", "pepriple", "aventure", "quête", "expédition", "vadrouille", "chasse aux monstres",
@@ -40,7 +40,8 @@ var BOT_SynonymList	=  [
 	["_a offreZZZ",		["offre", "tiens", "Tiens", "tien", "Tien", "tennez", "Tennez", "prends", "Prends", "prennez", "Prennez"]],
 	["name",			["nom", "prenom", "appelle", "toi"]],
 	["equipeZZZ",		["equipe", "troupe", "compagnie", "confrerie", "queteZZZ"]],
-	["",				["la", "de", "le", "du", "un", "une", "coute", "coûte", "reste", "t-il", "donc", "dois"]]
+	["",				["la", "de", "le", "du", "un", "une", "coute", "coûte", "reste", "t-il", "donc", "dois"]],
+	["type",			["race"]]
 
 	];
 BOT_basicSynonymList = BOT_basicSynonymList.concat(BOT_SynonymList);
@@ -493,3 +494,10 @@ function BOT_reqSay (success,emote,reason,arg1,arg2,arg3) {
 // Ca defonce les trolls ?
 // rejoins mon equipe
 // Je veux devenir plus populaire
+
+// je voudrais
+// puis-je avoir la carte
+// as-tu un pouvoir spécial
+// Ca t'arrives souvent ?
+// ca sert a quoi
+// comment tu t'appelles ?

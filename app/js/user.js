@@ -84,7 +84,7 @@ function isGameOver()
 	}
 
 	if (couple1.length > 0 && couple2.length > 0)
-		return true;
+		onAskGagner();
 	return false;
 }
 
