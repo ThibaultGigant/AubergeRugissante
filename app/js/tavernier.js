@@ -8,7 +8,7 @@ var tavernierTopic = [
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],
 	[["KEY", "_exec"],						["VAL", ["userTopic"]]], // try
 	[["KEY", "type"],						["VAL", ["Humain aux dents lisses","Humain"]]],
-	[["KEY", "name"],						["VAL", "Tavernier"],   				
+	[["KEY", "name"],						["VAL", "Tavernier"],
 											["ONASK","Je suis le tenancier du bar !"]
 											],
 	[["KEY", "age"],						["VAL", "?"],
@@ -50,10 +50,10 @@ var tavernierTopic = [
 	[["KEY", "force"],						["VAL", 0], ["CAT","VAR"], ["TYPE","INT"]],
 	[["KEY", "excitement"],					["VAL", 0], ["CAT","VAR"], ["TYPE","INT"]],
 	// PREFS
-	[["KEY", "preference"],					["VAL", [["tavernierTopic","name"]]], ["CAT","VAR"], 	["ONASK",BOT_printPreferenceList]],  
-	[["KEY", "distaste"],					["VAL", [["maelisTopic","name"]]],  ["CAT","VAR"], 	["ONASK",BOT_printDistasteList]], 
-	[["KEY", "suggestion"],					["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printSuggestionList]], 
-	[["KEY", "intention"],					["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printIntentionList]],  
+	[["KEY", "preference"],					["VAL", [["tavernierTopic","name"]]], ["CAT","VAR"], 	["ONASK",BOT_printPreferenceList]],
+	[["KEY", "distaste"],					["VAL", [["maelisTopic","name"]]],  ["CAT","VAR"], 	["ONASK",BOT_printDistasteList]],
+	[["KEY", "suggestion"],					["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printSuggestionList]],
+	[["KEY", "intention"],					["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printIntentionList]],
 	// FUNC
 	[["KEY", "action"],						["VAL", ["compute"]]],
 	[["KEY", "compute"],					["VAL", "func_compute"], ["CAT","ACT"],
@@ -92,8 +92,13 @@ function onAskBoissonTavernier() {
 		if (bourseAventurier >= 7)
 		{
 			boisson = "bière";
-			stockBiereAventurier ++;
-			bourseAventurier -= 7;
+			str = ["Et voilà ! une " + boisson,
+			"Avec modération *clin d'oeil*",
+			"Dégustez", "Savourez" ];
+			onAddBiere(1);
+		}
+		else {
+			str = ["Désolé, mais tu n'as pas assez de pognon !"]
 		}
 	}
 	else if (s.includes("vin"))
@@ -101,8 +106,13 @@ function onAskBoissonTavernier() {
 		if (bourseAventurier >= 13)
 		{
 			boisson = "vin";
-			stockVinAventurier ++;
-			bourseAventurier -= 13;
+			str = ["Et voilà ! Du bon " + boisson,
+			"Avec modération *clin d'oeil*",
+			"Dégustez", "Savourez" ];
+			onAddVin(1);
+		}
+		else {
+			str = ["Désolé, mais tu n'as pas assez de pognon !"]
 		}
 
 	}
@@ -111,8 +121,13 @@ function onAskBoissonTavernier() {
 		if (bourseAventurier >= 17)
 		{
 			boisson = "cru";
-			stockCruAventurier ++;
-			bourseAventurier -= 17;
+			str = ["Et voilà ! Du bon " + boisson + " de la maison !",
+			"Avec modération *clin d'oeil*",
+			"Dégustez", "Savourez" ];
+			onAddCru(1);
+		}
+		else {
+			str = ["Désolé, mais tu n'as pas assez de pognon !"]
 		}
 	}
 	else if (s.includes("bibine"))
@@ -120,8 +135,13 @@ function onAskBoissonTavernier() {
 		if (bourseAventurier >= 5)
 		{
 			boisson = "bibine";
-			stockBibineAventurier ++;
-			bourseAventurier -= 5;
+			str = ["Et voilà ! une " + boisson,
+				"Avec modération *clin d'oeil*",
+				"Dégustez", "Savourez" ];
+			onAddBibine(1);
+		}
+		else {
+			str = ["Désolé, mais tu n'as pas assez de pognon !"];
 		}
 	}
 	else {
@@ -131,9 +151,6 @@ function onAskBoissonTavernier() {
 		return str[card];
 	}
 
-	str = ["Et voilà ! une " + boisson,
-	"Avec modération *clin d'oeil*",
-	"Dégustez", "Savourez" ];
 	var card = Math.floor(Math.random() * str.length);
 	return str[card];
 
@@ -150,5 +167,5 @@ function objectif() {
 	"Eh bien me voilà ! Un petit conseil ? Eh bien fais attention à ne pas te faire avoir, sonde bien chacun des aventuriers de cette salle, détermine leurs atouts, leurs armements, et leurs compétences.	Moi personellement, je me bat à la fourchette, mais ça ne m'empêche pas de foutre des mendales au premier venu une fois sortie de la cuisine" ];
 	var card = Math.floor(Math.random() * str.length);
 	return str[card];
-	return 
+	return
 }

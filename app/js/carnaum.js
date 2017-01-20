@@ -301,10 +301,10 @@ function onAskOffreCarnaum() {
 
 	if (s.includes("bière") || s.includes("biere"))
 	{
-		if (stockBiereAventurier >= 0)
+		if (stockBiereAventurier > 0)
 		{
 			drinkCarnaum("biere");
-			stockBiereAventurier --;
+			onRemoveBiere(1);
 
 			//if (drunkThresholdCarnaum == drunkStepsCarnaum[0])
 				happyCarnaum++;
@@ -317,10 +317,10 @@ function onAskOffreCarnaum() {
 	}
 	else if (s.includes("vin"))
 	{
-		if (stockVinAventurier >= 0)
+		if (stockVinAventurier > 0)
 		{
 			drinkCarnaum("vin");
-			stockVinAventurier --;
+			onRemoveVin(1);
 
 
 			//if (drunkThresholdCarnaum > drunkStepsCarnaum[1])
@@ -338,7 +338,7 @@ function onAskOffreCarnaum() {
 		if (stockCruAventurier > 0)
 		{
 			drinkCarnaum("cru");
-			stockCruAventurier --;
+			onRemoveCru(1);
 
 			//if (drunkThresholdCarnaum > drunkStepsCarnaum[1])
 				happyCarnaum+=2;
@@ -354,7 +354,7 @@ function onAskOffreCarnaum() {
 		if (stockBibineAventurier > 0)
 		{
 			drinkCarnaum("bibine");
-			stockBibineAventurier --;
+			onRemoveBibine(-1);
 			happyCarnaum++;
 			return "Ça passera le temps. *Carnaum prend votre choppe de bibine*";
 		}

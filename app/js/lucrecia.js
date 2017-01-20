@@ -283,10 +283,10 @@ function onAskOffreLucrecia() {
 
 	if (s.includes("bière") || s.includes("biere"))
 	{
-		if (stockBiereAventurier >= 0)
+		if (stockBiereAventurier > 0)
 		{
 			drinkLucrecia("biere");
-			stockBiereAventurier --;
+			onRemoveBiere(1);
 			happyLucrecia++;
 			return "Commencer avec une bonne biere, c'est génial. Continuer à en boire, c'est tellement mieux. *Lucrecia boit cul-sec votre choppe de bière*";
 		}
@@ -296,10 +296,10 @@ function onAskOffreLucrecia() {
 	}
 	else if (s.includes("vin"))
 	{
-		if (stockVinAventurier >= 0)
+		if (stockVinAventurier > 0)
 		{
 			drinkLucrecia("vin");
-			stockVinAventurier --;
+			onRemoveVin(1);
 			happyLucrecia ++;
 			return "Je trouve que ça à l'air bon pour la santé, ce truc. *Lucrecia prend votre verre de vin*";
 		}
@@ -312,7 +312,8 @@ function onAskOffreLucrecia() {
 	{
 		if (stockCruAventurier > 0)
 		{
-			stockCruAventurier--;
+			drinkLucrecia("cru");
+			onRemoveCru(1);
 			happyLucrecia += 2;
 			return "Le saint Graal ! Je porterai cette coupe à mes lèvres comme lors des grandes cérémonies";
 		}
@@ -325,7 +326,7 @@ function onAskOffreLucrecia() {
 		if (stockBibineAventurier > 0)
 		{
 			drinkLucrecia("bibine");
-			stockBibineAventurier --;
+			onRemoveBibine(1);
 			happyLucrecia++;
 			return "Une petite tasse, ça pars vite *Lucrecia prend votre choppe de bibine*";
 		}

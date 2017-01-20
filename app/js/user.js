@@ -143,3 +143,51 @@ function onAskPerdre()
 	return "\nAprès être sortis de la taverne, vos coéquipiers plus saouls les uns que les autres, vous vous êtes retrouvés face à une grotte pourprée d'horreur. Vous avez su faire preuve de " +
 					"bon sens, et avez décidé de vous carapater. Vous n'aviez aucune chance avec une telle équipe de bras cassés ! Allez vous remonter le moral à la taverne. Peut-être aurez-vous plus de chance avec un nouvel essai.";
 }
+
+function onAddBibine(nb) {
+	stockBibineAventurier += nb;
+	bourseAventurier -= nb * 5;
+	document.getElementById("bibine").innerHTML = stockBibineAventurier;
+	document.getElementById("bourse").innerHTML = bourseAventurier;
+}
+
+function onAddBiere(nb) {
+	stockBiereAventurier += nb;
+	bourseAventurier -= nb * 7;
+	document.getElementById("biere").innerHTML = stockBiereAventurier;
+	document.getElementById("bourse").innerHTML = bourseAventurier;
+}
+
+function onAddVin(nb) {
+	stockVinAventurier += nb;
+	bourseAventurier -= nb * 13;
+	document.getElementById("vin").innerHTML = stockVinAventurier;
+	document.getElementById("bourse").innerHTML = bourseAventurier;
+}
+
+function onAddCru(nb) {
+	stockCruAventurier += nb;
+	bourseAventurier -= nb * 17;
+	document.getElementById("cru").innerHTML = stockCruAventurier;
+	document.getElementById("bourse").innerHTML = bourseAventurier;
+}
+
+function onRemoveBibine(nb) {
+	stockBibineAventurier -= nb;
+	document.getElementById("bibine").innerHTML = stockBibineAventurier;
+}
+
+function onRemoveBiere(nb) {
+	stockBiereAventurier -= nb;
+	document.getElementById("biere").innerHTML = stockBiereAventurier;
+}
+
+function onRemoveVin(nb) {
+	stockVinAventurier -= nb;
+	document.getElementById("vin").innerHTML = stockVinAventurier;
+}
+
+function onRemoveCru(nb) {
+	stockCruAventurier -= nb;
+	document.getElementById("cru").innerHTML = stockCruAventurier;
+}

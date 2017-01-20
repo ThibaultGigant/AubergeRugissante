@@ -230,10 +230,10 @@ function onAskOffreTaoJim() {
 
 	if (s.includes("bière") || s.includes("biere"))
 	{
-		if (stockBiereAventurier >= 0)
+		if (stockBiereAventurier > 0)
 		{
 			drinkTaoJim("biere");
-			stockBiereAventurier --;
+			onRemoveBiere(1);
 			happyTao++;
 			return "Ça rafraîchit le vestibule ! Merci l'ami. *TaoJim boit cul-sec votre choppe de bière*";
 		}
@@ -243,10 +243,10 @@ function onAskOffreTaoJim() {
 	}
 	else if (s.includes("vin"))
 	{
-		if (stockVinAventurier >= 0)
+		if (stockVinAventurier > 0)
 		{
 			drinkTaoJim("vin");
-			stockVinAventurier --;
+			onRemoveVin(1);
 			happyTao++;
 			return "C'est limite hein. Mais tant que ça coule bien ;) *TaoJim prend votre verre de vin*";
 		}
@@ -270,7 +270,7 @@ function onAskOffreTaoJim() {
 		if (stockBibineAventurier > 0)
 		{
 			drinkTaoJim("bibine");
-			stockBibineAventurier --;
+			onRemoveBibine(1)
 			happyTao += 2;
 			return "Les grands esprits se rencontrent. C'est bien, comme moi t'es LeaderPrice ! *TaoJim prend votre choppe de bibine*";
 		}

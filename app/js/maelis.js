@@ -254,7 +254,7 @@ function onAskOffreMaelis() {
 		if (stockBiereAventurier >= 0)
 		{
 			drinkMaelis("biere");
-			stockBiereAventurier --;
+			onRemoveBiere(1);
 			happyMae++;
 			return "Moui, c'est mieux que rien. *Mealis boit cul-sec votre choppe de bière*";
 		}
@@ -267,7 +267,7 @@ function onAskOffreMaelis() {
 		if (stockVinAventurier >= 0)
 		{
 			drinkMaelis("vin");
-			stockVinAventurier --;
+			onRemoveVin(1);
 			happyMae++;
 			return "Ça me changera de la bière, tiens. *Maelis prend votre verre de vin*";
 		}
@@ -281,7 +281,7 @@ function onAskOffreMaelis() {
 		if (stockCruAventurier > 0)
 		{
 			drinkMaelis("cru");
-			stockCruAventurier --;
+			onRemoveCru(1);
 			happyMae += 2;
 			return "Ah ! Là je dis oui ! Merci ! *Maelis prend votre verre de cru*";
 		}
