@@ -31,7 +31,7 @@ var BOT_SynonymList	=  [
 	["_a",				["comment", "que puis", "que dois", "parle moi", "rappelez moi", "je veux", "je voudrais", "donnez moi", "passez moi","combien", "quels", "quel", "quelles", "quelle", "quoi", "qu", "que fais", "que faites", "qui", "c est un", "c est une", "c est de", "c est du"]],
 	["_g",				["bonjour", "salut", "hola", "heho", "hohe", "eho", "ohe", "ca va"]],
 	["_a boissonZZZ",	["va pour", "donne moi", "tu me donnes"]],
-	["boissonZZZ",		["beuvrie", "boire","carte","boisson","boissons","biere", "choppe", "cru", "tonnelet", "tonneau", "vin", "gnôle", "binouze", "pinte", "litre", "bibine"]],
+	["boissonZZZ",		["beuvrie", "boire","carte","boisson","boissons","biere", "choppe", "cru", "tonnelet", "tonneau", "vin", "gnole", "binouze", "pinte", "litre", "bibine"]],
 	["_a competenceZZZ",["sais faire quoi"]],
 	["competenceZZZ",	["pouvoir","pouvoirs","competences","competence", "magie", "maniement", "maitrise","boule de feu", "psychique", "aider", "sais faire","capacites","capacite"]],
 	["defenseZZZ",		["defense", "equipement", "armure", "protection", "fais quoi", "bouclier", "protege", "proteger",
