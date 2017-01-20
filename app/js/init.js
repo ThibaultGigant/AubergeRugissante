@@ -19,7 +19,7 @@ var BOT_SynonymList	=  [
 	["_a objectifZZZ",	["je faire", "je dois faire", "objectif", "conseil", "conseille", "dois-je faire", "puis-je faire", "je peux faire"]],
 	["_a proposeZZZ",	["propose", "tu veux", "veux-tu", "vous prendrez", "tu prendra", "veux tu", "vous voulez", "voulez-vous",
 										"voulez vous", "voudrez", "voudrais", "aimerais", "je veux que", "on fait", "ca te dit"]],
-	["_a TMM",			["dites m en plus", "dis m en plus", "et donc", "et alors", "expliquez", "explique", "quoi d autre", "comment", "c est quoi"]],
+	["_a TMM",			["dites m en plus", "dis m en plus", "et donc", "et alors", "expliquez", "explique", "quoi d autre", "c est quoi"]],
 	["quêteZZZ",		["quete","voyage", "pepriple", "aventure", "quête", "expédition", "vadrouille", "chasse aux monstres",
 						"quetes","voyages", "pepriples", "aventures", "quêtes", "expéditions", "vadrouilles", "chasses aux monstres"]],
 	["aventurier",		["recrue","recrues","aventurier","soldat", "camarade", "equipier", "co-equipier", "coequipier", "glandu", "inconscient", "gars", "ami"]],
@@ -28,7 +28,7 @@ var BOT_SynonymList	=  [
 	["madame",			["madame", "mm", "mme"]],
 	["mademoiselle",	["mademoiselle","mlle.", "mlle"]],
 	["saoulZZZ",		["saoul","bourre", "torche", "rond", "gris"]],
-	["_a",				["que puis", "que dois", "parle moi", "rappelez moi", "je veux", "je voudrais", "donnez moi", "passez moi","combien", "quels", "quel", "quelles", "quelle", "quoi", "qu", "que fais", "que faites", "qui","c est un", "c est une", "c est de", "c est du"]],
+	["_a",				["comment", "que puis", "que dois", "parle moi", "rappelez moi", "je veux", "je voudrais", "donnez moi", "passez moi","combien", "quels", "quel", "quelles", "quelle", "quoi", "qu", "que fais", "que faites", "qui","c est un", "c est une", "c est de", "c est du"]],
 	["_g",				["bonjour", "salut", "hola", "heho", "hohe", "eho", "ohe", "ca va"]],
 	["_a boissonZZZ",	["va pour"]],
 	["boissonZZZ",		["beuvrie", "boire","carte","boisson","boissons","biere", "choppe", "cru", "tonnelet", "tonneau", "vin", "gnôle", "binouze", "pinte", "litre", "bibine"]],
@@ -39,7 +39,7 @@ var BOT_SynonymList	=  [
 						"armes", "epees", "forces", "haches", "arbaletes", "arcs","combat"]],
 	["bourseZZZ",		["bourse", "argent", "des sous", "de sous", "piece", "pognon", "monaie"]],
 	["_a offreZZZ",		["offre", "tiens", "Tiens", "tien", "Tien", "tennez", "Tennez", "prends", "Prends", "prennez", "Prennez"]],
-	["name",			["nom", "prenom", "appelle", "toi"]],
+	["name",			["nom", "prenom", "appelle", "toi", "appelles"]],
 	["equipeZZZ",		["equipe", "troupe", "compagnie", "confrerie", "queteZZZ"]],
 	["",				["la", "de", "le", "du", "un", "une", "coute", "coûte", "reste", "t-il", "donc", "dois"]],
 	["type",			["race"]]
@@ -495,13 +495,9 @@ function BOT_reqSay (success,emote,reason,arg1,arg2,arg3) {
 // Ca defonce les trolls ?
 // rejoins mon equipe
 // Je veux devenir plus populaire
-<<<<<<< HEAD
-
 // je voudrais
 // puis-je avoir la carte
 // as-tu un pouvoir spécial
 // Ca t'arrives souvent ?
 // ca sert a quoi
 // comment tu t'appelles ?
-=======
->>>>>>> c0ed85ec04beb1bea5d43fea6869f6b83a6e1731

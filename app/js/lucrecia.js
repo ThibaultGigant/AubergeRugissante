@@ -7,8 +7,8 @@ var lucreciaTopic = [
 	[["KEY", "_read"],						["VAL", ["userTopic", "maelisTopic", "carnaumTopic", "taojimTopic", "tavernierTopic"]]],
 	[["KEY", "_write"],						["VAL", ["userTopic"]]],
 	[["KEY", "_exec"],						["VAL", ["userTopic"]]], // try
-	[["KEY", "type"],						["VAL", ["Humain aux dents lisses","Humain"]],
-											["ONASK", "Je suis un humain aux dents lisses. Détail qu'il serait malheureux d'omettre."]],
+	[["KEY", "type"],						["VAL", ["Paysanne avantagée","Humain"]],
+											["ONASK", "Je suis une paysanne avantagée. Autant dire que plus rustre que moi, y a pas."]],
 	[["KEY", "name"],						["VAL", "Lucrecia"],
 											["ONASK","Je m'appelle Lucrecia ! Si tu n'as pas déjà entendu parler de moi, je ne sais pas d'où tu sors..."]
 											],
