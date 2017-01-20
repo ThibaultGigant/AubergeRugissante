@@ -30,10 +30,11 @@ var BOT_SynonymList	=  [
 	["saoulZZZ",		["saoul","bourre", "torche", "rond", "gris"]],
 	["_a",				["comment", "que puis", "que dois", "parle moi", "rappelez moi", "je veux", "je voudrais", "donnez moi", "passez moi","combien", "quels", "quel", "quelles", "quelle", "quoi", "qu", "que fais", "que faites", "qui","c est un", "c est une", "c est de", "c est du"]],
 	["_g",				["bonjour", "salut", "hola", "heho", "hohe", "eho", "ohe", "ca va"]],
-	["_a boissonZZZ",	["va pour"]],
+	["_a boissonZZZ",	["va pour", "donne moi"]],
 	["boissonZZZ",		["beuvrie", "boire","carte","boisson","boissons","biere", "choppe", "cru", "tonnelet", "tonneau", "vin", "gnôle", "binouze", "pinte", "litre", "bibine"]],
+	["_a competenceZZZ",["sais faire quoi"]],
 	["competenceZZZ",	["pouvoir","pouvoirs","competences","competence", "magie", "maniement", "maitrise","boule de feu", "psychique", "aider", "sais faire","capacites","capacite"]],
-	["defenseZZZ",		["defense", "equipement", "armure", "protection", "fais quoi", "sais faire quoi", "bouclier", "protege", "proteger",
+	["defenseZZZ",		["defense", "equipement", "armure", "protection", "fais quoi", "bouclier", "protege", "proteger",
 						"defenses", "equipements", "armures", "protections", "boucliers"]],
 	["armeZZZ",			["arme", "epee", "force", "hache", "arbalete", "arc",
 						"armes", "epees", "forces", "haches", "arbaletes", "arcs","combat"]],
@@ -94,7 +95,7 @@ function tellMeMore(name) {
 	case "Lucrecia":
 		return tellMeMoreLucrecia();
 	default:
-		return "* Je crois que moi même j'ai pas compris ce que je viens de dire *";
+		return "Je crois que toi même tu comprends pas ce que tu viens de dire";
 	}
 
 }
@@ -108,7 +109,8 @@ function BOT_expressTopicAttribute(tid,attr) {
 	else if (tid == thebottopicid && attr == "_reference") return("me");
 	else if (tid == thebottopicid) return(attr);
 	else if (attr == "_reference") return(BOT_topicToName(tid))
-	else if (c == "user") return("your "+attr)
+	//else if (c == "user") return("your "+attr)
+	else if (c == "user") return(attr)
 	else return(BOT_topicToName(tid)+"'s "+attr)
 }
 
@@ -119,7 +121,11 @@ function BOT_onGreet() {
 	var thebottopicid  = thebotobject.topicId;
 	var oldbotid,name,c;
 	if(BOT_theReqTopic == thebottopicid ) {
-		if (!BOT_theReqText.includes("bonjour")) {
+		if (BOT_theReqText == null) {
+			BOT_reqSay(true,"HELLO","PING");
+		}
+		else if (!BOT_theReqText.includes("bonjour") &&
+			!BOT_theReqText.includes("Bonjour")) {
 			BOT_reqSay(false,"WARNING","BADAGENT",BOT_theReqTopic);
 		}
 		else
