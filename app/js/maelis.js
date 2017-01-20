@@ -13,7 +13,7 @@ var maelisTopic = [
 											["WHY","Parce que "]
 											],
 	[["KEY", "age"],						["VAL", 25], ["TYPE","INT"],
-											["ONASK", onAskAgeMaelis], 
+											["ONASK", onAskAgeMaelis],
 											["WHY","T'es débile ou bien ?"]
 											],
 	[["KEY", "gender"],						["VAL", "female"],
@@ -63,7 +63,7 @@ var maelisTopic = [
 	//[["KEY", "taojim"],					["VAL", "taojimTopic"],["CAT","REL"]],
 	//[["KEY", "lucrecia"],				["VAL", "lucreciaTopic"],["CAT","REL"]],
 	//[["KEY", "tavernier"],				["VAL", "tavernierTopic"],["CAT","REL"]],
-	
+
 	// FEELINGS
 	[["KEY", "happiness"],		["VAL", 0.8], ["CAT","VAR"], ["TYPE","INT"]], // 7 standard feelings iniitated
 	[["KEY", "confidence"],		["VAL", -0.8], ["CAT","VAR"], ["TYPE","INT"]],
@@ -73,10 +73,10 @@ var maelisTopic = [
 	[["KEY", "force"],			["VAL", 0], ["CAT","VAR"], ["TYPE","INT"]],
 	[["KEY", "excitement"],		["VAL", 0], ["CAT","VAR"], ["TYPE","INT"]],
 	// PREFS
-	[["KEY", "preference"],		["VAL", [["maelisTopic","name"]]], ["CAT","VAR"], 	["ONASK",BOT_printPreferenceList]],  
-	[["KEY", "distaste"],		["VAL", [["userTopic","name"]]],  ["CAT","VAR"], 	["ONASK",BOT_printDistasteList]], 
-	[["KEY", "suggestion"],		["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printSuggestionList]], 
-	[["KEY", "intention"],		["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printIntentionList]],  
+	[["KEY", "preference"],		["VAL", [["maelisTopic","name"]]], ["CAT","VAR"], 	["ONASK",BOT_printPreferenceList]],
+	[["KEY", "distaste"],		["VAL", [["userTopic","name"]]],  ["CAT","VAR"], 	["ONASK",BOT_printDistasteList]],
+	[["KEY", "suggestion"],		["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printSuggestionList]],
+	[["KEY", "intention"],		["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printIntentionList]],
 	// FUNC
 	[["KEY", "action"],			["VAL", ["compute"]]],
 	[["KEY", "compute"],		["VAL", "func_compute"], ["CAT","ACT"],
@@ -88,6 +88,7 @@ var maelisTopic = [
 // ===================== Variables =====================//
 var nbAskAgeMaelis = 0;
 var drunkThresholdMaelis = 13;
+var drunkStepsMaelis = [13, 8, 4];
 
 var happyMae = 0;
 
@@ -98,7 +99,7 @@ function onAskAgeMaelis()
 {
 	nbAskAgeMaelis++;
 
-	if (drunkThresholdMaelis >= 8)
+	if (drunkThresholdMaelis >= drunkStepsMaelis[1])
 	{
 		if (nbAskAgeMaelis < 3)
 		{
@@ -109,7 +110,7 @@ function onAskAgeMaelis()
 			return  "Mais t'es sourd gringalet ?";
 		}
 	}
-	else if (drunkThresholdMaelis >= 4)
+	else if (drunkThresholdMaelis >= drunkStepsMaelis[2])
 	{
 		if (nbAskAgeMaelis < 2)
 		{
@@ -139,9 +140,9 @@ function onAskAgeMaelis()
 function onAskArmeMaelis()
 {
 	lastAskMaelis = "Arme";
-	if (drunkThresholdMaelis >= 8)
+	if (drunkThresholdMaelis >= drunkStepsMaelis[1])
 		return "Je ne quitte jamais mon arbalete. C'est du bon matériel, depuis que j'ai échangé mon arc.";
-	else if (drunkThresholdMaelis >= 4)
+	else if (drunkThresholdMaelis >= drunkStepsMaelis[2])
 		return "Je me balade toujours avec une arbalete. Ça aurait pu être du bois de platane, pour nous venger des arbres qu'on se prend lorsque la monture fait un pas de travers.";
 	else if (drunkThresholdMaelis > 0)
 		return "L'autre aux dents lisses là-bas, il a essayé de m'attaquer mais il ne pourrait pas couper mon pain avec son arme même s'il le voulait.";
@@ -152,9 +153,9 @@ function onAskArmeMaelis()
 function onAskDefenseMaelis()
 {
 	lastAskMaelis = "Defense";
-	if (drunkThresholdMaelis >= 8)
+	if (drunkThresholdMaelis >= drunkStepsMaelis[1])
 		return "J'ai une petite armure, mais elle ne date pas d'hier";
-	else if (drunkThresholdMaelis >= 4)
+	else if (drunkThresholdMaelis >= drunkStepsMaelis[2])
 		return "Mon armure c'est la plus forte !";
 	else if (drunkThresholdMaelis > 0)
 		return "Pouah ! La semaine dernière y'a un siphoné du ciboulot qui a crié comme un lapin. Je devais être dans le même état que maintenant, je jurerais avoir vu un lapin géant courir à ses côtés ensuite.";
@@ -165,9 +166,9 @@ function onAskDefenseMaelis()
 function onAskMagieMaelis()
 {
 	lastAskMaelis = "Magie";
-	if (drunkThresholdMaelis >= 8)
+	if (drunkThresholdMaelis >= drunkStepsMaelis[1])
 		return "Je maîtrise le contrôle mental mieux que personne, mon ami !";
-	else if (drunkThresholdMaelis >= 4)
+	else if (drunkThresholdMaelis >= drunkStepsMaelis[2])
 		return "Bon, j'avoue que je contrôle mentalement des animaux, mais ça ne fonctionne pas réellement sur les humains";
 	else if (drunkThresholdMaelis > 0)
 		return "Hahaha ! Comment c'est pourri de pas avoir le courage de sauter alors qu'on survivrait à la chute !";
@@ -197,9 +198,9 @@ function tellMeMoreMaelis() {
 }
 
 function tellMeMoreArmeMaelis() {
-	if (drunkThresholdMaelis >= 8)
+	if (drunkThresholdMaelis >= drunkStepsMaelis[1])
 		return "Mon arme a en effet un petit secret, mais il va falloir être plus gentil pour que j'accepte d'en dire plus.";
-	else if (drunkThresholdMaelis >= 4)
+	else if (drunkThresholdMaelis >= drunkStepsMaelis[2])
 		return "D'accord, j'avoue... Je n'ai pas d'argent pour acheter des flèches alors je les construits moi-même. Il arrive qu'elles ne partent pas tout à fait droit...";
 	else if (drunkThresholdMaelis > 0)
 		return "Wouhouuuu ! La soirée ne fait que commencer !!!";
@@ -208,9 +209,9 @@ function tellMeMoreArmeMaelis() {
 }
 
 function tellMeMoreDefenseMaelis() {
-	if (drunkThresholdMaelis >= 8)
+	if (drunkThresholdMaelis >= drunkStepsMaelis[1])
 		return "Mon armure est très belle. Je pourrais en dire plus, mais je préfère qu'on se connaisse mieux.";
-	else if (drunkThresholdMaelis >= 4)
+	else if (drunkThresholdMaelis >= drunkStepsMaelis[2])
 		return "Dans ma famille, on a eu de la chance, un pélerin nous a offert cette armure en mithrill. Elle est totalement indestructible.";
 	else if (drunkThresholdMaelis > 0)
 		return "Iiiiiil est des nôôôôôôtres !";
@@ -219,9 +220,9 @@ function tellMeMoreDefenseMaelis() {
 }
 
 function tellMeMoreMagieMaelis() {
-	if (drunkThresholdMaelis >= 8)
+	if (drunkThresholdMaelis >= drunkStepsMaelis[1])
 		return "Je peux contrôler mentalement les créatures, mais il ne faut pas qu'elles soient trop trop grosses, mais ça ne gêne pas vraiment.";
-	else if (drunkThresholdMaelis >= 4)
+	else if (drunkThresholdMaelis >= drunkStepsMaelis[2])
 		return "C'est dur à avouer, mais en fait quand j'exerce mon pouvoir, il ne fonctionne que sur des rongeurs de moins de 10cm";
 	else if (drunkThresholdMaelis > 0)
 		return "Vazy Aventurier montre-nous tes fesses ! Vazy Aventurier montre-nous ton c** !";
@@ -325,13 +326,26 @@ function drinkMaelis(boisson) {
 }
 
 function onAskEquipeMae() {
+	var str;
 	if (happyMae >= 2)
 	{
 		equipe.push("maelis");
-		return "Je suis partant ! Juste le temps d'une dernière.";
+		str = "Je suis partant ! Juste le temps d'une dernière.";
 	}
 	else if (happyMae < -2) {
-		return "C'est mort, on va pas être copains.";
+		str = "C'est mort, on va pas être copains.";
 	}
-	return "Attendons de faire plus ample connaissance... A moins que tu ne sois fauché";
+	else {
+		str = "Attendons de faire plus ample connaissance... A moins que tu ne sois fauché";
+	}
+
+	if (isGameWon())
+	{
+		return str + onAskGagner();
+	}
+	if (isGameLost())
+	{
+		return str + onAskPerdre();
+	}
+	return str;
 }

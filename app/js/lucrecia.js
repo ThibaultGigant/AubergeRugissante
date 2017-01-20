@@ -9,15 +9,15 @@ var lucreciaTopic = [
 	[["KEY", "_exec"],						["VAL", ["userTopic"]]], // try
 	[["KEY", "type"],						["VAL", ["Humain aux dents lisses","Humain"]],
 											["ONASK", "Je suis un humain aux dents lisses. Détail qu'il serait malheureux d'omettre."]],
-	[["KEY", "name"],						["VAL", "Lucrecia"],   				
-											["ONASK","Je m'appelle Lucrecia ! Tu peux te le tatouer sur la peau, si tu veux devenir plus populaire"]
+	[["KEY", "name"],						["VAL", "Lucrecia"],
+											["ONASK","Je m'appelle Lucrecia ! Si tu n'as pas déjà entendu parler de moi, je ne sais pas d'où tu sors..."]
 											],
-	[["KEY", "age"],						["VAL", "?"],
-											["ONASK", onAskAgeLucrecia], 
-											["WHY","I was born thirty years ago"]
+	[["KEY", "age"],						["VAL", "36"],
+											["ONASK", onAskAgeLucrecia],
+											["WHY","Heu... C'est une question piège ?"]
 											],
 	[["KEY", "gender"],						["VAL", "male"],
-											["ONASK", function(s) { return ((s == "male") ? "I am proud to be a man!" : "Just a woman") }]
+											["ONASK", function(s) { return ((s == "male") ? "Je suis un mec, un vrai !" : "Une femme, dans toute sa splendeur") }]
 											],
 
 	[["KEY", "boissonZZZ"],					["VAL", "boisson"],
@@ -26,7 +26,7 @@ var lucreciaTopic = [
 	// Arme
 	[["KEY", "armeZZZ"],					["VAL",		"Boomerang"],
 											["ONASK",	onAskArmeLucrecia],
-											["ONWHY",	"Je suis certaine que quoi qu'il qrrive, il me reviendra."]
+											["ONWHY",	"Je suis certaine que quoi qu'il arrive, il me reviendra."]
 											],
 	// armure
 	[["KEY", "defenseZZZ"],					["VAL",		"Chemise épaisse"],
@@ -75,10 +75,10 @@ var lucreciaTopic = [
 	[["KEY", "force"],			["VAL", 0], ["CAT","VAR"], ["TYPE","INT"]],
 	[["KEY", "excitement"],		["VAL", 0], ["CAT","VAR"], ["TYPE","INT"]],
 	// PREFS
-	[["KEY", "preference"],		["VAL", [["lucreciaTopic","name"]]], ["CAT","VAR"], 	["ONASK",BOT_printPreferenceList]],  
-	[["KEY", "distaste"],		["VAL", [["maelisTopic","name"]]],  ["CAT","VAR"], 	["ONASK",BOT_printDistasteList]], 
-	[["KEY", "suggestion"],		["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printSuggestionList]], 
-	[["KEY", "intention"],		["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printIntentionList]],  
+	[["KEY", "preference"],		["VAL", [["lucreciaTopic","name"]]], ["CAT","VAR"], 	["ONASK",BOT_printPreferenceList]],
+	[["KEY", "distaste"],		["VAL", [["maelisTopic","name"]]],  ["CAT","VAR"], 	["ONASK",BOT_printDistasteList]],
+	[["KEY", "suggestion"],		["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printSuggestionList]],
+	[["KEY", "intention"],		["VAL", 0], ["CAT","VAR"], ["ONASK",BOT_printIntentionList]],
 	// FUNC
 	[["KEY", "action"],			["VAL", ["compute"]]],
 	[["KEY", "compute"],		["VAL", "func_compute"], ["CAT","ACT"],
@@ -363,13 +363,26 @@ function drinkLucrecia(boisson) {
 }
 
 function onAskEquipeLucrecia() {
+	var str;
 	if (happyLucrecia >= 2)
 	{
 		equipe.push("lucrecia");
-		return "Je suis partant ! Juste le temps d'une dernière.";
+		str = "Je suis partant ! Juste le temps d'une dernière.";
 	}
 	else if (happyLucrecia < -2) {
-		return "C'est mort, on va pas être copains.";
+		str = "C'est mort, on va pas être copains.";
 	}
-	return "Attendons de faire plus ample connaissance... A moins que tu ne sois fauché";
+	else
+	{
+		str = "Attendons de faire plus ample connaissance... A moins que tu ne sois fauché";
+	}
+	if (isGameWon())
+	{
+		return str + onAskGagner();
+	}
+	if (isGameLost())
+	{
+		return str + onAskPerdre();
+	}
+	return str;
 }

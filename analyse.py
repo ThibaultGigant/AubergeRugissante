@@ -8,8 +8,8 @@ import re
 
 #### Exercice 1 ####
 
-def mots_4_lettres(text):
-	return [w for w in text if len(w) == 4]
+def mots_x_lettres(text, x):
+	return [w for w in text if len(w) == x]
 
 def freq_decroissante(text):
 	fdist = FreqDist(text)
@@ -46,7 +46,7 @@ if __name__ == '__main__':
 	tweet = TweetTokenizer()
 	tokenizedCorpus = tweet.tokenize(corpusText)
 	#print(corpusText)
-	list_mots_4 = mots_4_lettres(tokenizedCorpus)
+	list_mots_4 = mots_x_lettres(tokenizedCorpus, 4)
 	print(list_mots_4)
 	print("Fréquence décroissante " + str(freq_decroissante(tokenizedCorpus)))
 
