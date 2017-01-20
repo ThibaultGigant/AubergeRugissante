@@ -4,9 +4,9 @@ var maelisBot = new BOT_makeBot("maelisBot","maelisTopic");
 var taojimBot = new BOT_makeBot("taojimBot","taojimTopic");
 var lucreciaBot = new BOT_makeBot("lucreciaBot","lucreciaTopic");
 var tavernierBot = new BOT_makeBot("tavernierBot","tavernierTopic");
-BOT_declareTopics(["userTopic"]); 
+BOT_declareTopics(["userTopic"]);
 
-BOT_theBotId		= "tavernierBot";		// sets current bot id 
+BOT_theBotId		= "tavernierBot";		// sets current bot id
 BOT_theTopicId		= "tavernierTopic";		// sets current topic id
 BOT_theUserTopicId	= "userTopic";		// sets topic of current user id
 
@@ -17,7 +17,8 @@ var drunk_sentences = ["Zzzzz", "Heuu...", "bwork", "Hic!", "Gnouf", "Slurp", "G
 
 var BOT_SynonymList	=  [
 	["_a objectifZZZ",		["je faire", "je dois faire", "objectif", "conseil", "conseille", "dois-je faire", "puis-je faire", "je peux faire"]],
-	["_a proposeZZZ",	["propose", "tu veux", "veux-tu", "vous prendrez", "tu prendra", "veux tu", "vous voulez", "voulez-vous", "voulez vous", "voudrez", "voudrais", "aimerais", "je veux que"]],
+	["_a proposeZZZ",	["propose", "tu veux", "veux-tu", "vous prendrez", "tu prendra", "veux tu", "vous voulez", "voulez-vous",
+										"voulez vous", "voudrez", "voudrais", "aimerais", "je veux que", "on fait", "ca te dit"]],
 	["_a TMM",			["dites m en plus", "dis m en plus", "et donc", "et alors", "expliquez", "explique", "quoi d autre", "comment", "c est quoi"]],
 	["quêteZZZ",		["quete","voyage", "pepriple", "aventure", "quête", "expédition", "vadrouille", "chasse aux monstres",
 						"quetes","voyages", "pepriples", "aventures", "quêtes", "expéditions", "vadrouilles", "chasses aux monstres"]],
@@ -51,7 +52,7 @@ var BOT_pluralList = [
 BOT_pluralExceptionList = BOT_pluralExceptionList.concat(BOT_pluralList);
 
 // ====================================================================
-//        EVENTS  HANDLERS & REQUESTS SPECIFIC POSTPROCESSING 
+//        EVENTS  HANDLERS & REQUESTS SPECIFIC POSTPROCESSING
 // ====================================================================
 
 
@@ -103,8 +104,8 @@ function BOT_expressTopicAttribute(tid,attr) {
 	var thebottopicid  = thebotobject.topicId;
 	var c = BOT_get(tid,"_class","VAL");
 	     if (c == "user" && attr == "_reference") return("you")
-	else if (tid == thebottopicid && attr == "_reference") return("me"); 
-	else if (tid == thebottopicid) return(attr); 
+	else if (tid == thebottopicid && attr == "_reference") return("me");
+	else if (tid == thebottopicid) return(attr);
 	else if (attr == "_reference") return(BOT_topicToName(tid))
 	else if (c == "user") return("your "+attr)
 	else return(BOT_topicToName(tid)+"'s "+attr)
@@ -122,12 +123,12 @@ function BOT_onGreet() {
 		}
 		else
 			BOT_reqSay(true,"HELLO","PING");
-	} 
+	}
 	else {
 		c = BOT_get(BOT_theReqTopic,"_class","VAL");
 		if(c && c != "bot") BOT_reqSay(false,"WARNING","BADAGENT",BOT_theReqTopic);
 		else {
-			// switch bot 
+			// switch bot
 			var newbotid = BOT_get(BOT_theReqTopic,"_class","BOT");
 			if(newbotid) {
 				var newbotobject  = eval(newbotid);
@@ -149,31 +150,31 @@ function BOT_onGreet() {
 // arg1 = topicobject, action
 // arg2 = attribute
 // arg3 = result/value
-function BOT_reqSay (success,emote,reason,arg1,arg2,arg3) { 
+function BOT_reqSay (success,emote,reason,arg1,arg2,arg3) {
 	BOT_reqSuccess = success;
 	BOT_reqEmote   = emote;
 	var short = "";
 	var long  = "";
-	switch (reason) {  
- 	case "ATTRIBUTENOTFOUND": 
+	switch (reason) {
+ 	case "ATTRIBUTENOTFOUND":
 		short += "Not found";
-		long  += "I found no attribute "+arg2+" for "+BOT_expressTopic(arg1); 
+		long  += "I found no attribute "+arg2+" for "+BOT_expressTopic(arg1);
 		break;
-	case "ACTIONNOTFOUND": 
+	case "ACTIONNOTFOUND":
 		short += "Not found";
-		long  += "I found no action "+arg2+" for "+BOT_expressTopic(arg1); 
+		long  += "I found no action "+arg2+" for "+BOT_expressTopic(arg1);
 		break;
  	case "TAGNOTFOUND":
 		short += "Not found";
 		long  += "I found nothing for "+arg2+" for "+BOT_expressTopic(arg1);
 		break;
-	 case "FEELINGNOTFOUND": 
+	 case "FEELINGNOTFOUND":
 		short += "Not found";
-		long  += "I found no feeling "+arg2+" for "+BOT_expressTopic(arg1); 
+		long  += "I found no feeling "+arg2+" for "+BOT_expressTopic(arg1);
 		break;
-	case "RELATIONFOUND": 
+	case "RELATIONFOUND":
 		short += "Not found";
-		long  += "I found no relation "+arg2+" for "+BOT_expressTopic(arg1); 
+		long  += "I found no relation "+arg2+" for "+BOT_expressTopic(arg1);
 		break;
 	case "NEEDSATTTRIBUTE":
 		short += "No attribute";
@@ -187,24 +188,24 @@ function BOT_reqSay (success,emote,reason,arg1,arg2,arg3) {
 		break;
 	case "BADATTTRIBUTE":
 		short += "Bad attribute";
-		long  += "May be " + arg1 + " is not an attribute name"; 
+		long  += "May be " + arg1 + " is not an attribute name";
 		if(BOT_reqHintMode) BOT_buildHintText("ATTRIBUTELIST");
 		break;
 	case "BADACTION":
 		short += "Bad action";
-		long  += "May be " + arg1 + " is not an action name"; 
+		long  += "May be " + arg1 + " is not an action name";
 		if(BOT_reqHintMode) BOT_buildHintText("ACTIONLIST");
 		break;
 	case "BADAGENT":
 		short += BOT_expressTopicAttribute(arg1, tellMeMore(BOT_get(BOT_theTopicId, "name", "VAL")));
 		long  += BOT_expressTopicAttribute(arg1, tellMeMore(BOT_get(BOT_theTopicId, "name", "VAL")));
 		//short += "Bad agent";
-		//long  += "May be " + arg1 + " is not an agent name"; 
+		//long  += "May be " + arg1 + " is not an agent name";
 		if(BOT_reqHintMode) BOT_buildHintText("AGENTTLIST");
 		break;
 	 case "TELLRESULT": // managed by ask, how
 		short += arg3;
-		long  += arg3; 
+		long  += arg3;
 		break;
 	case "THANKYOU":
 		short += "Thanks";

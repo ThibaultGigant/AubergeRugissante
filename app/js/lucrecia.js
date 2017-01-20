@@ -10,14 +10,14 @@ var lucreciaTopic = [
 	[["KEY", "type"],						["VAL", ["Humain aux dents lisses","Humain"]],
 											["ONASK", "Je suis un humain aux dents lisses. Détail qu'il serait malheureux d'omettre."]],
 	[["KEY", "name"],						["VAL", "Lucrecia"],
-											["ONASK","Je m'appelle Lucrecia ! Tu peux te le tatouer sur la peau, si tu veux devenir plus populaire"]
+											["ONASK","Je m'appelle Lucrecia ! Si tu n'as pas déjà entendu parler de moi, je ne sais pas d'où tu sors..."]
 											],
-	[["KEY", "age"],						["VAL", "?"],
+	[["KEY", "age"],						["VAL", "36"],
 											["ONASK", onAskAgeLucrecia],
-											["WHY","I was born thirty years ago"]
+											["WHY","Heu... C'est une question piège ?"]
 											],
 	[["KEY", "gender"],						["VAL", "male"],
-											["ONASK", function(s) { return ((s == "male") ? "I am proud to be a man!" : "Just a woman") }]
+											["ONASK", function(s) { return ((s == "male") ? "Je suis un mec, un vrai !" : "Une femme, dans toute sa splendeur") }]
 											],
 
 	[["KEY", "boissonZZZ"],					["VAL", "boisson"],
@@ -26,7 +26,7 @@ var lucreciaTopic = [
 	// Arme
 	[["KEY", "armeZZZ"],					["VAL",		"Boomerang"],
 											["ONASK",	onAskArmeLucrecia],
-											["ONWHY",	"Je suis certaine que quoi qu'il qrrive, il me reviendra."]
+											["ONWHY",	"Je suis certaine que quoi qu'il arrive, il me reviendra."]
 											],
 	// armure
 	[["KEY", "defenseZZZ"],					["VAL",		"Chemise épaisse"],
