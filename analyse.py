@@ -33,35 +33,46 @@ def freq_lettre_text(text):
 	somme = sum(dico.values())
 	return {key: value/somme for key, value in dico.items()}
 
+def size_sentences(file):
+	sommemots = 0
+	sommelignes = 0
+
+	for s in file.readlines()[:241]:
+		sommemots += len(s)
+		sommelignes += 1
+	return sommemots / sommelignes
+
 def nb_moyen_lettre_dans_mot(text):
-	somme = 0
-	for w in set(text):
-		somme += len(w)
-	return somme / len(set(text))
+	fdist = FreqDist(text)
+	mots = fdist.keys()
+	return sum([len(mot) for mot in mots]) / len(mots)
+
+def nb_synonyms(file):
+	file.seek(0)
+	return len(file.readlines()) - 241
+
 
 if __name__ == '__main__':
 	f = open("Corpus.txt", "r")
 	corpusText = f.read()
+	f.close()
 	#print(len(corpusText))
 	tweet = TweetTokenizer()
 	tokenizedCorpus = tweet.tokenize(corpusText)
 	#print(corpusText)
 	list_mots_4 = mots_x_lettres(tokenizedCorpus, 4)
-	print(list_mots_4)
-	print("Fréquence décroissante " + str(freq_decroissante(tokenizedCorpus)))
+	#print(list_mots_4)
+	#print("Fréquence décroissante " + str(freq_decroissante(tokenizedCorpus)))
 
 	fdist = FreqDist(tokenizedCorpus)
 	for key in sorted(fdist, reverse=True, key=lambda x: fdist[x]):
-		print(key + " " + str(fdist[key]))
+		if len(key) > 2:
+			print(key + " " + str(fdist[key]))
 
-	#print(mots_expression(text6, "[hH]at$"))
-	#print(mots_expression(text6, "z"))
-	#print(mots_expression(text6, "pt"))
-	#print(freq_lettre_text(text6))
-	#print(freq_lettre_text(udhr.raw("French_Francais-Latin1")))
-	#print(freq_lettre_text(udhr.raw("German_Deutsch-Latin1")))
-	#print(freq_lettre_text(udhr.raw("English-Latin1")))
-	#print(freq_lettre_text(udhr.raw("Spanish_Espanol-Latin1")))
-	print(nb_moyen_lettre_dans_mot(corpusText))
+	print(nb_moyen_lettre_dans_mot(tokenizedCorpus))
 
-	#f.close()
+	f = open("Corpus.txt", "r")
+	print(size_sentences(f))
+	print(nb_synonyms(f))
+
+	f.close()

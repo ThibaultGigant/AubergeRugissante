@@ -53,7 +53,7 @@ J'ai un beau lance-pierre qui tire loin !
 L'autre folle avec son armure qui brille, elle a dit qu'elle allait contrôler mon esprit puisque je suis presque un animal. Dommage pour elle que son pouvoir ne fonctionne que sur beaucoup plus petit qu'un humain !
 Pour me défendre, je mets toujours la robe de magicien dont j'ai hérité de mon grand-père, ce grand sage millénaire.
 Ma robe protectrice me rappelle mon grand-père mort il y a peu, au doux âge de 1385 ans
-L'autre guignol avec sa côte de maille, j'ai essayé de le frapper pour lui faire fermer son clapet, mais bon sang, c'est du lourd sa protection !
+L'autre guignol avec sa cotte de maille, j'ai essayé de le frapper pour lui faire fermer son clapet, mais bon sang, c'est du lourd sa protection !
 Je sais crier comme les lapins ! C'est trop mignon les lapins !
 Mon cri de lapin est connu dans le monde entier pour sa douceur.
 Hey, si j'étais toi, je n'irais pas trop près de la fille en vert, quand elle parle aux plantes, celles-ci font tout ce qu'elle veut, j'ai failli être étranglé par des lianes la dernière fois !
@@ -156,10 +156,10 @@ Je n'ai pas d'inquiétude à avoir, je porte toujours une chemise bien épaisse 
 C'est que, les chemises, c'est pas mal confortable, surtout pour les lancés, on garde l'amplitude des mouvements
 Je fais toujours très attention à la couleur de ma chemise, toujours éviter de passer DERRIERE les vaches.
 Allez, top là, et file m'en payer une !
-Certe, ma côte de maille est un peu lourde, mais elle résiste des Trolls !
-Impossible de briser ma côte de maille !
+Certe, ma cotte de maille est un peu lourde, mais elle résiste des Trolls !
+Impossible de briser ma cotte de maille !
 Parfois j'ai froid, c'est pour ça que je viens me réchauffer devant une bonne pinte
-Je ne la voudrais pour rien au monde sa côtte de maille, il a sué dedans et tout, ...
+Je ne la voudrais pour rien au monde sa cotte de maille, il a sué dedans et tout, ...
 Je parle à la flore, et elle m'écoute. C'est si agréable de se détendre au pied d'un chêne bien mou
 Personne n'a jamais contesté la beauté de cette puissance ! Sans la flore, que serions-nous ?
 Je trouve ça drole, de chatouiller des gens endormis au nombril avec des orties", "Quand je me fais mal, c'est vers les plantes aue je me tourne.
@@ -183,7 +183,7 @@ J'ai pas saisi. Qu'est-ce qu'il y a ?
 Je m'appelle Carnaum ! Tu peux te le tatouer sur la peau, si tu veux devenir plus populaire
 Ne tente pas de négocier avec moi, tu ne tiens pas la route. Si tu veux de la boisson, va voir le tavernier
 Dans la vie, faut faire des choix, et moi, le voilà.
-Côtte de maille
+cotte de maille
 Chute extrême
 Ahaha ! T'as dit eau !
 Mêle toi de tes affaires
@@ -204,12 +204,12 @@ On en a encaissé des coups
 Faut pas écouter les autres, ça s'émousse, tout au plus
 De toute façon, le mien je l'ai acheté de chez un grand forgeron !
 Je pense que même ébréchée comme elle l'est, je peut quand même te faire mal...
-Je me sens super bien loti dans ma côtte de maille.
-Je me sens super bien loti dans ma côtte de maille.
-C'est pas facile à nettoyer n'empêche une côtte de maille
+Je me sens super bien loti dans ma cotte de maille.
+Je me sens super bien loti dans ma cotte de maille.
+C'est pas facile à nettoyer n'empêche une cotte de maille
 Booeerg, j'ai dégobié dessus...
-Certe, ma côtte de maille est un peu lourde, mais elle résiste des Trolls !
-Impossible de briser ma côtte de maille !
+Certe, ma cotte de maille est un peu lourde, mais elle résiste des Trolls !
+Impossible de briser ma cotte de maille !
 Certe, ma cotte de maille est un peu lourde, mais elle résiste des Trolls !", "Je ne me balade pas en chemise, moi.
 C'est pas le tout, mais faut boire
 Je suis le champion au saut de l'extrême !
@@ -217,9 +217,9 @@ Quand je saute d'une falaise de 30 métres, c'est pas moins de 4 litres de sang 
 Une fois j'ai glissé en sautant...
 Je vais te le dire à toi, parce que tu ne me lance pas des carreaux d'arbalète à moitié cassés : j'ai un peu le vertige
 Je ne saute jamais vers le haut ! Ce doit être un rêve fabuleux á accomplir.
-Certe, ma côtte de maille est un peu lourde, mais elle résiste des Trolls !
-Impossible de briser ma côtte de maille !
-Certe, ma côtte de maille est un peu lourde, mais elle résiste des Trolls !
+Certe, ma cotte de maille est un peu lourde, mais elle résiste des Trolls !
+Impossible de briser ma cotte de maille !
+Certe, ma cotte de maille est un peu lourde, mais elle résiste des Trolls !
 Je ne me balade pas en chemise, moi.
 C'est pas le tout, mais faut boire
 Ah, je veux bien !
@@ -232,7 +232,7 @@ J'en ai vu des faux-cul, mais me proposer un cru que tu n'as pas... *Vous n'avez
 Ça passera le temps. *Carnaum prend votre choppe de bibine*
 Je veux bien boire tout ce que tu veux, mais faudrait que tu m'en donnes. *Vous n'avez pas de bibine*
 J'ai pas saisi. Qu'est-ce qu'il y a ?
-"Zzzzz
+Zzzzz
 Heuu...
 bwork
 Hic!
